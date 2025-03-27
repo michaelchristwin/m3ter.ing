@@ -2,9 +2,19 @@
 import { render } from "solid-js/web";
 import { Router } from "@solidjs/router";
 import "./index.css";
-import { lazy } from "solid-js";
+import { lazy, ParentComponent } from "solid-js";
 import { MetaProvider } from "@solidjs/meta";
 import "./App.css";
+import Navbar from "./components/Navbar";
+
+const Layout: ParentComponent = ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      <div class={`mt-[50px] px-[90px]`}>{children}</div>
+    </>
+  );
+};
 
 const root = document.getElementById("root");
 
@@ -18,7 +28,7 @@ const routes = [
 render(
   () => (
     <MetaProvider>
-      <Router>{routes}</Router>
+      <Router root={Layout}>{routes}</Router>
     </MetaProvider>
   ),
   root!
