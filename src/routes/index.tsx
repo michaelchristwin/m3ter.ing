@@ -1,7 +1,8 @@
 import { Title } from "@solidjs/meta";
 import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import SolarPunk3 from "~/assets/solarpunk3.webp";
-import Card from "~/components/Card";
+import AppCard from "~/components/AppCard";
+import Card from "~/components/CompanyCard";
 
 function Index() {
   return (
@@ -32,8 +33,8 @@ function Index() {
           </div>
         </div>
       </div>
-      <div class={`relative mt-[150px]`}>
-        <div class={`container`}>
+      <div class={`relative my-[150px]`}>
+        <div class={`container h-[300px] w-full flex`}>
           <Card image={SolarFoundation} />
           <Card image={SwitchElectric} />
           <Card image={Arkreen} />
@@ -43,6 +44,14 @@ function Index() {
           <Card image={Arkreen} />
           <Card image={Arkreen} />
         </div>
+      </div>
+      <div
+        class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-[30vh]`}
+      >
+        <AppCard />
+        <AppCard />
+        <AppCard />
+        <AppCard />
       </div>
     </div>
   );

@@ -6,7 +6,9 @@ interface CardProps {
 
 const Card: Component<CardProps> = ({ image }) => {
   return (
-    <div class={`shadow-lg card p-3`}>
+    <div
+      class={`shadow-lg flex h-[280px] w-[200px] bg-white rounded-[10px] p-3 card`}
+    >
       <div class={`w-[150px] h-[150px] mx-auto`}>
         <img
           src={image}
