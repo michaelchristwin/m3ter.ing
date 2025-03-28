@@ -269,3 +269,7 @@ body {
     content: counter(step);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
