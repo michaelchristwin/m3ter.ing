@@ -11,7 +11,7 @@ const Layout: ParentComponent = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div class={`mt-[50px] px-[90px]`}>{children}</div>
+      {children}
     </>
   );
 };
