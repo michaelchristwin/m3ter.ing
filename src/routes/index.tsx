@@ -46,14 +46,14 @@ function Index() {
         </div>
       </section>
       <section
-        class={`w-full flex flex-wrap justify-center gap-[30px] items-center max-h-[60vh]`}
+        class={`w-full flex flex-wrap justify-center gap-[30px] items-center max-h-screen`}
       >
         <AppCard />
         <AppCard />
         <AppCard />
         <AppCard />
       </section>
-      <section class={`h-[80vh] w-full flex items-center justify-end`}>
+      {/* <section class={`max-h-screen w-full flex items-center justify-end`}>
         <div class="users-color-container">
           <span class="item" style="--i: 1"></span>
           <M3terHeadBlink
@@ -100,6 +100,61 @@ function Index() {
             displayTime={5}
             hiddenTime={5}
           />
+        </div>
+      </section> */}
+      <section class={`h-[50vh] w-full`}>
+        <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {/* Top row: 2 cards */}
+              <div class="bg-white rounded-lg shadow-sm p-7 h-64 flex items-end text-center">
+                {/* First card content would go here */}
+                <div class={`block text-start space-y-[8px]`}>
+                  <p class={`font-[600] text-[25px]`}>100% EVM compatible</p>
+                  <p class={`text-neutral-500 text-[17px]`}>
+                    Use the existing EVM ecosystem to your advantage.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class={`block text-center space-y-[5px] w-full`}>
+                  <p class={`font-extrabold text-[60px]`}>10,000</p>
+                  <p class={`font-[600] text-[20px]`}>kWh</p>
+                  <p class={`text-neutral-500 text-[17px]`}>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Bottom row: 3 cards */}
+              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                {/* Third card content would go here */}
+                <div class={`block text-center space-y-[5px] w-full`}>
+                  <p class={`font-extrabold text-[60px]`}>4,000</p>
+                  <p class={`font-[600] text-[20px]`}>
+                    Tonnes of CO₂ prevented
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class={`block text-center space-y-[5px] w-full`}>
+                  <p class={`font-extrabold text-[60px]`}>$30,000</p>
+                  <p class={`font-[600] text-[20px]`}>Revenue generated</p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class={`block text-center space-y-[5px] w-full`}>
+                  <p class={`font-extrabold text-[60px]`}>6</p>
+                  <p class={`font-[600] text-[20px]`}>Ecovillages</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
