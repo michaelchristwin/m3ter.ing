@@ -3,7 +3,7 @@ import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import SolarPunk3 from "~/assets/solarpunk3.webp";
 import AppCard from "~/components/AppCard";
 import Card from "~/components/CompanyCard";
-import M3terHeadBlink from "~/components/M3terHeadBlink";
+// import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
