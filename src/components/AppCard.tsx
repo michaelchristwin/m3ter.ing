@@ -1,7 +1,7 @@
 const AppCard = () => {
   return (
     <div
-      class={`w-[320px] h-[250px] shadow-lg flex items-center p-[20px] rounded-[30px]`}
+      class={`w-[300px] h-[250px] shadow-lg flex items-center p-[20px] rounded-[30px]`}
     >
       <div class="block space-y-2.5">
         <div class={`flex items-center w-full space-x-[10px]`}>
