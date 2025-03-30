@@ -1,19 +1,8 @@
+/* src/app.css or put it where you have your main .css file */
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@plugin 'tailwindcss-animate';
 @plugin '@kobalte/tailwindcss';
-
-body {
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.bowlby-one-regular {
-  font-family: "Bowlby One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 @custom-variant dark (.dark &,[data-kb-theme="dark"] &);
 
@@ -268,8 +257,4 @@ body {
     @apply ml-[-50px] mt-[-4px];
     content: counter(step);
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }

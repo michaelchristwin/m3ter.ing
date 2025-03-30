@@ -6,13 +6,15 @@ import { lazy, ParentComponent } from "solid-js";
 import { MetaProvider } from "@solidjs/meta";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const Layout: ParentComponent = ({ children }) => {
   return (
-    <>
+    <main class={`relative h-fit`}>
       <Navbar />
       {children}
-    </>
+      <Footer />
+    </main>
   );
 };
 
