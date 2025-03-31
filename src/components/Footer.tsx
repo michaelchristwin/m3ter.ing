@@ -82,7 +82,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                class="bg-orange-500/20 backdrop-blur-[10px] text-white cursor-pointer font-medium py-2 px-4 rounded-lg hover:bg-orange-500/30 transition duration-300"
+                class="bg-orange-500/40 backdrop-blur-[10px] text-white cursor-pointer font-medium py-2 px-4 rounded-lg hover:bg-orange-500/20 transition duration-300"
               >
                 Subscribe
               </button>

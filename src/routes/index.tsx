@@ -1,28 +1,23 @@
 import { Title } from "@solidjs/meta";
 import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
-import SolarPunk3 from "~/assets/solarpunk3.webp";
 import AppCard from "~/components/AppCard";
 import Card from "~/components/CompanyCard";
+//import M3tering from "~/assets/m3tering.png";
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
-    <div class={`space-y-[100px]`}>
+    <div>
       <Title>Home</Title>
-      <section
-        class={`w-full h-[94vh] bg-fixed bg-no-repeat bg-cover bg-center px-[90px]`}
-        style={{
-          "background-image": `url(${SolarPunk3})`,
-        }}
-      >
-        <div class={`flex w-full h-full items-center space-x-[250px]`}>
+      <section class={`w-full h-[100vh]  px-[90px]`}>
+        <div class={`flex w-full h-full items-end space-x-[250px] py-[50px]`}>
           <div class={`lg:w-[500px] md:w-[400px] w-[300px] block`}>
             <p
-              class={`bowlby-one-regular lg:text-[45px] md:text-[40px] text-[35px] text-orange-500`}
+              class={`bowlby-one-regular lg:text-[55px] md:text-[50px] text-[45px] text-orange-500`}
             >
               Measure Smarter, Not Harder
             </p>
-            <p class={`text-[17px] font-[400] text-orange-500`}>
+            <p class={`text-[17px] font-[400] text-white`}>
               Unlock the power of precise measurements and efficient operations.
             </p>
             <div class={`flex w-full h-[80px] items-center mt-[10px]`}>
@@ -34,28 +29,86 @@ function Index() {
               </button>
             </div>
           </div>
+          {/* <img src={M3tering} alt="M3tering" class={`mx-auto`} /> */}
         </div>
       </section>
+      <div class={`space-y-[100px] w-full bg-gray-50`}>
+        <section class={`relative py-[100px] px-[90px] w-full`}>
+          <div class={`container h-fit w-full flex`}>
+            <Card image={SolarFoundation} />
+            <Card image={SwitchElectric} />
+            <Card image={Arkreen} />
+            <Card image={Arkreen} />
+            <Card image={Arkreen} />
+            <Card image={Arkreen} />
+            <Card image={Arkreen} />
+          </div>
+        </section>
+        <section
+          class={`w-full flex flex-wrap justify-center gap-[30px] items-center max-h-screen px-[90px]`}
+        >
+          <AppCard />
+          <AppCard />
+          <AppCard />
+          <AppCard />
+        </section>
+        <section class={`h-fit w-full px-[90px]`}>
+          <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* Top row: 2 cards */}
+                <div class="bg-white rounded-lg shadow-sm p-7 h-64 flex items-end text-center">
+                  {/* First card content would go here */}
+                  <div class={`block text-start space-y-[8px]`}>
+                    <p class={`font-[600] text-[25px]`}>100% EVM compatible</p>
+                    <p class={`text-neutral-500 text-[17px]`}>
+                      Use the existing EVM ecosystem to your advantage.
+                    </p>
+                  </div>
+                </div>
 
-      <section class={`relative py-[100px] px-[90px] w-full`}>
-        <div class={`container h-fit w-full flex`}>
-          <Card image={SolarFoundation} />
-          <Card image={SwitchElectric} />
-          <Card image={Arkreen} />
-          <Card image={Arkreen} />
-          <Card image={Arkreen} />
-          <Card image={Arkreen} />
-          <Card image={Arkreen} />
-        </div>
-      </section>
-      <section
-        class={`w-full flex flex-wrap justify-center gap-[30px] items-center max-h-screen px-[90px]`}
-      >
-        <AppCard />
-        <AppCard />
-        <AppCard />
-        <AppCard />
-      </section>
+                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                  <div class={`block text-center space-y-[5px] w-full`}>
+                    <p class={`font-extrabold text-[60px]`}>10,000</p>
+                    <p class={`font-[600] text-[20px]`}>kWh</p>
+                    <p class={`text-neutral-500 text-[17px]`}>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Bottom row: 3 cards */}
+                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                  {/* Third card content would go here */}
+                  <div class={`block text-center space-y-[5px] w-full`}>
+                    <p class={`font-extrabold text-[60px]`}>4,000</p>
+                    <p class={`font-[600] text-[20px]`}>
+                      Tonnes of CO₂ prevented
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                  <div class={`block text-center space-y-[5px] w-full`}>
+                    <p class={`font-extrabold text-[60px]`}>$30,000</p>
+                    <p class={`font-[600] text-[20px]`}>Revenue generated</p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                  <div class={`block text-center space-y-[5px] w-full`}>
+                    <p class={`font-extrabold text-[60px]`}>6</p>
+                    <p class={`font-[600] text-[20px]`}>Ecovillages</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* <section class={`max-h-screen w-full flex items-center justify-end`}>
         <div class="users-color-container">
           <span class="item" style="--i: 1"></span>
@@ -105,61 +158,6 @@ function Index() {
           />
         </div>
       </section> */}
-      <section class={`h-fit w-full px-[90px]`}>
-        <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-          <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {/* Top row: 2 cards */}
-              <div class="bg-white rounded-lg shadow-sm p-7 h-64 flex items-end text-center">
-                {/* First card content would go here */}
-                <div class={`block text-start space-y-[8px]`}>
-                  <p class={`font-[600] text-[25px]`}>100% EVM compatible</p>
-                  <p class={`text-neutral-500 text-[17px]`}>
-                    Use the existing EVM ecosystem to your advantage.
-                  </p>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
-                <div class={`block text-center space-y-[5px] w-full`}>
-                  <p class={`font-extrabold text-[60px]`}>10,000</p>
-                  <p class={`font-[600] text-[20px]`}>kWh</p>
-                  <p class={`text-neutral-500 text-[17px]`}>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Bottom row: 3 cards */}
-              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
-                {/* Third card content would go here */}
-                <div class={`block text-center space-y-[5px] w-full`}>
-                  <p class={`font-extrabold text-[60px]`}>4,000</p>
-                  <p class={`font-[600] text-[20px]`}>
-                    Tonnes of CO₂ prevented
-                  </p>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
-                <div class={`block text-center space-y-[5px] w-full`}>
-                  <p class={`font-extrabold text-[60px]`}>$30,000</p>
-                  <p class={`font-[600] text-[20px]`}>Revenue generated</p>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
-                <div class={`block text-center space-y-[5px] w-full`}>
-                  <p class={`font-extrabold text-[60px]`}>6</p>
-                  <p class={`font-[600] text-[20px]`}>Ecovillages</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
