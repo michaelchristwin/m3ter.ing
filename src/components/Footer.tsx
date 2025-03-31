@@ -23,7 +23,9 @@ const Footer = () => {
         <div class="lg:flex md:flex block justify-between">
           {/* Logo and company info */}
           <div class="mb-8 lg:mb-0 md:mb-0 lg:max-w-xs md:max-w-xs">
-            <h3 class="text-xl font-bold text-white mb-4">Company Name</h3>
+            <h3 class="text-xl font-bold text-white mb-4 bowlby-one-regular">
+              M3tering
+            </h3>
             <p class="text-gray-200 mb-4">
               Creating beautiful sustainable experiences since 2025.
             </p>
@@ -76,11 +78,11 @@ const Footer = () => {
                 value={email()}
                 onInput={(e) => setEmail(e.target.value)}
                 required
-                class="px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                class="px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg border border-white border-opacity-20 placeholder-neutral-700 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
               />
               <button
                 type="submit"
-                class="bg-white bg-opacity-20 backdrop-blur-sm text-white font-medium py-2 px-4 rounded-lg hover:bg-opacity-30 transition duration-300 border border-white border-opacity-20"
+                class="bg-orange-500/20 backdrop-blur-[10px] text-white cursor-pointer font-medium py-2 px-4 rounded-lg hover:bg-orange-500/30 transition duration-300"
               >
                 Subscribe
               </button>
@@ -175,9 +177,7 @@ const Footer = () => {
         {/* Copyright */}
         <div class="h-px bg-white bg-opacity-20 my-8"></div>
         <div class="text-center text-gray-200">
-          <p>
-            &copy; {new Date().getFullYear()} Company Name. All rights reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} M3tering</p>
         </div>
       </div>
     </footer>
