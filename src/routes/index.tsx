@@ -10,21 +10,21 @@ function Index() {
     <div class={`h-[100%]`}>
       <Title>Home</Title>
       <section
-        class={`relative flex justify-center items-end lg:h-[100%] md:h-[100%] h-[92%] hero`}
+        class={`relative flex justify-center items-end lg:h-[125%] md:h-[125%] h-[120%] hero`}
       >
-        <div class={`w-full absolute bottom-[-330px] left-0`}>
+        <div class={`w-full`}>
           <p
-            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)]`}
+            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] lg:leading-40 md:leading-24 leading-15`}
           >
             M3TERING
           </p>
           <section
-            class={`w-full lg:h-[390px] md:h-[300px] h-[330px] bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
+            class={`w-full h-[300px] bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
           ></section>
         </div>
       </section>
 
-      <div class={`space-y-[100px] w-full bg-gray-50 mt-[300px]`}>
+      <div class={`space-y-[100px] w-full bg-gray-50`}>
         <section class={`relative py-[100px] px-[90px] w-full`}>
           <div class={`container h-fit w-full flex`}>
             <Card image={SolarFoundation} />
