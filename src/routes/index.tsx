@@ -14,7 +14,7 @@ function Index() {
       >
         <div class={`w-full`}>
           <p
-            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] lg:leading-40 md:leading-24 leading-15`}
+            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] lg:leading-48 md:leading-24 leading-15`}
           >
             M3TERING
           </p>
