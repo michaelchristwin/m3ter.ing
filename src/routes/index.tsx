@@ -9,23 +9,18 @@ function Index() {
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
-      <section
-        class={`relative flex justify-center items-end lg:h-[125%] md:h-[125%] h-[120%] hero`}
-      >
-        <div class={`w-full block space-y-0`}>
-          <p
-            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] leading-[100%]`}
-          >
-            M3TERING
-          </p>
-          <section
-            class={`w-full h-[300px] bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
-          ></section>
-        </div>
+      <section class={`relative flex justify-center items-end h-[96%] hero`}>
+        <p
+          class={`dynapuff font-[600] w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] leading-[90%]`}
+        >
+          M3TERING
+        </p>
       </section>
 
-      <div class={`space-y-[100px] w-full bg-gray-50`}>
-        <section class={`relative py-[30px] px-[90px] w-full space-y-[50px]`}>
+      <div
+        class={`space-y-[100px] w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
+      >
+        <section class={`relative pb-[40px] px-[90px] w-full space-y-[90px]`}>
           <h1 class={`text-center font-semibold text-[30px]`}>Protocol V2</h1>
           <div class={`container h-fit w-full flex`}>
             <Card image={SolarFoundation} />
