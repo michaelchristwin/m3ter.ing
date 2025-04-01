@@ -3,38 +3,28 @@ import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import AppCard from "~/components/AppCard";
 import Card from "~/components/CompanyCard";
 import Footer from "~/components/Footer";
-
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
-      <section class={`relative flex justify-center items-end h-[100%] hero`}>
-        {/* <div class={`lg:w-[500px] md:w-[400px] w-[300px] block`}>
-            <p
-              class={`bowlby-one-regular lg:text-[55px] md:text-[50px] text-[45px] text-orange-500`}
-            >
-              Measure Smarter, Not Harder
-            </p>
-            <p class={`text-[17px] font-[400] text-white`}>
-              Unlock the power of precise measurements and efficient operations.
-            </p>
-            <div class={`flex w-full h-[80px] items-center mt-[10px]`}>
-              <button
-                type="button"
-                class={`h-[60px] transition-transform duration-200 hover:scale-105 active:scale-90 text-center rounded-full bg-orange-500 w-[200px] text-white text-[18px] font-semibold cursor-pointer active:opacity-[0.8]`}
-              >
-                Join
-              </button>
-            </div>
-          </div> */}
-        <p class={`moirai-one-regular mx-auto w-fit text-white text-[260px]`}>
-          M3TERING
-        </p>
+      <section
+        class={`relative flex justify-center items-end lg:h-[100%] md:h-[100%] h-[92%] hero`}
+      >
+        <div class={`w-full absolute bottom-[-330px] left-0`}>
+          <p
+            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)]`}
+          >
+            M3TERING
+          </p>
+          <section
+            class={`w-full lg:h-[390px] md:h-[300px] h-[330px] bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
+          ></section>
+        </div>
       </section>
 
-      <div class={`space-y-[100px] w-full bg-gray-50`}>
+      <div class={`space-y-[100px] w-full bg-gray-50 mt-[300px]`}>
         <section class={`relative py-[100px] px-[90px] w-full`}>
           <div class={`container h-fit w-full flex`}>
             <Card image={SolarFoundation} />
@@ -55,7 +45,7 @@ function Index() {
           <AppCard />
         </section>
         <section class={`h-fit w-full px-[90px]`}>
-          <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+          <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
