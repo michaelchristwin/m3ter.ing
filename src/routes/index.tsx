@@ -9,7 +9,9 @@ function Index() {
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
-      <section class={`relative flex justify-center items-end h-[91%] hero`}>
+      <section
+        class={`relative flex justify-center items-end lg:h-[91%] md:h-[91%] h-[85%] hero`}
+      >
         <p
           class={`dynapuff font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[65%]`}
         >
