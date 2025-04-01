@@ -20,6 +20,12 @@ button {
   font-variation-settings: "wdth" 100;
 }
 
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 .card {
   /*   margin-left: -50px; */
   transition: 0.4s ease-out;

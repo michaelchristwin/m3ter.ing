@@ -11,7 +11,7 @@ function Index() {
       <Title>Home</Title>
       <section class={`relative flex justify-center items-end h-[96%] hero`}>
         <p
-          class={`dynapuff font-[600] w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] leading-[90%]`}
+          class={`dynapuff font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[65%]`}
         >
           M3TERING
         </p>
@@ -21,7 +21,11 @@ function Index() {
         class={`space-y-[100px] w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section class={`relative pb-[40px] px-[90px] w-full space-y-[90px]`}>
-          <h1 class={`text-center font-semibold text-[30px]`}>Protocol V2</h1>
+          <h1
+            class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
+          >
+            Protocol V2
+          </h1>
           <div class={`container h-fit w-full flex`}>
             <Card image={SolarFoundation} />
             <Card image={SwitchElectric} />
