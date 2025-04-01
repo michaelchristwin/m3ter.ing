@@ -2,17 +2,15 @@ import { Title } from "@solidjs/meta";
 import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import AppCard from "~/components/AppCard";
 import Card from "~/components/CompanyCard";
-import SolarBg from "~/assets/solar-bg.png";
+import Footer from "~/components/Footer";
+
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
-    <div class={`h-[100vh] overflow-y-auto overflow-x-hidden wrapper`}>
+    <div class={`h-[100%]`}>
       <Title>Home</Title>
-      <header
-        class={`relative flex justify-center items-center h-[100%] header`}
-      >
-        <img src={SolarBg} class={`background`} />
+      <section class={`relative flex justify-center items-end h-[100%] hero`}>
         {/* <div class={`lg:w-[500px] md:w-[400px] w-[300px] block`}>
             <p
               class={`bowlby-one-regular lg:text-[55px] md:text-[50px] text-[45px] text-orange-500`}
@@ -36,7 +34,7 @@ function Index() {
         >
           M3TERING
         </p>
-      </header>
+      </section>
 
       <div class={`space-y-[100px] w-full bg-gray-50`}>
         <section class={`relative py-[100px] px-[90px] w-full`}>
@@ -164,6 +162,7 @@ function Index() {
           />
         </div>
       </section> */}
+      <Footer />
     </div>
   );
 }

@@ -151,7 +151,7 @@ button {
 .wrapper {
   perspective: 10px;
 }
-.header {
+.hero {
   transform-style: preserve-3d;
   z-index: -1;
 }
