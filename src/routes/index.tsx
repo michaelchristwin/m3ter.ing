@@ -9,7 +9,7 @@ function Index() {
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
-      <section class={`relative flex justify-center items-end h-[96%] hero`}>
+      <section class={`relative flex justify-center items-end h-[91%] hero`}>
         <p
           class={`dynapuff font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[65%]`}
         >
@@ -63,7 +63,11 @@ function Index() {
 
                 <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p class={`font-extrabold text-[60px]`}>10,000</p>
+                    <p
+                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
+                    >
+                      10,000
+                    </p>
                     <p class={`font-[600] text-[20px]`}>kWh</p>
                     <p class={`text-neutral-500 text-[17px]`}>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.

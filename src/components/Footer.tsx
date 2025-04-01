@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer
-      class="w-full py-12 lg:px-[80px] md:px-[60px] px-[40px] relative text-white bg-no-repeat bg-center bg-cover"
+      class="w-full py-12 lg:px-[70px] md:px-[50px] px-[30px] relative text-white bg-no-repeat bg-center bg-cover"
       style={{ "background-image": `url(${Solarpunk2})` }}
     >
       {/* Overlay for better text visibility */}
