@@ -29,9 +29,7 @@ function Index() {
               </button>
             </div>
           </div> */}
-        <p
-          class={`libre-bodoni font-[700] mx-auto w-fit text-white text-[230px]`}
-        >
+        <p class={`moirai-one-regular mx-auto w-fit text-white text-[260px]`}>
           M3TERING
         </p>
       </section>
