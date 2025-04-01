@@ -4,7 +4,7 @@ import NavbarSheet from "./NavbarSheet";
 const Navbar = () => {
   return (
     <nav
-      class={`w-full flex h-[50px] px-[90px] z-2 bg-transparent justify-between sticky left-0 top-0 items-center`}
+      class={`w-full flex h-[50px] px-[90px] bg-transparent justify-between items-center`}
     >
       <A href="/" class={`text-orange-500 text-[23px] bowlby-one-regular`}>
         m3tering

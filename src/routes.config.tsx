@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 const Layout: ParentComponent = ({ children }) => {
   return (
-    <main class={`relative h-fit`}>
+    <main class={``}>
       <Navbar />
       {children}
       <Footer />

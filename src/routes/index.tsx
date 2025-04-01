@@ -2,16 +2,18 @@ import { Title } from "@solidjs/meta";
 import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import AppCard from "~/components/AppCard";
 import Card from "~/components/CompanyCard";
-//import M3tering from "~/assets/m3tering.png";
+import SolarBg from "~/assets/solar-bg.png";
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
-    <div>
+    <div class={`h-[100vh] overflow-y-auto overflow-x-hidden wrapper`}>
       <Title>Home</Title>
-      <section class={`w-full h-[100vh]  px-[90px]`}>
-        <div class={`flex w-full h-full items-end space-x-[250px] py-[50px]`}>
-          <div class={`lg:w-[500px] md:w-[400px] w-[300px] block`}>
+      <header
+        class={`relative flex justify-center items-center h-[100%] header`}
+      >
+        <img src={SolarBg} class={`background`} />
+        {/* <div class={`lg:w-[500px] md:w-[400px] w-[300px] block`}>
             <p
               class={`bowlby-one-regular lg:text-[55px] md:text-[50px] text-[45px] text-orange-500`}
             >
@@ -28,10 +30,14 @@ function Index() {
                 Join
               </button>
             </div>
-          </div>
-          {/* <img src={M3tering} alt="M3tering" class={`mx-auto`} /> */}
-        </div>
-      </section>
+          </div> */}
+        <p
+          class={`libre-bodoni font-[700] mx-auto w-fit text-white text-[230px]`}
+        >
+          M3TERING
+        </p>
+      </header>
+
       <div class={`space-y-[100px] w-full bg-gray-50`}>
         <section class={`relative py-[100px] px-[90px] w-full`}>
           <div class={`container h-fit w-full flex`}>
