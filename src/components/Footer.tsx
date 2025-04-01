@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer
-      class="w-full py-12 px-[90px] relative text-white bg-no-repeat bg-center bg-cover"
+      class="w-full py-12 lg:px-[80px] md:px-[60px] px-[40px] relative text-white bg-no-repeat bg-center bg-cover"
       style={{ "background-image": `url(${Solarpunk2})` }}
     >
       {/* Overlay for better text visibility */}
@@ -90,21 +90,21 @@ const Footer = () => {
           </div>
 
           {/* Navigation links grid - keeping your existing structure */}
-          <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[40px]">
+          <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[40px]">
             <div>
-              <p class="font-bold mb-4">Product</p>
+              <p class="font-bold mb-4 text-[20px]">Products</p>
               <ul class="space-y-2">
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">XCharge</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Watt-A-Frame</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Solaxy</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Maxwell</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
                   <a href="#">Nitro</a>
@@ -112,19 +112,39 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p class="font-bold mb-4">Product</p>
+              <p class="font-bold mb-4 text-[20px]">Socials</p>
               <ul class="space-y-2">
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Facebook</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Twitter</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Farcaster</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a href="#">Mastodon</a>
+                </li>
+                <li class="hover:text-gray-300 transition">
+                  <a href="#">Instagram</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-4 text-[20px]">Docs</p>
+              <ul class="space-y-2">
+                <li class="hover:text-gray-300 transition">
+                  <a href="#">M3tering</a>
+                </li>
+                <li class="hover:text-gray-300 transition">
+                  <a href="#">Switch</a>
+                </li>
+                <li class="hover:text-gray-300 transition">
+                  <a href="#">Lorem</a>
+                </li>
+                <li class="hover:text-gray-300 transition">
+                  <a href="#">Ipsum</a>
                 </li>
                 <li class="hover:text-gray-300 transition">
                   <a href="#">Nitro</a>
@@ -132,27 +152,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p class="font-bold mb-4">Product</p>
-              <ul class="space-y-2">
-                <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li class="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-bold mb-4">Product</p>
+              <p class="font-bold mb-4 text-[20px]">Product</p>
               <ul class="space-y-2">
                 <li class="hover:text-gray-300 transition">
                   <a href="#">Nitro</a>

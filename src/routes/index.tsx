@@ -20,7 +20,9 @@ function Index() {
       <div
         class={`space-y-[100px] w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
-        <section class={`relative pb-[40px] px-[90px] w-full space-y-[90px]`}>
+        <section
+          class={`relative pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-full space-y-[90px]`}
+        >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
           >
@@ -37,19 +39,19 @@ function Index() {
           </div>
         </section>
         <section
-          class={`w-full flex flex-wrap justify-center gap-[30px] items-center max-h-screen px-[90px]`}
+          class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
         >
           <AppCard />
           <AppCard />
           <AppCard />
           <AppCard />
         </section>
-        <section class={`h-fit w-full px-[90px]`}>
-          <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <section class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px]`}>
+          <div class="h-fit py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
-                <div class="bg-white rounded-lg shadow-sm p-7 h-64 flex items-end text-center">
+                <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center">
                   {/* First card content would go here */}
                   <div class={`block text-start space-y-[8px]`}>
                     <p class={`font-[600] text-[25px]`}>100% EVM compatible</p>
@@ -59,7 +61,7 @@ function Index() {
                   </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
                     <p class={`font-extrabold text-[60px]`}>10,000</p>
                     <p class={`font-[600] text-[20px]`}>kWh</p>
@@ -72,19 +74,27 @@ function Index() {
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   {/* Third card content would go here */}
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p class={`font-extrabold text-[60px]`}>4,000</p>
+                    <p
+                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
+                    >
+                      4,000
+                    </p>
                     <p class={`font-[600] text-[20px]`}>
                       Tonnes of CO₂ prevented
                     </p>
                   </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p class={`font-extrabold text-[60px]`}>$30,000</p>
+                    <p
+                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
+                    >
+                      $30,000
+                    </p>
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </div>
