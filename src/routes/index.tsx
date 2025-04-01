@@ -12,9 +12,9 @@ function Index() {
       <section
         class={`relative flex justify-center items-end lg:h-[125%] md:h-[125%] h-[120%] hero`}
       >
-        <div class={`w-full`}>
+        <div class={`w-full block space-y-0`}>
           <p
-            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] lg:leading-48 md:leading-24 leading-15`}
+            class={`moirai-one-regular w-fit mx-auto text-white text-[clamp(60px,12vw,240px)] leading-[100%]`}
           >
             M3TERING
           </p>
@@ -25,7 +25,8 @@ function Index() {
       </section>
 
       <div class={`space-y-[100px] w-full bg-gray-50`}>
-        <section class={`relative py-[100px] px-[90px] w-full`}>
+        <section class={`relative py-[30px] px-[90px] w-full space-y-[50px]`}>
+          <h1 class={`text-center font-semibold text-[30px]`}>Protocol V2</h1>
           <div class={`container h-fit w-full flex`}>
             <Card image={SolarFoundation} />
             <Card image={SwitchElectric} />
