@@ -52,76 +52,79 @@ button {
   transform: translateZ(-10px) scale(2);
 }
 
-.slider {
+.carousel {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  position: relative;
-  height: 350px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: Arial;
 }
-
-ul {
+.carousel__list {
+  display: flex;
   list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-li {
-  width: fit-content;
-  height: fit-content;
-}
-
-li img {
-  border-radius: 5% / 3%;
-  border: 1px solid black;
   position: relative;
-}
-
-.item {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  transition: all 0.6s ease-in-out;
-  background-color: white;
-  position: relative;
-}
-
-.small1,
-.small2 {
-  height: 250px;
-  position: absolute;
-  z-index: 0;
-  top: 70px;
-}
-
-.big1,
-.big2 {
+  width: 100%;
   height: 300px;
+  justify-content: center;
+  perspective: 300px;
+}
+
+.carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0px;
+  width: 150px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
   position: absolute;
-  z-index: 1;
-  top: 40px;
+  transition: all 0.3s ease-in;
 }
 
-.small1 {
-  left: 21%;
+.carousel__item:nth-child(1) {
+  background: linear-gradient(45deg, #2d35eb 0%, #904ed4 100%);
+}
+.carousel__item:nth-child(2) {
+  background: linear-gradient(45deg, #2d35eb 0%, #fdbb2d 100%);
+}
+.carousel__item:nth-child(3) {
+  background: linear-gradient(45deg, #2d35eb 0%, #22c1c3 100%);
+}
+.carousel__item:nth-child(4) {
+  background: linear-gradient(45deg, #fdbb2d 0%, #904ed4 100%);
+}
+.carousel__item:nth-child(5) {
+  background: linear-gradient(45deg, #22c1c3 0%, #904ed4 100%);
 }
 
-.big1 {
-  left: 27%;
+.carousel__item[data-pos="0"] {
+  z-index: 5;
 }
 
-.focus {
-  position: absolute;
-  z-index: 2;
-  height: 350px;
-  left: 35%;
-  top: 10px;
+/* .carousel__item[data-pos="-1"],
+.carousel__item[data-pos="1"] {
+  opacity: 0.7;
+  filter: blur(1px) grayscale(10%);
+} */
+
+.carousel__item[data-pos="-1"] {
+  transform: translateX(-70%) scale(0.9);
+  z-index: 4;
 }
 
-.small2 {
-  left: 48%;
+.carousel__item[data-pos="1"] {
+  transform: translateX(70%) scale(0.9);
+  z-index: 4;
 }
-.big2 {
-  left: 42%;
+
+.carousel__item[data-pos="-2"] {
+  transform: translateX(-130%) scale(0.8);
+  z-index: 3;
+}
+
+.carousel__item[data-pos="2"] {
+  transform: translateX(130%) scale(0.8);
+  z-index: 3;
 }
