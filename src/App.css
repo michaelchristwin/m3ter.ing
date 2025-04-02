@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "Maxi";
-  src: url("../src/assets/maxi-font/ABCMaxiRound-Bold.otf");
-  font-weight: bold;
+  font-family: "Selamat-Pagi";
+  src: url("./assets/selamat-pagi-font/SelamatPagi-pgB9a.otf");
   font-style: normal;
 }
 
@@ -27,9 +26,8 @@ button {
   font-variation-settings: "wdth" 100;
 }
 
-.maxi-bold {
-  font-family: "Maxi", sans-serif;
-  font-style: normal;
+.selamat-pagi {
+  font-family: "Selamat-Pagi", sans-serif;
   font-optical-sizing: auto;
 }
 
