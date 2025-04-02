@@ -4,6 +4,7 @@ import {
   SolarFoundation,
   SwitchElectric,
   Arkreen,
+  Your_Project,
 } from "~/assets/companies";
 
 const Carousel: Component = () => {
@@ -30,11 +31,13 @@ const Carousel: Component = () => {
         </li>
         <li class="carousel__item" data-pos="0">
           <div class="image-container">
-            <p
-              class={`caveat font-[600] text-[clamp(30px,5vw,60px)] text-center`}
-            >
-              Your Project Here
-            </p>
+            <div class={`w-[250px] h-[250px]`}>
+              <img
+                src={Your_Project}
+                alt="Your Project Here"
+                class={`object-contain`}
+              />
+            </div>
           </div>
         </li>
         <li class="carousel__item" data-pos="1">
