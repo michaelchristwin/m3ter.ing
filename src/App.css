@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Maxi";
+  src: url("../src/assets/maxi-font/ABCMaxiRound-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html,
 body {
   font-family: "DM Sans", sans-serif;
@@ -18,6 +25,12 @@ button {
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+}
+
+.maxi-bold {
+  font-family: "Maxi", sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
 }
 
 .caveat {

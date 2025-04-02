@@ -31,11 +31,11 @@ const Carousel: Component = () => {
         </li>
         <li class="carousel__item" data-pos="0">
           <div class="image-container">
-            <div class={`w-[250px] h-[250px]`}>
+            <div class={`image-container`}>
               <img
                 src={Your_Project}
                 alt="Your Project Here"
-                class={`object-contain`}
+                class={`carousel-image object-contain`}
               />
             </div>
           </div>
