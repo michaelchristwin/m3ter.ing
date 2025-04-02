@@ -1,7 +1,6 @@
 import { Title } from "@solidjs/meta";
-import { Arkreen, SolarFoundation, SwitchElectric } from "~/assets/companies";
 import AppCard from "~/components/AppCard";
-import Card from "~/components/CompanyCard";
+import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
@@ -30,15 +29,7 @@ function Index() {
           >
             Protocol V2
           </h1>
-          <div class={`container h-fit w-full flex`}>
-            <Card image={SolarFoundation} />
-            <Card image={SwitchElectric} />
-            <Card image={Arkreen} />
-            <Card image={Arkreen} />
-            <Card image={Arkreen} />
-            <Card image={Arkreen} />
-            <Card image={Arkreen} />
-          </div>
+          <Carousel />
         </section>
         <section
           class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}

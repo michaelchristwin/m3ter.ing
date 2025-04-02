@@ -15,9 +15,11 @@
     "@tailwindcss/vite": "^4.0.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "flickity": "^3.0.0",
     "m3ters-solid": "^1.0.8",
     "seedrandom": "^3.0.5",
     "solid-js": "^1.9.5",
+    "solid-transition-group": "^0.3.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.17"
   },
