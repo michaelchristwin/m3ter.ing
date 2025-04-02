@@ -5,6 +5,20 @@ import Footer from "~/components/Footer";
 // import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
+  // const cardsData = [
+  //   {
+  //     image: SwitchElectric,
+  //     alt: "Switch Electric",
+  //   },
+  //   {
+  //     image: SolarFoundation,
+  //     alt: "Solar Foundation",
+  //   },
+  //   {
+  //     image: Arkreen,
+  //     alt: "Arkreen",
+  //   },
+  // ];
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
@@ -22,7 +36,7 @@ function Index() {
         class={`space-y-[100px] w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section
-          class={`relative pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-full space-y-[90px]`}
+          class={`relative pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
         >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}

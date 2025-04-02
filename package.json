@@ -15,19 +15,18 @@
     "@tailwindcss/vite": "^4.0.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "flickity": "^3.0.0",
     "m3ters-solid": "^1.0.8",
     "seedrandom": "^3.0.5",
     "solid-js": "^1.9.5",
     "solid-transition-group": "^0.3.0",
     "tailwind-merge": "^3.0.2",
-    "tailwindcss": "^4.0.17"
+    "tailwindcss": "^4.0.17",
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@kobalte/tailwindcss": "^0.9.0",
     "@types/node": "^22.13.14",
     "@types/seedrandom": "^3.0.8",
-    "tw-animate-css": "^1.2.4",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
     "vite-plugin-solid": "^2.11.2"

@@ -1,24 +1,33 @@
-import { Component, For } from "solid-js";
-import "~/styles/flickity.css";
-import "~/modules/flickity.pkgd.min.js";
-import { Companies } from "~/assets/companies";
+import { Component } from "solid-js";
+import {
+  TAS,
+  SolarFoundation,
+  SwitchElectric,
+  Arkreen,
+} from "~/assets/companies";
 
 const Carousel: Component = () => {
   return (
-    <div class="carousel" data-flickity='{ "wrapAround": true }'>
-      <For each={Companies}>
-        {(img) => (
-          <div class="carousel-cell">
-            <div class={`w-[150px] h-[150px] mx-auto`}>
-              <img
-                src={img}
-                alt={`Company Logo`}
-                class={`w-full h-full object-contain mx-auto`}
-              />
-            </div>
-          </div>
-        )}
-      </For>
+    <div class="slider">
+      <ul>
+        <li>
+          <img class="item small1" style="order: 1;" src={Arkreen} />
+        </li>
+        <li>
+          <img class="item big1" style="order: 2;" src={SolarFoundation} />
+        </li>
+
+        <li>
+          <img class="item focus" style="order: 3;" src={SwitchElectric} />
+        </li>
+
+        <li>
+          <img class="item big2" style="order: 4;" src={Arkreen} />
+        </li>
+        <li>
+          <img class="item small2" style="order: 5;" src={TAS} />
+        </li>
+      </ul>
     </div>
   );
 };
