@@ -51,6 +51,12 @@ button {
   z-index: -1;
   transform: translateZ(-10px) scale(2);
 }
+/* Base styles */
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
 .carousel {
   display: flex;
@@ -59,6 +65,7 @@ button {
   align-items: center;
   font-family: Arial;
 }
+
 .carousel__list {
   display: flex;
   list-style: none;
@@ -67,6 +74,8 @@ button {
   height: 300px;
   justify-content: center;
   perspective: 300px;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel__item {
@@ -74,7 +83,7 @@ button {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 0px;
+  font-size: 1rem; /* Changed from 0px to make numbers visible */
   width: 150px;
   height: 250px;
   border-radius: 12px;
@@ -103,28 +112,130 @@ button {
   z-index: 5;
 }
 
-/* .carousel__item[data-pos="-1"],
-.carousel__item[data-pos="1"] {
-  opacity: 0.7;
-  filter: blur(1px) grayscale(10%);
-} */
+/* Small screens (mobile) */
+@media screen and (max-width: 480px) {
+  .carousel__item {
+    width: 100px;
+    height: 160px;
+  }
 
-.carousel__item[data-pos="-1"] {
-  transform: translateX(-70%) scale(0.9);
-  z-index: 4;
+  .carousel__item[data-pos="-1"] {
+    transform: translateX(-60%) scale(0.8);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="1"] {
+    transform: translateX(60%) scale(0.8);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="-2"] {
+    transform: translateX(-110%) scale(0.6);
+    z-index: 3;
+    opacity: 0.4;
+  }
+
+  .carousel__item[data-pos="2"] {
+    transform: translateX(110%) scale(0.6);
+    z-index: 3;
+    opacity: 0.4;
+  }
 }
 
-.carousel__item[data-pos="1"] {
-  transform: translateX(70%) scale(0.9);
-  z-index: 4;
+/* Medium screens (tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .carousel__item {
+    width: 120px;
+    height: 200px;
+  }
+
+  .carousel__item[data-pos="-1"] {
+    transform: translateX(-75%) scale(0.85);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="1"] {
+    transform: translateX(75%) scale(0.85);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="-2"] {
+    transform: translateX(-130%) scale(0.7);
+    z-index: 3;
+    opacity: 0.4;
+  }
+
+  .carousel__item[data-pos="2"] {
+    transform: translateX(130%) scale(0.7);
+    z-index: 3;
+    opacity: 0.4;
+  }
 }
 
-.carousel__item[data-pos="-2"] {
-  transform: translateX(-130%) scale(0.8);
-  z-index: 3;
+/* Large screens (desktop) */
+@media screen and (min-width: 769px) {
+  .carousel__item {
+    width: 150px;
+    height: 250px;
+  }
+
+  .carousel__item[data-pos="-1"] {
+    transform: translateX(-90%) scale(0.9);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="1"] {
+    transform: translateX(90%) scale(0.9);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="-2"] {
+    transform: translateX(-150%) scale(0.8);
+    z-index: 3;
+    opacity: 0.4;
+  }
+
+  .carousel__item[data-pos="2"] {
+    transform: translateX(150%) scale(0.8);
+    z-index: 3;
+    opacity: 0.4;
+  }
 }
 
-.carousel__item[data-pos="2"] {
-  transform: translateX(130%) scale(0.8);
-  z-index: 3;
+/* Extra large screens */
+@media screen and (min-width: 1200px) {
+  .carousel__item {
+    width: 180px;
+    height: 300px;
+  }
+
+  .carousel__item[data-pos="-1"] {
+    transform: translateX(-100%) scale(0.9);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="1"] {
+    transform: translateX(100%) scale(0.9);
+    z-index: 4;
+    opacity: 0.7;
+  }
+
+  .carousel__item[data-pos="-2"] {
+    transform: translateX(-170%) scale(0.8);
+    z-index: 3;
+    opacity: 0.4;
+  }
+
+  .carousel__item[data-pos="2"] {
+    transform: translateX(170%) scale(0.8);
+    z-index: 3;
+    opacity: 0.4;
+  }
 }
