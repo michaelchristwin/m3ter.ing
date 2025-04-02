@@ -2,23 +2,8 @@ import { Title } from "@solidjs/meta";
 import AppCard from "~/components/AppCard";
 import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
-// import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
-  // const cardsData = [
-  //   {
-  //     image: SwitchElectric,
-  //     alt: "Switch Electric",
-  //   },
-  //   {
-  //     image: SolarFoundation,
-  //     alt: "Solar Foundation",
-  //   },
-  //   {
-  //     image: Arkreen,
-  //     alt: "Arkreen",
-  //   },
-  // ];
   return (
     <div class={`h-[100%]`}>
       <Title>Home</Title>
