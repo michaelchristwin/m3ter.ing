@@ -2,12 +2,12 @@ import { Component, createSignal, onCleanup, onMount, Show } from "solid-js";
 import seedrandom from "seedrandom";
 import { M3terHead } from "m3ters-solid";
 
-interface M3terHeadProps {
+type M3terHeadProps = {
   displayTime: number;
   hiddenTime: number;
   backgroundColor: string;
   index: number;
-}
+};
 
 const M3terHeadBlink: Component<M3terHeadProps> = (props) => {
   const [randomNum, setRandomNum] = createSignal<number | null>(null);

@@ -1,4 +1,5 @@
 import { Title } from "@solidjs/meta";
+import AnimatedCounter from "~/components/AnimatedCounter";
 import AppCard from "~/components/AppCard";
 import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
@@ -30,14 +31,6 @@ function Index() {
             Protocol V2
           </h1>
           <Carousel />
-        </section>
-        <section
-          class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
-        >
-          <AppCard />
-          <AppCard />
-          <AppCard />
-          <AppCard />
         </section>
         <section class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px]`}>
           <div class="h-fit py-12 px-4 sm:px-6 lg:px-8">
@@ -87,11 +80,7 @@ function Index() {
 
                 <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p
-                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
-                    >
-                      $30,000
-                    </p>
+                    <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </div>
@@ -105,6 +94,14 @@ function Index() {
               </div>
             </div>
           </div>
+        </section>
+        <section
+          class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
+        >
+          <AppCard />
+          <AppCard />
+          <AppCard />
+          <AppCard />
         </section>
       </div>
 

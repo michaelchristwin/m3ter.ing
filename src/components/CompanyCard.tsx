@@ -1,8 +1,8 @@
 import { Component } from "solid-js";
 
-interface CardProps {
+type CardProps = {
   image: string;
-}
+};
 
 const Card: Component<CardProps> = ({ image }) => {
   return (
