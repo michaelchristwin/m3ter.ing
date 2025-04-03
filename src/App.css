@@ -21,6 +21,32 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+/* For Chromium-based browsers */
+/* Hide scrollbar for Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE */
+body {
+  -ms-overflow-style: none;
+}
+
 button {
   cursor: pointer;
 }
