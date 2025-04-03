@@ -2,26 +2,27 @@ import { Title } from "@solidjs/meta";
 import AppCard from "~/components/AppCard";
 import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
+import Navbar from "~/components/Navbar";
+import styles from "~/styles/parallax.module.css";
 
 function Index() {
   return (
-    <div class={`h-[100%]`}>
+    <div class={styles.index}>
+      <Navbar />
       <Title>Home</Title>
-      <section
-        class={`relative flex justify-center items-end h-[calc(100vh-10vh)] hero`}
-      >
+      <section class={styles.parallax_wrapper}>
         <p
-          class={`selamat-pagi font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[65%]`}
+          class={`jello-stone font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[50%]`}
         >
           M3tering
         </p>
       </section>
 
       <div
-        class={`space-y-[100px] w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
+        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section
-          class={`relative pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
         >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}

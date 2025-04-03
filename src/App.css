@@ -4,6 +4,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Jello-Stone";
+  src: url("./assets/jello-stone-font/JelloStone-YqKz8.ttf");
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 html,
 body {
   font-family: "DM Sans", sans-serif;
@@ -31,6 +42,11 @@ button {
   font-optical-sizing: auto;
 }
 
+.jello-stone {
+  font-family: "Jello-Stone", sans-serif;
+  font-optical-sizing: auto;
+}
+
 .caveat {
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
@@ -47,21 +63,6 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.wrapper {
-  perspective: 10px;
-}
-.hero {
-  transform-style: preserve-3d;
-  z-index: -1;
-}
-.background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  transform: translateZ(-10px) scale(2);
-}
 /* Base styles */
 
 .carousel {

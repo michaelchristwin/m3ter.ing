@@ -5,7 +5,7 @@ import Avatar from "~/assets/avatar.png";
 const Navbar = () => {
   return (
     <nav
-      class={`w-full flex h-[50px] lg:px-[90px] md:px-[90px] px-[40px] bg-transparent justify-between items-center`}
+      class={`w-full flex h-[50px] lg:px-[90px] md:px-[90px] px-[40px] bg-transparent justify-between items-center absolute top-[10px] left-0 z-[2]`}
     >
       <A href="/">
         <img class={`w-[50px] h-[50px]`} src={Avatar} />
