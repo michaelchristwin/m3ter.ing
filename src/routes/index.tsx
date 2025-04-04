@@ -49,11 +49,7 @@ function Index() {
 
                 <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p
-                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
-                    >
-                      10,000
-                    </p>
+                    <AnimatedCounter to={10000} />
                     <p class={`font-[600] text-[20px]`}>kWh</p>
                     <p class={`text-neutral-500 text-[17px]`}>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -67,11 +63,7 @@ function Index() {
                 <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   {/* Third card content would go here */}
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p
-                      class={`font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
-                    >
-                      4,000
-                    </p>
+                    <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
                       Tonnes of CO₂ prevented
                     </p>
@@ -87,7 +79,7 @@ function Index() {
 
                 <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
-                    <p class={`font-extrabold text-[60px]`}>6</p>
+                    <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
                   </div>
                 </div>
