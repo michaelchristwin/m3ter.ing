@@ -49,12 +49,13 @@ const M3terHeadBlink: Component<M3terHeadProps> = (props) => {
     >
       <Show when={randomNum() !== null}>
         <div
+          class={`p-[20px]`}
           style={{
             opacity: visible() ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
           }}
         >
-          <M3terHead seed={String(randomNum())} size={100} />
+          <M3terHead seed={String(randomNum())} size={150} />
         </div>
       </Show>
     </div>

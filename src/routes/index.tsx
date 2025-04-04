@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
 import { ETHCity, Flywheel } from "~/assets/images";
+import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
@@ -158,7 +159,57 @@ function Index() {
           </h3>
           <Carousel />
         </section>
+        <section
+          class={`w-full min-h-[40vh] lg:px-[90px] md:px-[90px] px-[40px] flex justify-center items-center`}
+        >
+          <div class="users-color-container">
+            <span class="item" style="--i: 1"></span>
+            <M3terHeadBlink
+              backgroundColor="#fe7419"
+              index={2}
+              displayTime={10}
+              hiddenTime={5}
+            />
+            <span class="item" style="--i: 3"></span>
+            <M3terHeadBlink
+              displayTime={8}
+              hiddenTime={4}
+              backgroundColor="#8071A8"
+              index={4}
+            />
+            <M3terHeadBlink
+              backgroundColor="#fad058"
+              displayTime={6}
+              hiddenTime={3}
+              index={10}
+            />
 
+            <span class="item" style="--i: 11"></span>
+            <M3terHeadBlink
+              backgroundColor="#edafb0"
+              index={12}
+              displayTime={7}
+              hiddenTime={7}
+            />
+
+            <span class="item" style="--i: 5"></span>
+
+            <span class="item" style="--i: 9"></span>
+            <M3terHeadBlink
+              backgroundColor="#71c266"
+              index={8}
+              displayTime={9}
+              hiddenTime={4}
+            />
+            <span class="item" style="--i: 7"></span>
+            <M3terHeadBlink
+              backgroundColor="#6bd6eb"
+              index={6}
+              displayTime={5}
+              hiddenTime={5}
+            />
+          </div>
+        </section>
         <section
           class={`w-full flex flex-wrap py-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
         >
@@ -169,55 +220,6 @@ function Index() {
         </section>
       </div>
 
-      {/* <section class={`max-h-screen w-full flex items-center justify-end`}>
-        <div class="users-color-container">
-          <span class="item" style="--i: 1"></span>
-          <M3terHeadBlink
-            backgroundColor="#fe7419"
-            index={2}
-            displayTime={10}
-            hiddenTime={5}
-          />
-          <span class="item" style="--i: 3"></span>
-          <M3terHeadBlink
-            displayTime={8}
-            hiddenTime={4}
-            backgroundColor="#8071A8"
-            index={4}
-          />
-          <M3terHeadBlink
-            backgroundColor="#fad058"
-            displayTime={6}
-            hiddenTime={3}
-            index={10}
-          />
-
-          <span class="item" style="--i: 11"></span>
-          <M3terHeadBlink
-            backgroundColor="#edafb0"
-            index={12}
-            displayTime={7}
-            hiddenTime={7}
-          />
-
-          <span class="item" style="--i: 5"></span>
-
-          <span class="item" style="--i: 9"></span>
-          <M3terHeadBlink
-            backgroundColor="#71c266"
-            index={8}
-            displayTime={9}
-            hiddenTime={4}
-          />
-          <span class="item" style="--i: 7"></span>
-          <M3terHeadBlink
-            backgroundColor="#6bd6eb"
-            index={6}
-            displayTime={5}
-            hiddenTime={5}
-          />
-        </div>
-      </section> */}
       <Footer />
     </div>
   );
