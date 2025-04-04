@@ -24,25 +24,30 @@ function Index() {
         class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section
-          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto`}
         >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
           >
             Protocol V2
           </h1>
-          <div class="relative max-w-[700px] w-full mx-auto">
+          <div class="relative max-w-[700px] w-full mx-auto mt-[90px]">
             <img
               src={Flywheel}
               alt="Flywheel effect"
               class="object-contain w-full h-auto"
             />
           </div>
-        </section>
-        <section
-          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
-        >
-          <Carousel />
+          <h4
+            class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
+          >
+            Energy Infrastructure Reimagined
+          </h4>
+          <p
+            class={`text-[16px] text-neutral-500 text-center leading-relaxed mt-[10px]`}
+          >
+            Decentralised, Democratized and Solarpunk at its core
+          </p>
         </section>
         <section class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px]`}>
           <div class="h-fit py-12 px-4 sm:px-6 lg:px-8">
@@ -99,6 +104,12 @@ function Index() {
             </div>
           </div>
         </section>
+        <section
+          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+        >
+          <Carousel />
+        </section>
+
         <section
           class={`w-full flex flex-wrap my-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
         >
