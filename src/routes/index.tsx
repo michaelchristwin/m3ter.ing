@@ -57,20 +57,32 @@ function Index() {
               class="object-cover w-full h-full rounded-2xl"
             />
           </div>
-          <div class={`w-full h-auto`}>
-            <p class={`lg:text-[23px] text-[20px]`}>
-              The M3tering Protocol is shifting energy infrastructure from
-              centralized monopolies to a shared, open economy on Ethereum.
-              Whether it’s a neighborhood solar farm or a shared battery
-              network, the protocol enables the energy assets to be tokenized
-              and transformed liquid assets onchain that anyone can own, trade,
-              and earn from permissionlessly. Using the protocol communities
-              chose how their power is produced, allowing them to accelerate
-              local clean energy adoption. This is more than infrastructure;
-              it’s a solarpunk movement to democratize both ownership and access
-              to energy. It's literally and figuratively{" "}
-              <i>power to the people</i>.
-            </p>
+          <div class="w-full h-auto">
+            <div class="space-y-4 lg:text-[28px] text-[23px]">
+              <p>
+                The M3tering Protocol is shifting energy infrastructure from
+                centralized monopolies to a shared, open economy on Ethereum.
+              </p>
+              <p>
+                Whether it's a neighborhood solar farm or a shared battery
+                network, the protocol enables the energy assets to be tokenized
+                and transformed into liquid assets onchain that anyone can own,
+                trade, and earn from permissionlessly.
+              </p>
+              <p>
+                Using the protocol, communities choose how their power is
+                produced, allowing them to accelerate local clean energy
+                adoption.
+              </p>
+              <p>
+                This is more than infrastructure; it's a solarpunk movement to
+                democratize both ownership and access to energy.
+              </p>
+              <p>
+                It's literally and figuratively{" "}
+                <i class={`font-bold`}>power to the people</i>.
+              </p>
+            </div>
           </div>
         </section>
 
