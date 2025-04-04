@@ -5,7 +5,7 @@ import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
-import Flywheel from "~/assets/flywheel.png";
+import { ETHCity, Flywheel } from "~/assets/images";
 
 function Index() {
   return (
@@ -49,9 +49,41 @@ function Index() {
             Decentralised, Democratized and Solarpunk at its core
           </p>
         </section>
-        <section class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px]`}>
+        <section class="w-full grid lg:grid-cols-2 grid-cols-1 px-[40px] lg:px-[90px] lg:gap-[40px] gap-[30px]">
+          <div class="relative w-full h-full aspect-square overflow-hidden">
+            <img
+              src={ETHCity}
+              alt="ETH City"
+              class="object-cover w-full h-full rounded-2xl"
+            />
+          </div>
+          <div class={`w-full h-auto`}>
+            <p class={`lg:text-[23px] text-[20px]`}>
+              The M3tering Protocol is shifting energy infrastructure from
+              centralized monopolies to a shared, open economy on Ethereum.
+              Whether it’s a neighborhood solar farm or a shared battery
+              network, the protocol enables the energy assets to be tokenized
+              and transformed liquid assets onchain that anyone can own, trade,
+              and earn from permissionlessly. Using the protocol communities
+              chose how their power is produced, allowing them to accelerate
+              local clean energy adoption. This is more than infrastructure;
+              it’s a solarpunk movement to democratize both ownership and access
+              to energy. It's literally and figuratively{" "}
+              <i>power to the people</i>.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px] mb-[200px]`}
+        >
           <div class="h-fit py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
+            <div class="max-w-7xl mx-auto space-y-[50px]">
+              <h3
+                class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
+              >
+                Real Environmental Impact; Real Economic Value
+              </h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
                 <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center">
@@ -105,13 +137,18 @@ function Index() {
           </div>
         </section>
         <section
-          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[70px]`}
         >
+          <h3
+            class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
+          >
+            Let's build your project next
+          </h3>
           <Carousel />
         </section>
 
         <section
-          class={`w-full flex flex-wrap my-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
+          class={`w-full flex flex-wrap py-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
         >
           <AppCard />
           <AppCard />

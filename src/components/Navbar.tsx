@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import NavbarSheet from "./NavbarSheet";
-import Avatar from "~/assets/avatar.png";
+import { Avatar } from "~/assets/images";
 
 const Navbar = () => {
   return (

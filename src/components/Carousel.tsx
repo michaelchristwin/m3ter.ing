@@ -5,7 +5,7 @@ import {
   SwitchElectric,
   Arkreen,
   Your_Project,
-} from "~/assets/companies";
+} from "~/assets/images/companies";
 
 const Carousel: Component = () => {
   return (

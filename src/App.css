@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Selamat-Pagi";
-  src: url("./assets/selamat-pagi-font/SelamatPagi-pgB9a.otf");
+  src: url("./assets/fonts/selamat-pagi-font/SelamatPagi-pgB9a.otf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Jello-Stone";
-  src: url("./assets/jello-stone-font/JelloStone-YqKz8.ttf");
+  src: url("./assets/fonts/jello-stone-font/JelloStone-YqKz8.ttf");
   font-style: normal;
 }
 
