@@ -5,6 +5,7 @@ import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
+import Flywheel from "~/assets/flywheel.png";
 
 function Index() {
   return (
@@ -23,13 +24,24 @@ function Index() {
         class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section
-          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
         >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
           >
             Protocol V2
           </h1>
+          <div class="relative max-w-[700px] w-full mx-auto">
+            <img
+              src={Flywheel}
+              alt="Flywheel effect"
+              class="object-contain w-full h-auto"
+            />
+          </div>
+        </section>
+        <section
+          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[90px]`}
+        >
           <Carousel />
         </section>
         <section class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px]`}>
@@ -88,7 +100,7 @@ function Index() {
           </div>
         </section>
         <section
-          class={`w-full flex flex-wrap justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
+          class={`w-full flex flex-wrap my-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
         >
           <AppCard />
           <AppCard />
