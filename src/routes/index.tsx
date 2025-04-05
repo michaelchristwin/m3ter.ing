@@ -22,20 +22,18 @@ function Index() {
       </section>
 
       <div
-        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
+        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px] lg:px-[90px] px-[40px]`}
       >
-        <section
-          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-full mx-auto`}
-        >
+        <section class={`mb-[100px] w-full mx-auto`}>
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
           >
             Protocol V2
           </h1>
-          <div class="relative lg:max-w-[700px] max-w-full w-full mx-auto mt-[90px] shadow-xl">
+          <div class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl">
             <img
               src={Infra}
-              alt="Flywheel effect"
+              alt="Energy Infrastructure design"
               class="object-cover w-full h-auto"
             />
           </div>
@@ -50,7 +48,7 @@ function Index() {
             Decentralised, Democratized and Solarpunk at its core
           </p>
         </section>
-        <section class="w-full grid lg:grid-cols-2 grid-cols-1 px-[40px] lg:px-[90px] lg:gap-[40px] gap-[30px]">
+        <section class="w-full grid lg:grid-cols-2 grid-cols-1   lg:gap-[40px] gap-[30px]">
           <div class="relative w-full h-0 pb-[100%]">
             <img
               src={ETHCity}
@@ -59,7 +57,7 @@ function Index() {
             />
           </div>
           <div class="w-full h-auto">
-            <div class="space-y-4 lg:text-[28px] text-[23px]">
+            <div class="space-y-4 xl:text-[28px] lg:text-[25px] md:text-[25px] text-[23px]">
               <p>
                 The M3tering Protocol is shifting energy infrastructure from
                 centralized monopolies to a shared, open economy on Ethereum.
@@ -87,11 +85,9 @@ function Index() {
           </div>
         </section>
 
-        <section
-          class={`h-fit w-full lg:px-[90px] md:px-[90px] px-[40px] mb-[200px]`}
-        >
-          <div class="h-fit py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto space-y-[50px]">
+        <section class={`h-fit w-full mb-[200px]`}>
+          <div class="h-fit py-12">
+            <div class="space-y-[50px]">
               <h3
                 class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
               >
@@ -149,9 +145,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <section
-          class={`pb-[40px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto space-y-[70px]`}
-        >
+        <section class={`pb-[40px]   w-[90%] mx-auto space-y-[70px]`}>
           <h3
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
@@ -159,9 +153,7 @@ function Index() {
           </h3>
           <Carousel />
         </section>
-        <section
-          class={`w-full min-h-[40vh] lg:px-[90px] md:px-[90px] px-[40px] flex justify-center items-center`}
-        >
+        <section class={`w-full min-h-[40vh] flex justify-center items-center`}>
           <div class="users-color-container">
             <span class="item" style="--i: 1"></span>
             <M3terHeadBlink
@@ -211,7 +203,7 @@ function Index() {
           </div>
         </section>
         <section
-          class={`w-full flex flex-wrap py-[100px] justify-center gap-[30px] items-center h-fit lg:px-[90px] md:px-[90px] px-[40px]`}
+          class={`w-full flex flex-wrap py-[100px] justify-center gap-[30px] items-center h-fit  `}
         >
           <AppCard />
           <AppCard />

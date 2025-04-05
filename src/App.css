@@ -268,12 +268,13 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 20px;
-  width: auto;
+  width: 100%; /* Change from auto to 100% */
   max-width: 100%;
 }
 
 .item {
-  max-width: 200px;
+  width: 100%; /* Add this */
+  max-width: 200px; /* You can keep this as a maximum */
   aspect-ratio: 1/1;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5),
     inset 0px 2px 2px rgba(255, 255, 255, 0.2);
@@ -344,5 +345,16 @@ button {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .users-color-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .users-color-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
