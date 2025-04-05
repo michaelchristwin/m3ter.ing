@@ -16,7 +16,7 @@ const Carousel: Component = () => {
             <img
               src={Arkreen}
               alt="Arkreen"
-              class="carousel-image object-contain"
+              class="carousel-image object-cover"
             />
           </div>
         </li>
@@ -25,7 +25,7 @@ const Carousel: Component = () => {
             <img
               src={SwitchElectric}
               alt="Switch Electric"
-              class="carousel-image object-contain"
+              class="carousel-image object-cover"
             />
           </div>
         </li>
@@ -35,7 +35,7 @@ const Carousel: Component = () => {
               <img
                 src={Your_Project}
                 alt="Your Project Here"
-                class={`carousel-image object-contain`}
+                class={`carousel-image object-cover`}
               />
             </div>
           </div>

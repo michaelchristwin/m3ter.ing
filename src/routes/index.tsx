@@ -57,7 +57,7 @@ function Index() {
             />
           </div>
           <div class="w-full h-auto">
-            <div class="space-y-4 xl:text-[28px] lg:text-[25px] md:text-[25px] text-[23px]">
+            <div class="space-y-4 xl:text-[25px] text-[23px]">
               <p>
                 The M3tering Protocol is shifting energy infrastructure from
                 centralized monopolies to a shared, open economy on Ethereum.
@@ -145,7 +145,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <section class={`pb-[40px]   w-[90%] mx-auto space-y-[70px]`}>
+        <section class={`pb-[40px] w-full space-y-[70px]`}>
           <h3
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
