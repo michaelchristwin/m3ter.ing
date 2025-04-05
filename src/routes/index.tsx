@@ -5,7 +5,7 @@ import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
-import { ETHCity, Flywheel } from "~/assets/images";
+import { ETHCity, Infra } from "~/assets/images";
 import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
@@ -25,18 +25,18 @@ function Index() {
         class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px]`}
       >
         <section
-          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-[90%] mx-auto`}
+          class={`mb-[100px] lg:px-[90px] md:px-[90px] px-[40px] w-full mx-auto`}
         >
           <h1
             class={`text-center font-semibold text-[clamp(60px,15vw,150px)] caveat`}
           >
             Protocol V2
           </h1>
-          <div class="relative max-w-[700px] w-full mx-auto mt-[90px]">
+          <div class="relative lg:max-w-[700px] max-w-full w-full mx-auto mt-[90px] shadow-xl">
             <img
-              src={Flywheel}
+              src={Infra}
               alt="Flywheel effect"
-              class="object-contain w-full h-auto"
+              class="object-cover w-full h-auto"
             />
           </div>
           <h4
@@ -51,11 +51,11 @@ function Index() {
           </p>
         </section>
         <section class="w-full grid lg:grid-cols-2 grid-cols-1 px-[40px] lg:px-[90px] lg:gap-[40px] gap-[30px]">
-          <div class="relative w-full h-full aspect-square overflow-hidden">
+          <div class="relative w-full h-0 pb-[100%]">
             <img
               src={ETHCity}
               alt="ETH City"
-              class="object-cover w-full h-full rounded-2xl"
+              class="absolute inset-0 object-cover w-full h-full rounded-2xl"
             />
           </div>
           <div class="w-full h-auto">
@@ -81,7 +81,7 @@ function Index() {
               </p>
               <p>
                 It's literally and figuratively{" "}
-                <i class={`font-bold`}>power to the people</i>.
+                <i class="font-bold">power to the people</i>.
               </p>
             </div>
           </div>
