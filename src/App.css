@@ -119,6 +119,7 @@ button {
   position: absolute;
   transition: all 0.3s ease-in;
   overflow: hidden; /* Prevent image overflow */
+  aspect-ratio: 0.9;
 }
 
 .image-container {
@@ -148,8 +149,7 @@ button {
 /* Small screens (mobile) */
 @media screen and (max-width: 480px) {
   .carousel__item {
-    width: 100px;
-    height: 160px;
+    width: calc((100vw / 5) + 40px);
   }
 
   .carousel__item[data-pos="-1"] {
@@ -176,8 +176,7 @@ button {
 /* Medium screens (tablets) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .carousel__item {
-    width: 140px;
-    height: 210px;
+    width: calc((100vw / 5) + 40px);
   }
 
   .carousel__item[data-pos="-1"] {
@@ -204,8 +203,7 @@ button {
 /* Large screens (desktop) */
 @media screen and (min-width: 769px) {
   .carousel__item {
-    width: 200px;
-    height: 250px;
+    width: calc((100vw / 5) + 40px);
   }
 
   .carousel__item[data-pos="-1"] {
@@ -232,8 +230,7 @@ button {
 /* Extra large screens */
 @media screen and (min-width: 1200px) {
   .carousel__item {
-    width: 240px;
-    height: 300px;
+    width: calc((100vw / 5) + 40px);
   }
 
   .carousel__item[data-pos="-1"] {

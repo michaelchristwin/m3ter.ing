@@ -10,7 +10,7 @@ import M3terHeadBlink from "~/components/M3terHeadBlink";
 
 function Index() {
   return (
-    <div class={styles.index}>
+    <div class={`${styles.index} bg-gray-50`}>
       <Navbar />
       <Title>Home</Title>
       <section class={styles.parallax_wrapper}>
@@ -85,7 +85,7 @@ function Index() {
           </div>
         </section>
 
-        <section class={`h-fit w-full mb-[200px]`}>
+        <section class={`h-fit w-full mb-[100px]`}>
           <div class="h-fit py-12">
             <div class="space-y-[50px]">
               <h3
@@ -145,7 +145,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <section class={`pb-[40px] w-full space-y-[70px]`}>
+        <section class={`pb-[100px] h-fit w-full space-y-[70px]`}>
           <h3
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
@@ -153,7 +153,7 @@ function Index() {
           </h3>
           <Carousel />
         </section>
-        <section class={`w-full min-h-[40vh] flex justify-center items-center`}>
+        <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">
             <span class="item" style="--i: 1"></span>
             <M3terHeadBlink
@@ -203,7 +203,7 @@ function Index() {
           </div>
         </section>
         <section
-          class={`w-full flex flex-wrap py-[100px] justify-center gap-[30px] items-center h-fit  `}
+          class={`w-full flex flex-wrap my-[100px] justify-center gap-[30px] items-center h-fit`}
         >
           <AppCard />
           <AppCard />
