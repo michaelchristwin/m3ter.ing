@@ -7,6 +7,9 @@ import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
 import { ETHCity, Infra } from "~/assets/images";
 import M3terHeadBlink from "~/components/M3terHeadBlink";
+import MetricTop from "~/components/MetricTop";
+import { Cloud, Ecovillages, Panel } from "~/assets/images/metrics";
+import MetricBottom from "~/components/MetricBottom";
 
 function Index() {
   return (
@@ -57,7 +60,7 @@ function Index() {
             />
           </div>
           <div class="w-full h-auto">
-            <div class="space-y-4 xl:text-[25px] text-[23px]">
+            <div class="space-y-4 xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]">
               <p>
                 The M3tering Protocol is shifting energy infrastructure from
                 centralized monopolies to a shared, open economy on Ethereum.
@@ -105,28 +108,27 @@ function Index() {
                   </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
-                  <div class={`block text-center space-y-[5px] w-full`}>
+                <MetricTop image={Panel}>
+                  <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={10000} />
                     <p class={`font-[600] text-[20px]`}>kWh</p>
-                    <p class={`text-neutral-500 text-[17px]`}>
+                    <p class={`text-white text-[17px]`}>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     </p>
                   </div>
-                </div>
+                </MetricTop>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
-                  {/* Third card content would go here */}
+                <MetricBottom image={Cloud}>
                   <div class={`block text-center space-y-[5px] w-full`}>
                     <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
                       Tonnes of CO₂ prevented
                     </p>
                   </div>
-                </div>
+                </MetricBottom>
 
                 <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
                   <div class={`block text-center space-y-[5px] w-full`}>
@@ -135,12 +137,12 @@ function Index() {
                   </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm p-6 h-64 flex items-end text-center">
+                <MetricBottom image={Ecovillages}>
                   <div class={`block text-center space-y-[5px] w-full`}>
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
                   </div>
-                </div>
+                </MetricBottom>
               </div>
             </div>
           </div>
