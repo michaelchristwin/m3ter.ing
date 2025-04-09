@@ -13,6 +13,7 @@ const Navbar = () => {
           class={`w-[50px] h-[50px]`}
           loading={`lazy`}
           src={`${IMAGE_URL}/avatar.webp`}
+          alt="M3tering avatar"
         />
       </A>
 
