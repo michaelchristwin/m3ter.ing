@@ -12,14 +12,14 @@ const Footer = () => {
 
   return (
     <footer
-      class="w-full py-12 lg:px-[70px] md:px-[50px] px-[30px] relative text-white bg-no-repeat bg-center bg-cover"
+      class="w-full relative text-white bg-no-repeat bg-center bg-cover"
       style={{ "background-image": `url(${SolarPunk})` }}
     >
       {/* Overlay for better text visibility */}
       <div class="absolute inset-0 bg-black/30 "></div>
 
       {/* Main content container with glassmorphism */}
-      <div class="relative z-10 glassmorph rounded-xl shadow-lg p-8 border border-white border-opacity-20">
+      <div class="relative z-10 glassmorph lg:p-[90px] p-[40px] shadow-lg border border-white border-opacity-20">
         <div class="lg:flex md:flex block justify-between">
           {/* Logo and company info */}
           <div class="mb-8 lg:mb-0 md:mb-0 lg:max-w-xs md:max-w-xs">
