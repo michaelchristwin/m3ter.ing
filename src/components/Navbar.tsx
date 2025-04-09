@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import NavbarSheet from "./NavbarSheet";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
 
 const Navbar = () => {
   return (

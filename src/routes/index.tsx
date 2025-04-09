@@ -9,7 +9,7 @@ import M3terHeadBlink from "~/components/M3terHeadBlink";
 import MetricTop from "~/components/MetricTop";
 import MetricBottom from "~/components/MetricBottom";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
 
 function Index() {
   return (
@@ -225,12 +225,12 @@ function Index() {
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-6 md:gap-8">
-            <div class="w-full h-auto">
+            <div class="w-full h-auto aspect-square bg-white">
               <img
-                src={`${IMAGE_URL}/hardware/Switch_case_model_v13_1.webp`}
+                src={`${IMAGE_URL}/hardware/meter_case1.webp`}
                 alt="Hardware design model"
                 loading="lazy"
-                class="object-cover w-full h-full rounded"
+                class="object-contain w-full h-full rounded"
               />
             </div>
 
@@ -270,10 +270,18 @@ function Index() {
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div class="w-full aspect-square">
               <img
-                src={`${IMAGE_URL}/hardware/Switch_case_model_v13bvwd_1.webp`}
+                src={`${IMAGE_URL}/hardware/meter_case1.webp`}
+                loading="lazy"
+                class="object-contain w-full h-full rounded"
+                alt="Hardware design model 3"
+              />
+            </div>
+            <div class="w-full aspect-square">
+              <img
+                src={`${IMAGE_URL}/hardware/meter_case2.webp`}
                 loading="lazy"
                 class="object-cover w-full h-full rounded"
                 alt="Hardware design model 2"
@@ -281,7 +289,23 @@ function Index() {
             </div>
             <div class="w-full aspect-square">
               <img
-                src={`${IMAGE_URL}/hardware/output-onlinepngtools.webp`}
+                src={`${IMAGE_URL}/hardware/board_overview.webp`}
+                loading="lazy"
+                class="object-cover w-full h-full rounded"
+                alt="Hardware design model 3"
+              />
+            </div>
+            <div class="w-full aspect-square">
+              <img
+                src={`${IMAGE_URL}/hardware/exterior_design.webp`}
+                loading="lazy"
+                class="object-cover w-full h-full rounded"
+                alt="Hardware design model 3"
+              />
+            </div>
+            <div class="w-full aspect-square">
+              <img
+                src={`${IMAGE_URL}/hardware/pcb_design.webp`}
                 loading="lazy"
                 class="object-cover w-full h-full rounded"
                 alt="Hardware design model 3"

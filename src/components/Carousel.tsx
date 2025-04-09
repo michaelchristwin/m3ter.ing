@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/companies";
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images/companies";
 
 const Carousel: Component = () => {
   return (
