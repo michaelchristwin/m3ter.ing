@@ -8,7 +8,7 @@ import styles from "~/styles/parallax.module.css";
 import { ETHCity, Infra } from "~/assets/images";
 import M3terHeadBlink from "~/components/M3terHeadBlink";
 import MetricTop from "~/components/MetricTop";
-import { Cloud, Ecovillages, Panel } from "~/assets/images/metrics";
+import { Cloud, Ecovillages, Panel, Revenue } from "~/assets/images/metrics";
 import MetricBottom from "~/components/MetricBottom";
 
 function Index() {
@@ -122,7 +122,7 @@ function Index() {
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
                 <MetricBottom image={Cloud}>
-                  <div class={`block text-center space-y-[5px] w-full`}>
+                  <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
                       Tonnes of CO₂ prevented
@@ -130,15 +130,15 @@ function Index() {
                   </div>
                 </MetricBottom>
 
-                <div class="bg-white rounded-lg shadow-sm lg:p-6 md:p-5 p-4 h-64 flex items-end text-center">
-                  <div class={`block text-center space-y-[5px] w-full`}>
+                <MetricBottom image={Revenue}>
+                  <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
-                </div>
+                </MetricBottom>
 
                 <MetricBottom image={Ecovillages}>
-                  <div class={`block text-center space-y-[5px] w-full`}>
+                  <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
                   </div>
