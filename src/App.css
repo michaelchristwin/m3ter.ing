@@ -1,12 +1,14 @@
 @font-face {
   font-family: "Selamat-Pagi";
-  src: url("./assets/fonts/selamat-pagi-font/SelamatPagi-pgB9a.otf");
+  src: url("https://michaelchristwin.github.io/m3tering-images/fonts/selamat-pagi-font/SelamatPagi-pgB9a.woff2")
+    format("woff2");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Jello-Stone";
-  src: url("./assets/fonts/jello-stone-font/JelloStone-YqKz8.ttf");
+  src: url("https://michaelchristwin.github.io/m3tering-images/fonts/jello-stone-font/JelloStone-YqKz8.woff2")
+    format("woff2");
   font-style: normal;
 }
 

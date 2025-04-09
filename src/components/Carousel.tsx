@@ -1,11 +1,6 @@
 import { Component } from "solid-js";
-import {
-  TAS,
-  SolarFoundation,
-  SwitchElectric,
-  Arkreen,
-  Your_Project,
-} from "~/assets/images/companies";
+
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/companies";
 
 const Carousel: Component = () => {
   return (
@@ -14,7 +9,8 @@ const Carousel: Component = () => {
         <li class="carousel__item" data-pos="-2">
           <div class="image-container">
             <img
-              src={Arkreen}
+              loading={`lazy`}
+              src={`${IMAGE_URL}/arkreen.webp`}
               alt="Arkreen"
               class="carousel-image object-cover"
             />
@@ -23,7 +19,8 @@ const Carousel: Component = () => {
         <li class="carousel__item" data-pos="-1">
           <div class="image-container">
             <img
-              src={SwitchElectric}
+              loading={`lazy`}
+              src={`${IMAGE_URL}/switch-electric.webp`}
               alt="Switch Electric"
               class="carousel-image object-cover"
             />
@@ -33,7 +30,8 @@ const Carousel: Component = () => {
           <div class="image-container">
             <div class={`image-container`}>
               <img
-                src={Your_Project}
+                loading={`lazy`}
+                src={`${IMAGE_URL}/project.webp`}
                 alt="Your Project Here"
                 class={`carousel-image object-cover`}
               />
@@ -43,7 +41,8 @@ const Carousel: Component = () => {
         <li class="carousel__item" data-pos="1">
           <div class="image-container">
             <img
-              src={SolarFoundation}
+              loading={`lazy`}
+              src={`${IMAGE_URL}/solar-foundation.webp`}
               alt="Solar Foundation"
               class="carousel-image object-cover"
             />
@@ -51,7 +50,12 @@ const Carousel: Component = () => {
         </li>
         <li class="carousel__item" data-pos="2">
           <div class="image-container">
-            <img src={TAS} alt="TAS" class="carousel-image object-cover" />
+            <img
+              loading={`lazy`}
+              src={`${IMAGE_URL}/tas.webp`}
+              alt="TAS"
+              class="carousel-image object-cover"
+            />
           </div>
         </li>
       </ul>

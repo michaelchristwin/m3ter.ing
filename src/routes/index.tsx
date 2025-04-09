@@ -5,11 +5,11 @@ import Carousel from "~/components/Carousel";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
-import { ETHCity, Infra } from "~/assets/images";
 import M3terHeadBlink from "~/components/M3terHeadBlink";
 import MetricTop from "~/components/MetricTop";
-import { Cloud, Ecovillages, Panel, Revenue } from "~/assets/images/metrics";
 import MetricBottom from "~/components/MetricBottom";
+
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 function Index() {
   return (
@@ -35,7 +35,8 @@ function Index() {
           </h1>
           <div class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl">
             <img
-              src={Infra}
+              loading={`lazy`}
+              src={`${IMAGE_URL}/infra.webp`}
               alt="Energy Infrastructure design"
               class="object-cover w-full h-auto"
             />
@@ -54,7 +55,8 @@ function Index() {
         <section class="w-full grid lg:grid-cols-2 grid-cols-1   lg:gap-[40px] gap-[30px]">
           <div class="relative w-full h-0 pb-[100%]">
             <img
-              src={ETHCity}
+              loading={`lazy`}
+              src={`${IMAGE_URL}/ethcity.webp`}
               alt="ETH City"
               class="absolute inset-0 object-cover w-full h-full rounded-2xl"
             />
@@ -108,7 +110,7 @@ function Index() {
                   </div>
                 </div>
 
-                <MetricTop image={Panel}>
+                <MetricTop image={`${IMAGE_URL}/metrics/panel.jpg`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={10000} />
                     <p class={`font-[600] text-[20px]`}>kWh</p>
@@ -121,7 +123,7 @@ function Index() {
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <MetricBottom image={Cloud}>
+                <MetricBottom image={`${IMAGE_URL}/metrics/wind.jpg`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
@@ -130,14 +132,14 @@ function Index() {
                   </div>
                 </MetricBottom>
 
-                <MetricBottom image={Revenue}>
+                <MetricBottom image={`${IMAGE_URL}/metrics/revenue.jpg`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </MetricBottom>
 
-                <MetricBottom image={Ecovillages}>
+                <MetricBottom image={`${IMAGE_URL}/metrics/ecovillages.png`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
@@ -211,6 +213,14 @@ function Index() {
           <AppCard />
           <AppCard />
           <AppCard />
+        </section>
+        <section class={`w-full my-[100px]`}>
+          <div class={`flex w-full`}>
+            <div class={`flex-1`}>
+              <img src="" alt="" loading={`lazy`} />
+            </div>
+            <div class={``}></div>
+          </div>
         </section>
       </div>
 

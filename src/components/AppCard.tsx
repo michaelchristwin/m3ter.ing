@@ -6,6 +6,7 @@ const AppCard = () => {
       <div class="block space-y-2.5">
         <div class={`flex items-center w-full space-x-[10px]`}>
           <img
+            loading={`lazy`}
             src={`https://docs.gnosischain.com/img/tokens/xdai.png`}
             class={`w-[28px] h-[28px]`}
             alt={`App logo`}
