@@ -24,14 +24,18 @@ const Footer = () => {
         <div class="lg:flex md:flex block justify-between">
           {/* Logo and company info */}
           <div class="mb-8 lg:mb-0 md:mb-0 lg:max-w-xs md:max-w-xs">
-            <h3 class="text-xl font-[500] text-white mb-4 dynapuff">
+            <h2 class="text-xl font-[500] text-white mb-4 dynapuff">
               M3tering
-            </h3>
+            </h2>
             <p class="text-gray-200 mb-4">
               Creating beautiful sustainable experiences since 2025.
             </p>
             <div class="flex space-x-4 mb-6">
-              <a href="#" class="text-white hover:text-gray-300 transition">
+              <a
+                href="#"
+                class="text-white hover:text-gray-300 transition"
+                aria-label="Facebook"
+              >
                 <svg
                   class="w-6 h-6"
                   fill="currentColor"
@@ -45,7 +49,11 @@ const Footer = () => {
                   ></path>
                 </svg>
               </a>
-              <a href="#" class="text-white hover:text-gray-300 transition">
+              <a
+                href="#"
+                class="text-white hover:text-gray-300 transition"
+                aria-label="Twitter"
+              >
                 <svg
                   class="w-6 h-6"
                   fill="currentColor"
@@ -55,7 +63,11 @@ const Footer = () => {
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
                 </svg>
               </a>
-              <a href="#" class="text-white hover:text-gray-300 transition">
+              <a
+                href="#"
+                class="text-white hover:text-gray-300 transition"
+                aria-label="Instagram"
+              >
                 <svg
                   class="w-6 h-6"
                   fill="currentColor"
@@ -82,6 +94,7 @@ const Footer = () => {
                 class="px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg border border-white border-opacity-20 placeholder-neutral-700 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
               />
               <button
+                aria-label="Submit"
                 type="submit"
                 class="bg-orange-500/40 backdrop-blur-[10px] text-white cursor-pointer font-medium py-2 px-4 rounded-lg hover:bg-orange-500/20 transition duration-300"
               >

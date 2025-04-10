@@ -31,9 +31,9 @@ const HardwareSection: Component<{}> = () => {
   return (
     <section class="w-full py-16 md:py-20 lg:py-24 space-y-8 md:space-y-12 lg:space-y-16 px-4">
       <div>
-        <h3 class="text-center font-semibold text-xl sm:text-2xl md:text-2xl lg:text-3xl">
+        <h2 class="text-center font-semibold text-xl sm:text-2xl md:text-2xl lg:text-3xl">
           The Metering Hardware
-        </h3>
+        </h2>
         <p class="text-center text-base sm:text-lg font-medium mt-2">
           Maxwell 1.0.7
         </p>
@@ -42,15 +42,47 @@ const HardwareSection: Component<{}> = () => {
       {/* Gallery Section */}
       <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-6 md:gap-8">
         {/* Main Featured Image */}
-        <div class="w-full h-auto aspect-square bg-white rounded shadow-md overflow-hidden">
-          <ProgressiveImage
-            src={`${HARDWARE_IMAGE_URL + selectedImage().image}.webp`}
-            alt={selectedImage().alt}
-            class="w-full h-full"
-            placeholder={`${
-              IMAGE_URL + "/lazy" + selectedImage().image
-            }-small.webp`}
-          />
+        <div class={`w-full space-y-5 h-full`}>
+          <div class="w-full h-auto aspect-square bg-white rounded shadow-md overflow-hidden">
+            <ProgressiveImage
+              src={`${HARDWARE_IMAGE_URL + selectedImage().image}.webp`}
+              alt={selectedImage().alt}
+              class="w-full h-full"
+              placeholder={`${
+                IMAGE_URL + "/lazy" + selectedImage().image
+              }-small.webp`}
+            />
+          </div>
+          <div class="w-full">
+            <div class="flex gap-4 flex-wrap pb-2">
+              <For each={designData}>
+                {(item, index) => (
+                  <button
+                    onClick={() => setSelectedImageIndex(index())}
+                    class="min-w-24 focus:outline-none"
+                    aria-label={`View ${item.alt}`}
+                  >
+                    <div
+                      class={`w-24 h-24 rounded overflow-hidden border-2 transition-all ${
+                        index() === selectedImageIndex()
+                          ? "border-blue-500 shadow-md"
+                          : "border-gray-200 hover:border-gray-400"
+                      }`}
+                    >
+                      <ProgressiveImage
+                        src={`${HARDWARE_IMAGE_URL + item.image}.webp`}
+                        alt={item.alt}
+                        class="w-full h-full object-cover"
+                        placeholder={`${
+                          IMAGE_URL + "/lazy" + item.image
+                        }-small.webp`}
+                      />
+                    </div>
+                  </button>
+                )}
+              </For>
+            </div>
+          </div>
         </div>
 
         {/* Product Info Section */}
@@ -66,7 +98,7 @@ const HardwareSection: Component<{}> = () => {
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="w-full space-y-3">
-              <h4 class="text-lg sm:text-xl font-bold">Security</h4>
+              <h3 class="text-lg sm:text-xl font-bold">Security</h3>
               <p class="text-sm sm:text-base lg:text-lg">
                 Utilizes ED25519 elliptical curve digital signatures to ensure
                 data integrity. Keys are stored on a tamper-resistant crypto
@@ -76,7 +108,7 @@ const HardwareSection: Component<{}> = () => {
               </p>
             </div>
             <div class="w-full space-y-3">
-              <h4 class="text-lg sm:text-xl font-bold">Network</h4>
+              <h3 class="text-lg sm:text-xl font-bold">Network</h3>
               <p class="text-sm sm:text-base lg:text-lg">
                 Operates wirelessly via LoRaWAN (LongFi), a long-range,
                 low-power protocol designed for IoT with range up to 3 km. Ideal
@@ -87,51 +119,8 @@ const HardwareSection: Component<{}> = () => {
           </div>
         </div>
       </div>
-
-      {/* Thumbnail Navigation */}
-      <div class="w-full">
-        <div class="flex space-x-4 overflow-x-auto pb-2">
-          <For each={designData}>
-            {(item, index) => (
-              <button
-                onClick={() => setSelectedImageIndex(index())}
-                class="min-w-24 focus:outline-none"
-                aria-label={`View ${item.alt}`}
-              >
-                <div
-                  class={`w-24 h-24 rounded overflow-hidden border-2 transition-all ${
-                    index() === selectedImageIndex()
-                      ? "border-blue-500 shadow-md"
-                      : "border-gray-200 hover:border-gray-400"
-                  }`}
-                >
-                  <ProgressiveImage
-                    src={`${HARDWARE_IMAGE_URL + item.image}.webp`}
-                    alt={item.alt}
-                    class="w-full h-full object-cover"
-                    placeholder={`${
-                      IMAGE_URL + "/lazy" + item.image
-                    }-small.webp`}
-                  />
-                </div>
-              </button>
-            )}
-          </For>
-        </div>
-      </div>
     </section>
   );
 };
 
 export default HardwareSection;
-
-{
-  /* <div>
-          <img
-            src={`${IMAGE_URL}/hardware/meter_case1.webp`}
-            loading="lazy"
-            class="object-contain w-full h-full rounded"
-            alt="Hardware design model 3"
-          />
-        </div> */
-}

@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav
       class={`w-full flex h-[50px] lg:px-[90px] md:px-[90px] px-[40px] bg-transparent justify-between items-center absolute top-[10px] left-0 z-[2]`}
     >
-      <A href="/">
+      <A href="/" aria-label="Home">
         <img
           class={`w-[50px] h-[50px]`}
           loading={`lazy`}
@@ -19,6 +19,7 @@ const Navbar = () => {
 
       <NavbarSheet>
         <button
+          aria-label="Menu"
           type="button"
           class={`w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center`}
         >

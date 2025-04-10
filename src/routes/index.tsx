@@ -8,7 +8,8 @@ import styles from "~/styles/parallax.module.css";
 import M3terHeadBlink from "~/components/M3terHeadBlink";
 import MetricTop from "~/components/MetricTop";
 import MetricBottom from "~/components/MetricBottom";
-import HardwareSection from "~/components/HardwareSection";
+import { lazy } from "solid-js";
+const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
 
@@ -42,11 +43,11 @@ function Index() {
               class="object-cover w-full h-auto"
             />
           </div>
-          <h4
+          <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
             Energy Infrastructure Reimagined
-          </h4>
+          </p>
           <p
             class={`text-[16px] text-neutral-500 text-center leading-relaxed mt-[10px]`}
           >
@@ -94,11 +95,11 @@ function Index() {
         <section class={`h-fit w-full mb-[100px]`}>
           <div class="h-fit py-12">
             <div class="space-y-[50px]">
-              <h3
+              <h2
                 class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
               >
                 Real Environmental Impact; Real Economic Value
-              </h3>
+              </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
                 <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center">
@@ -151,11 +152,11 @@ function Index() {
           </div>
         </section>
         <section class={`pb-[100px] h-fit w-full space-y-[70px]`}>
-          <h3
+          <h2
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
             Let's build your project next
-          </h3>
+          </h2>
           <Carousel />
         </section>
         <section class={`w-full flex justify-center items-center`}>
