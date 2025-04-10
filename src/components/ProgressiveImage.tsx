@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { Component, createSignal, onCleanup, onMount } from "solid-js";
 
 type ProgressiveImageProps = {
   src: string;
@@ -7,7 +7,7 @@ type ProgressiveImageProps = {
   class?: string;
 };
 
-export default function ProgressiveImage(props: ProgressiveImageProps) {
+const ProgressiveImage: Component<ProgressiveImageProps> = (props) => {
   const [isInView, setIsInView] = createSignal(false);
   const [loaded, setLoaded] = createSignal(false);
   let wrapperRef!: HTMLDivElement;
@@ -32,6 +32,9 @@ export default function ProgressiveImage(props: ProgressiveImageProps) {
       ref={wrapperRef!}
       class={`relative overflow-hidden ${props.class || ""}`}
     >
+      {isInView() && !loaded() && (
+        <div class="absolute inset-0 bg-white animate-pulse z-10"></div>
+      )}
       {/* Blurred placeholder */}
       <img
         src={props.placeholder}
@@ -52,4 +55,5 @@ export default function ProgressiveImage(props: ProgressiveImageProps) {
       )}
     </div>
   );
-}
+};
+export default ProgressiveImage;
