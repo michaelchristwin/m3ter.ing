@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { Component, createSignal, onCleanup, onMount } from "solid-js";
 
 type ProgressiveBgProps = {
   src: string;
@@ -8,7 +8,7 @@ type ProgressiveBgProps = {
   children?: any;
 };
 
-export default function ProgressiveBg(props: ProgressiveBgProps) {
+const ProgressiveBg: Component<ProgressiveBgProps> = (props) => {
   const [isInView, setIsInView] = createSignal(false);
   const [loaded, setLoaded] = createSignal(false);
   let wrapperRef!: HTMLDivElement;
@@ -57,4 +57,5 @@ export default function ProgressiveBg(props: ProgressiveBgProps) {
       <div class="relative z-10">{props.children}</div>
     </div>
   );
-}
+};
+export default ProgressiveBg;
