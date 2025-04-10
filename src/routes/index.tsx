@@ -1,14 +1,14 @@
 import { Title } from "@solidjs/meta";
+import { lazy } from "solid-js";
 import AnimatedCounter from "~/components/AnimatedCounter";
 import AppCard from "~/components/AppCard";
-import Carousel from "~/components/Carousel";
-import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
-import M3terHeadBlink from "~/components/M3terHeadBlink";
 import MetricTop from "~/components/MetricTop";
 import MetricBottom from "~/components/MetricBottom";
-import { lazy } from "solid-js";
+const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
+const Carousel = lazy(() => import("~/components/Carousel"));
+const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 
 function Index() {
