@@ -37,7 +37,7 @@
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    url("https://michaelchristwin.github.io/m3tering-images/images/solarbg-ghiblify.webp");
+    url("/images/solarbg-ghiblify.webp");
   background-size: cover;
   transform-origin: center center 0;
   transform: translateZ(-1px) scale(2);

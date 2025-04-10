@@ -28,10 +28,7 @@ const ProgressiveImage: Component<ProgressiveImageProps> = (props) => {
   });
 
   return (
-    <div
-      ref={wrapperRef!}
-      class={`relative overflow-hidden ${props.class || ""}`}
-    >
+    <div ref={wrapperRef!} class={`relative ${props.class || ""}`}>
       {isInView() && !loaded() && (
         <div class="absolute inset-0 bg-white animate-pulse z-10"></div>
       )}
@@ -49,7 +46,7 @@ const ProgressiveImage: Component<ProgressiveImageProps> = (props) => {
           alt={props.alt}
           loading="lazy"
           onLoad={() => setLoaded(true)}
-          class="w-full h-auto transition-opacity duration-500"
+          class="absolute inset-0 object-contain w-full h-full transition-opacity duration-500"
           style={{ opacity: loaded() ? 1 : 0 }}
         />
       )}

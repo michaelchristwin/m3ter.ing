@@ -1,8 +1,6 @@
 import { A } from "@solidjs/router";
 import NavbarSheet from "./NavbarSheet";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
-
 const Navbar = () => {
   return (
     <nav
@@ -12,7 +10,7 @@ const Navbar = () => {
         <img
           class={`w-[50px] h-[50px]`}
           loading={`lazy`}
-          src={`${IMAGE_URL}/avatar.webp`}
+          src={`/images/avatar.webp`}
           alt="M3tering avatar"
         />
       </A>

@@ -1,9 +1,6 @@
 import { Component, For, createSignal } from "solid-js";
 import ProgressiveImage from "./ProgressiveImage";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
-const HARDWARE_IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images/hardware";
-
 type DesignDataType = {
   image: string;
   alt: string;
@@ -45,12 +42,10 @@ const HardwareSection: Component<{}> = () => {
         <div class={`w-full space-y-5 h-full`}>
           <div class="w-full h-auto aspect-square bg-white rounded shadow-md overflow-hidden">
             <ProgressiveImage
-              src={`${HARDWARE_IMAGE_URL + selectedImage().image}.webp`}
+              src={`/images/hardware${selectedImage().image}.webp`}
               alt={selectedImage().alt}
-              class="w-full h-full"
-              placeholder={`${
-                IMAGE_URL + "/lazy" + selectedImage().image
-              }-small.webp`}
+              class="w-full aspect-square"
+              placeholder={`/lazy${selectedImage().image}-small.webp`}
             />
           </div>
           <div class="w-full">
@@ -70,12 +65,10 @@ const HardwareSection: Component<{}> = () => {
                       }`}
                     >
                       <ProgressiveImage
-                        src={`${HARDWARE_IMAGE_URL + item.image}.webp`}
+                        src={`/images/hardware${item.image}.webp`}
                         alt={item.alt}
                         class="w-full h-full object-cover"
-                        placeholder={`${
-                          IMAGE_URL + "/lazy" + item.image
-                        }-small.webp`}
+                        placeholder={`/lazy${item.image}-small.webp`}
                       />
                     </div>
                   </button>

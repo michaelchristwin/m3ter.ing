@@ -1,7 +1,5 @@
 import { Component } from "solid-js";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images/companies";
-
 const Carousel: Component = () => {
   return (
     <div class="carousel">
@@ -10,7 +8,7 @@ const Carousel: Component = () => {
           <div class="image-container">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/arkreen.webp`}
+              src={`/images/companies/arkreen.webp`}
               alt="Arkreen"
               class="carousel-image object-cover"
             />
@@ -20,7 +18,7 @@ const Carousel: Component = () => {
           <div class="image-container">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/switch-electric.webp`}
+              src={`/images/companies/switch-electric.webp`}
               alt="Switch Electric"
               class="carousel-image object-cover"
             />
@@ -31,7 +29,7 @@ const Carousel: Component = () => {
             <div class={`image-container`}>
               <img
                 loading={`lazy`}
-                src={`${IMAGE_URL}/project.webp`}
+                src={`/images/companies/project.webp`}
                 alt="Your Project Here"
                 class={`carousel-image object-cover`}
               />
@@ -42,7 +40,7 @@ const Carousel: Component = () => {
           <div class="image-container">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/solar-foundation.webp`}
+              src={`/images/companies/solar-foundation.webp`}
               alt="Solar Foundation"
               class="carousel-image object-cover"
             />
@@ -52,7 +50,7 @@ const Carousel: Component = () => {
           <div class="image-container">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/tas.webp`}
+              src={`/images/companies/tas.webp`}
               alt="TAS"
               class="carousel-image object-cover"
             />

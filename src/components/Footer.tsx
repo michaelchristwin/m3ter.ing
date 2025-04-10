@@ -1,7 +1,5 @@
 import { createSignal } from "solid-js";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
-
 const Footer = () => {
   const [email, setEmail] = createSignal("");
 
@@ -14,7 +12,7 @@ const Footer = () => {
   return (
     <footer
       class="w-full relative text-white bg-no-repeat bg-center bg-cover"
-      style={{ "background-image": `url("${IMAGE_URL}/solarpunk.webp")` }}
+      style={{ "background-image": `url("/images/solarpunk.webp")` }}
     >
       {/* Overlay for better text visibility */}
       <div class="absolute inset-0 bg-black/30 "></div>

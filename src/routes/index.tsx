@@ -11,8 +11,6 @@ import MetricBottom from "~/components/MetricBottom";
 import { lazy } from "solid-js";
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL + "/images";
-
 function Index() {
   return (
     <div class={`${styles.index} bg-gray-50`}>
@@ -38,11 +36,17 @@ function Index() {
           <div class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/infra.webp`}
+              src={`/images/infra.webp`}
               alt="Energy Infrastructure design"
               class="object-cover w-full h-auto"
             />
           </div>
+          {/* <ProgressiveImage
+            class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl"
+            src={`${IMAGE_URL}/infra.webp`}
+            placeholder={`${ASSETS_URL}/lazy/infra-small.webp`}
+            alt="Energy Infrastructure design"
+          /> */}
           <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
@@ -54,11 +58,11 @@ function Index() {
             Decentralised, Democratized and Solarpunk at its core
           </p>
         </section>
-        <section class="w-full grid lg:grid-cols-2 grid-cols-1   lg:gap-[40px] gap-[30px]">
+        <section class="w-full grid lg:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
           <div class="relative w-full h-0 pb-[100%]">
             <img
               loading={`lazy`}
-              src={`${IMAGE_URL}/ethcity.webp`}
+              src={`/images/ethcity.webp`}
               alt="ETH City"
               class="absolute inset-0 object-cover w-full h-full rounded-2xl"
             />
@@ -112,7 +116,7 @@ function Index() {
                   </div>
                 </div>
 
-                <MetricTop image={`${IMAGE_URL}/metrics/panel.webp`}>
+                <MetricTop image={`/images/metrics/panel.webp`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={10000} />
                     <p class={`font-[600] text-[20px]`}>kWh</p>
@@ -125,7 +129,7 @@ function Index() {
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <MetricBottom image={`${IMAGE_URL}/metrics/wind.webp`}>
+                <MetricBottom image={`/images/metrics/wind.webp`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
@@ -134,14 +138,14 @@ function Index() {
                   </div>
                 </MetricBottom>
 
-                <MetricBottom image={`${IMAGE_URL}/metrics/revenue.webp`}>
+                <MetricBottom image={`/images/metrics/revenue.webp`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </MetricBottom>
 
-                <MetricBottom image={`${IMAGE_URL}/metrics/ecovillages.webp`}>
+                <MetricBottom image={`/images/metrics/ecovillages.webp`}>
                   <div class={`block text-center space-y-[5px] w-full z-2`}>
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
