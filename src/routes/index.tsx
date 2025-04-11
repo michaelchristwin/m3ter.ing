@@ -222,7 +222,7 @@ function Index() {
 
         {/** Hardware section */}
         <HardwareSection />
-        <section class="activity-container mb-[100px]">
+        <section class="activity-container mb-[100px] text-[20px] font-semibold">
           <A
             class="image-container2 img-one"
             href="https://xcharge.m3ter.ing/"
@@ -231,7 +231,7 @@ function Index() {
           >
             <img src="/images/xcharge.webp" alt="XCharge" />
             <div class="overlay">
-              <h3>XCharge</h3>
+              <p>XCharge</p>
             </div>
           </A>
 
@@ -243,7 +243,7 @@ function Index() {
           >
             <img src="/images/watt-a-frame.webp" alt="Watt-A-Frame" />
             <div class="overlay">
-              <h3>Watt-A-Frame</h3>
+              <p>Watt-A-Frame</p>
             </div>
           </A>
 
@@ -255,7 +255,7 @@ function Index() {
           >
             <img src="/images/solaxy.webp" alt="Solaxy" />
             <div class="overlay">
-              <h3>Solaxy</h3>
+              <p>Solaxy</p>
             </div>
           </A>
 
@@ -267,7 +267,7 @@ function Index() {
           >
             <img src="/images/xcharge.webp" alt="XCharge" />
             <div class="overlay">
-              <h3>XCharge</h3>
+              <p>XCharge</p>
             </div>
           </A>
 
@@ -279,7 +279,7 @@ function Index() {
           >
             <img src="/images/watt-a-frame.webp" alt="Watt-A-Frame" />
             <div class="overlay">
-              <h3>Watt-A-Frame</h3>
+              <p>Watt-A-Frame</p>
             </div>
           </A>
 
@@ -291,7 +291,7 @@ function Index() {
           >
             <img src="/images/solaxy.webp" alt="Solaxy" />
             <div class="overlay">
-              <h3>Solaxy</h3>
+              <p>Solaxy</p>
             </div>
           </A>
         </section>
