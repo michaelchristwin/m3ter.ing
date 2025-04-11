@@ -101,14 +101,16 @@ function Index() {
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
-                <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-center justify-center text-center">
+                <div class="bg-white rounded-lg shadow-sm h-64 flex items-center justify-center text-center">
                   <div class="w-full h-full">
-                    <img
-                      src="/images/m3terhead.gif"
-                      loading="lazy"
-                      alt="M3terHead GIF"
+                    <video
+                      src="/images/m3terhead.webm"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
                       class="w-full h-full object-contain"
-                    />
+                    ></video>
                   </div>
                 </div>
 
@@ -117,8 +119,7 @@ function Index() {
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
                     <AnimatedCounter to={10000} />
-                    <p class={`font-[600] text-[20px]`}>kWh</p>
-                    <p class={`text-[17px]`}>of electricity generated</p>
+                    <p class={`text-[17px]`}>kWh of electricity generated</p>
                   </div>
                 </MetricTop>
               </div>
