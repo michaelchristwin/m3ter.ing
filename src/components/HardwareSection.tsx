@@ -49,16 +49,16 @@ const HardwareSection: Component<{}> = () => {
             />
           </div>
           <div class="w-full">
-            <div class="flex gap-4 flex-wrap pb-2">
+            <div class="flex lg:gap-4 gap-2 pb-2">
               <For each={designData}>
                 {(item, index) => (
                   <button
                     onClick={() => setSelectedImageIndex(index())}
-                    class="min-w-24 focus:outline-none"
+                    class="min-w-13 focus:outline-none"
                     aria-label={`View ${item.alt}`}
                   >
                     <div
-                      class={`w-24 h-24 rounded overflow-hidden border-2 transition-all ${
+                      class={`lg:w-24 lg:h-24 md:h-20 md:w-20 h-13 w-13 rounded overflow-hidden border-2 transition-all ${
                         index() === selectedImageIndex()
                           ? "border-blue-500 shadow-md"
                           : "border-gray-200 hover:border-gray-400"

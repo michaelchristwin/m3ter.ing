@@ -1,11 +1,11 @@
 import { Title } from "@solidjs/meta";
 import { lazy } from "solid-js";
-import AnimatedCounter from "~/components/AnimatedCounter";
-import AppCard from "~/components/AppCard";
-import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
-import MetricTop from "~/components/MetricTop";
-import MetricBottom from "~/components/MetricBottom";
+const Navbar = lazy(() => import("~/components/Navbar"));
+const MetricBottom = lazy(() => import("~/components/MetricBottom"));
+const MetricTop = lazy(() => import("~/components/MetricTop"));
+const AppCard = lazy(() => import("~/components/AppCard"));
+const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
 const Carousel = lazy(() => import("~/components/Carousel"));
 const Footer = lazy(() => import("~/components/Footer"));
@@ -41,12 +41,7 @@ function Index() {
               class="object-cover w-full h-auto"
             />
           </div>
-          {/* <ProgressiveImage
-            class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl"
-            src={`${IMAGE_URL}/infra.webp`}
-            placeholder={`${ASSETS_URL}/lazy/infra-small.webp`}
-            alt="Energy Infrastructure design"
-          /> */}
+
           <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
@@ -106,23 +101,24 @@ function Index() {
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Top row: 2 cards */}
-                <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center">
-                  {/* First card content would go here */}
-                  <div class={`block text-start space-y-[8px]`}>
-                    <p class={`font-[600] text-[25px]`}>100% EVM compatible</p>
-                    <p class={`text-neutral-500 text-[17px]`}>
-                      Use the existing EVM ecosystem to your advantage.
-                    </p>
+                <div class="bg-white rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-center justify-center text-center">
+                  <div class="w-full h-full">
+                    <img
+                      src="/images/m3terhead.gif"
+                      loading="lazy"
+                      alt="M3terHead GIF"
+                      class="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 <MetricTop image={`/images/metrics/panel.webp`}>
-                  <div class={`block text-center space-y-[5px] w-full z-2`}>
+                  <div
+                    class={`block text-center space-y-[5px] w-full z-2 text-white`}
+                  >
                     <AnimatedCounter to={10000} />
                     <p class={`font-[600] text-[20px]`}>kWh</p>
-                    <p class={`text-white text-[17px]`}>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    </p>
+                    <p class={`text-[17px]`}>of electricity generated</p>
                   </div>
                 </MetricTop>
               </div>
@@ -130,7 +126,9 @@ function Index() {
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
                 <MetricBottom image={`/images/metrics/wind.webp`}>
-                  <div class={`block text-center space-y-[5px] w-full z-2`}>
+                  <div
+                    class={`block text-center space-y-[5px] w-full z-2 text-white`}
+                  >
                     <AnimatedCounter to={4000} />
                     <p class={`font-[600] text-[20px]`}>
                       Tonnes of CO₂ prevented
@@ -139,14 +137,18 @@ function Index() {
                 </MetricBottom>
 
                 <MetricBottom image={`/images/metrics/revenue.webp`}>
-                  <div class={`block text-center space-y-[5px] w-full z-2`}>
+                  <div
+                    class={`block text-center space-y-[5px] w-full z-2 text-white`}
+                  >
                     <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </MetricBottom>
 
                 <MetricBottom image={`/images/metrics/ecovillages.webp`}>
-                  <div class={`block text-center space-y-[5px] w-full z-2`}>
+                  <div
+                    class={`block text-center space-y-[5px] w-full z-2 text-white`}
+                  >
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
                   </div>

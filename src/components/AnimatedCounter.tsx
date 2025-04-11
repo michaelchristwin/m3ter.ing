@@ -69,7 +69,7 @@ const AnimatedCounter: Component<{ to: number }> = (props) => {
   return (
     <span
       ref={spanElement}
-      class={`font-mono font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px]`}
+      class={`font-mono font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px] text-white`}
     >
       0
     </span>
