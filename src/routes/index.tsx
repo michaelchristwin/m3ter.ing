@@ -228,7 +228,7 @@ function Index() {
 
         {/** Hardware section */}
         <HardwareSection />
-        <section class="activity-container">
+        <section class="activity-container mb-[100px]">
           <A
             class="image-container2 img-one"
             href="https://xcharge.m3ter.ing/"
