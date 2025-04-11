@@ -1,10 +1,10 @@
 import { Title } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 import { lazy } from "solid-js";
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));
-const AppCard = lazy(() => import("~/components/AppCard"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
 const Carousel = lazy(() => import("~/components/Carousel"));
@@ -215,16 +215,82 @@ function Index() {
             />
           </div>
         </section>
-        <section
-          class={`w-full flex flex-wrap my-[100px] justify-center gap-[30px] items-center h-fit`}
-        >
-          <AppCard />
-          <AppCard />
-          <AppCard />
-          <AppCard />
-        </section>
+
         {/** Hardware section */}
         <HardwareSection />
+        <section class="grid grid-cols-[repeat(5,1fr)] grid-rows-[repeat(2,150px)] gap-x-[10px] mb-[100px]">
+          <A
+            class="image-container2 img-one"
+            href="https://xcharge.m3ter.ing/"
+            aria-label="Open XCharge"
+            target="_blank"
+          >
+            <img src="/images/xcharge.webp" alt="XCharge" />
+            <div class="overlay">
+              <h3>XCharge</h3>
+            </div>
+          </A>
+
+          <A
+            href="https://watt-a-frame.vercel.app/"
+            aria-label="Open Watt-A-Frame in farcaster"
+            target="_blank"
+            class="image-container2 img-two"
+          >
+            <img src="/images/watt-a-frame.webp" alt="Watt-A-Frame" />
+            <div class="overlay">
+              <h3>Watt-A-Frame</h3>
+            </div>
+          </A>
+
+          <A
+            class="image-container2 img-three"
+            href="https://asset.m3ter.ing/"
+            aria-label="Go to Solaxy"
+            target="_blank"
+          >
+            <img src="/images/solaxy.webp" alt="Solaxy" />
+            <div class="overlay">
+              <h3>Solaxy</h3>
+            </div>
+          </A>
+
+          <A
+            class="image-container2 img-four"
+            href="https://xcharge.m3ter.ing/"
+            aria-label="Open XCharge"
+            target="_blank"
+          >
+            <img src="/images/xcharge.webp" alt="XCharge" />
+            <div class="overlay">
+              <h3>XCharge</h3>
+            </div>
+          </A>
+
+          <A
+            class="image-container2 img-five"
+            href="https://watt-a-frame.vercel.app/"
+            aria-label="Open Watt-A-Frame in farcaster"
+            target="_blank"
+          >
+            <img src="/images/watt-a-frame.webp" alt="Watt-A-Frame" />
+            <div class="overlay">
+              <h3>Watt-A-Frame</h3>
+            </div>
+          </A>
+
+          <A
+            class="image-container2 img-six"
+            href="https://asset.m3ter.ing/"
+            aria-label="Go to Solaxy"
+            target="_blank"
+          >
+            <img src="/images/solaxy.webp" alt="Solaxy" />
+            <div class="overlay">
+              <h3>Solaxy</h3>
+            </div>
+          </A>
+        </section>
       </div>
 
       <Footer />

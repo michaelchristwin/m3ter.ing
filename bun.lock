@@ -8,6 +8,7 @@
         "@solidjs/meta": "^0.29.4",
         "@solidjs/router": "^0.15.3",
         "@tailwindcss/vite": "^4.0.17",
+        "blurhash": "^2.0.5",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "colorthief": "^2.6.0",
@@ -323,6 +324,8 @@
     "babel-preset-solid": ["babel-preset-solid@1.9.5", "", { "dependencies": { "babel-plugin-jsx-dom-expressions": "^0.39.7" }, "peerDependencies": { "@babel/core": "^7.0.0" } }, "sha512-85I3osODJ1LvZbv8wFozROV1vXq32BubqHXAGu73A//TRs3NLI1OFP83AQBUTSQHwgZQmARjHlJciym3we+V+w=="],
 
     "base64-js": ["base64-js@1.5.1", "", {}, "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA=="],
+
+    "blurhash": ["blurhash@2.0.5", "", {}, "sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w=="],
 
     "browserslist": ["browserslist@4.24.4", "", { "dependencies": { "caniuse-lite": "^1.0.30001688", "electron-to-chromium": "^1.5.73", "node-releases": "^2.0.19", "update-browserslist-db": "^1.1.1" }, "bin": { "browserslist": "cli.js" } }, "sha512-KDi1Ny1gSePi1vm0q4oxSF8b4DR44GF4BbmS2YdhPLOEqd8pDviZOGH/GsmRwoWJ2+5Lr085X7naowMwKHDG1A=="],
 
