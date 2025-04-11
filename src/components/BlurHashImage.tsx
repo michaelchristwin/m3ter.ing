@@ -7,6 +7,7 @@ type BlurHashImageProps = {
   alt: string;
   aspectRatio?: number; // Optional aspect ratio (width/height)
   class?: string; // Optional additional classes
+  imageClass?: string;
 };
 
 const BlurHashImage: Component<BlurHashImageProps> = (props) => {
@@ -53,7 +54,9 @@ const BlurHashImage: Component<BlurHashImageProps> = (props) => {
         <img
           src={props.src}
           alt={props.alt || ""}
-          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+          class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+            props.imageClass || ""
+          }`}
           style={{ opacity: imageLoaded() ? "1" : "0" }}
           loading="lazy"
           onLoad={handleImageLoad}

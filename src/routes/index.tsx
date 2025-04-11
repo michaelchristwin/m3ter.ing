@@ -1,6 +1,7 @@
 import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 import { lazy } from "solid-js";
+import BlurHashImage from "~/components/BlurHashImage";
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
@@ -10,6 +11,7 @@ const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
 const Carousel = lazy(() => import("~/components/Carousel"));
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
+import blurHashes from "~/blurhashes.json";
 
 function Index() {
   return (
@@ -54,14 +56,22 @@ function Index() {
           </p>
         </section>
         <section class="w-full grid lg:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
-          <div class="relative w-full h-0 pb-[100%]">
+          {/* <div class="relative w-full h-0 pb-[100%]">
             <img
               loading={`lazy`}
               src={`/images/ethcity.webp`}
               alt="ETH City"
               class="absolute inset-0 object-cover w-full h-full rounded-2xl"
             />
-          </div>
+          </div> */}
+          <BlurHashImage
+            src={`/images/ethcity.webp`}
+            alt="ETH City"
+            class={` w-full h-0`}
+            imageClass={`rounded-2xl`}
+            hash={blurHashes["ethcity.webp"]}
+            aspectRatio={1 / 1}
+          />
           <div class="w-full h-auto">
             <div class="space-y-4 xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]">
               <p>
@@ -218,7 +228,7 @@ function Index() {
 
         {/** Hardware section */}
         <HardwareSection />
-        <section class="grid grid-cols-[repeat(5,1fr)] grid-rows-[repeat(2,150px)] gap-x-[10px] mb-[100px]">
+        <section class="activity-container">
           <A
             class="image-container2 img-one"
             href="https://xcharge.m3ter.ing/"
