@@ -27,7 +27,7 @@ function Index() {
       </section>
 
       <div
-        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px] lg:px-[90px] px-[40px]`}
+        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px] lg:px-[90px] px-[40px] xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]`}
       >
         <section class={`mb-[100px] w-full mx-auto`}>
           <h1
@@ -56,14 +56,6 @@ function Index() {
           </p>
         </section>
         <section class="w-full grid lg:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
-          {/* <div class="relative w-full h-0 pb-[100%]">
-            <img
-              loading={`lazy`}
-              src={`/images/ethcity.webp`}
-              alt="ETH City"
-              class="absolute inset-0 object-cover w-full h-full rounded-2xl"
-            />
-          </div> */}
           <BlurHashImage
             src={`/images/ethcity.webp`}
             alt="ETH City"
@@ -73,7 +65,7 @@ function Index() {
             aspectRatio={1 / 1}
           />
           <div class="w-full h-auto">
-            <div class="space-y-4 xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]">
+            <div class="space-y-4">
               <p>
                 The M3tering Protocol is shifting energy infrastructure from
                 centralized monopolies to a shared, open economy on Ethereum.
@@ -129,7 +121,9 @@ function Index() {
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
                     <AnimatedCounter to={10000} />
-                    <p class={`text-[17px]`}>kWh of electricity generated</p>
+                    <p class={`font-[600] text-[20px]`}>
+                      kWh of electricity generated
+                    </p>
                   </div>
                 </MetricTop>
               </div>

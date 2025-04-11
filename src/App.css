@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "Selamat-Pagi";
-  src: url("/fonts/selamat-pagi-font/SelamatPagi-pgB9a.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Jello-Stone";
   src: url("/fonts/jello-stone-font/JelloStone-YqKz8.woff2") format("woff2");
   font-display: swap;
@@ -51,23 +44,6 @@ body {
 
 button {
   cursor: pointer;
-}
-.bowlby-one-regular {
-  font-family: "Bowlby One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.dynapuff {
-  font-family: "DynaPuff", system-ui;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-
-.selamat-pagi {
-  font-family: "Selamat-Pagi", sans-serif;
-  font-optical-sizing: auto;
 }
 
 .jello-stone {

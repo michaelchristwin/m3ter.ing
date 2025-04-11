@@ -28,7 +28,7 @@ const HardwareSection: Component<{}> = () => {
   return (
     <section class="w-full py-16 md:py-20 lg:py-24 space-y-8 md:space-y-12 lg:space-y-16 px-4">
       <div>
-        <h2 class="text-center font-semibold text-xl sm:text-2xl md:text-2xl lg:text-3xl">
+        <h2 class="text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]">
           The Metering Hardware
         </h2>
         <p class="text-center text-base sm:text-lg font-medium mt-2">
@@ -81,7 +81,7 @@ const HardwareSection: Component<{}> = () => {
         {/* Product Info Section */}
         <div class="w-full grid grid-cols-1 gap-7 h-fit">
           <div class="w-full space-y-3">
-            <p class="text-sm sm:text-base md:text-base lg:text-lg">
+            <p>
               Designed specifically to bridge the gap between distributed energy
               resources (such as rooftop solar assets) and the web3.0 economy.
               Its data is crucial for accurate tracking, verification, and
@@ -92,7 +92,7 @@ const HardwareSection: Component<{}> = () => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="w-full space-y-3">
               <h3 class="text-lg sm:text-xl font-bold">Security</h3>
-              <p class="text-sm sm:text-base lg:text-lg">
+              <p>
                 Utilizes ED25519 elliptical curve digital signatures to ensure
                 data integrity. Keys are stored on a tamper-resistant crypto
                 chip that self-destructs if accessed externally. These security
@@ -102,7 +102,7 @@ const HardwareSection: Component<{}> = () => {
             </div>
             <div class="w-full space-y-3">
               <h3 class="text-lg sm:text-xl font-bold">Network</h3>
-              <p class="text-sm sm:text-base lg:text-lg">
+              <p>
                 Operates wirelessly via LoRaWAN (LongFi), a long-range,
                 low-power protocol designed for IoT with range up to 3 km. Ideal
                 for remote installations where traditional wireless

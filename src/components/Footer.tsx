@@ -22,7 +22,7 @@ const Footer = () => {
         <div class="lg:flex md:flex block justify-between">
           {/* Logo and company info */}
           <div class="mb-8 lg:mb-0 md:mb-0 lg:max-w-xs md:max-w-xs">
-            <h2 class="text-xl font-[500] text-white mb-4 dynapuff">
+            <h2 class="text-xl font-[500] text-white mb-4 jello-stone">
               M3tering
             </h2>
             <p class="text-gray-200 mb-4">
