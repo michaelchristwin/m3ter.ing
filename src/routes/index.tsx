@@ -4,7 +4,6 @@ import { lazy, onMount } from "solid-js";
 import AOS from "aos";
 import blurHashes from "~/blurhashes.json";
 import styles from "~/styles/parallax.module.css";
-import BlurHashImage2 from "~/components/ui/bur";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));

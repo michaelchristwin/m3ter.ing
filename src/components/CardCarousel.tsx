@@ -1,9 +1,9 @@
 import { Component, For } from "solid-js";
 
 const cards = [
+  { image: "/images/companies/logo.webp" },
   { image: "/images/companies/tas.webp" },
   { image: "/images/companies/solar-foundation.webp" },
-  { image: "/images/companies/logo.webp" },
   { image: "/images/companies/project.webp" },
   { image: "/images/companies/switch-electric.webp" },
   { image: "/images/companies/arkreen.webp" },
