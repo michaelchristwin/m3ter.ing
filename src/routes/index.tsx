@@ -1,19 +1,19 @@
 import { Title } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy, onMount } from "solid-js";
-import BlurHashImage from "~/components/BlurHashImage";
+import AOS from "aos";
+import blurHashes from "~/blurhashes.json";
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));
+const BlurHashImage = lazy(() => import("~/components/BlurHashImage"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
-const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
-import AOS from "aos";
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
-import blurHashes from "~/blurhashes.json";
-import AppsSection from "~/components/AppsSection";
+const AppsSection = lazy(() => import("~/components/AppsSection"));
 const CardCarousel = lazy(() => import("~/components/CardCarousel"));
+const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
 
 function Index() {
   onMount(() => {
