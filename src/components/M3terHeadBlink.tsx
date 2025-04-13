@@ -23,14 +23,21 @@ const M3terHeadBlink: Component<M3terHeadProps> = (props) => {
   };
 
   const startCycle = () => {
-    generateRandom();
-    setVisible(true); // Fade in
-    displayTimeout = setTimeout(() => {
-      setVisible(false); // Fade out
-      hiddenTimeout = setTimeout(() => {
-        startCycle(); // Restart the cycle
-      }, props.hiddenTime * 1000);
-    }, props.displayTime * 1000);
+    setVisible(false); // Ensure we're hidden first
+
+    // Short timeout to ensure proper transition
+    setTimeout(() => {
+      generateRandom(); // Generate new random number
+      setVisible(true); // Show with new avatar
+
+      displayTimeout = setTimeout(() => {
+        setVisible(false); // Hide after display time
+
+        hiddenTimeout = setTimeout(() => {
+          startCycle(); // Restart the cycle
+        }, props.hiddenTime * 1000);
+      }, props.displayTime * 1000);
+    }, 50);
   };
 
   onMount(() => {
@@ -44,12 +51,12 @@ const M3terHeadBlink: Component<M3terHeadProps> = (props) => {
 
   return (
     <div
-      class={`item flex justify-center items-center`}
+      class="item flex justify-center items-center"
       style={{ "--i": props.index, "background-color": props.backgroundColor }}
     >
       <Show when={randomNum() !== null}>
         <div
-          class={`p-[20px]`}
+          class="p-4"
           style={{
             opacity: visible() ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",

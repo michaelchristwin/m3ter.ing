@@ -1,19 +1,24 @@
 import { Title } from "@solidjs/meta";
-import { lazy } from "solid-js";
+import { clientOnly } from "@solidjs/start";
+import { lazy, onMount } from "solid-js";
 import BlurHashImage from "~/components/BlurHashImage";
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
-const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
-const Carousel = lazy(() => import("~/components/Carousel"));
+const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
+import AOS from "aos";
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 import blurHashes from "~/blurhashes.json";
 import AppsSection from "~/components/AppsSection";
+const CardCarousel = lazy(() => import("~/components/CardCarousel"));
 
 function Index() {
+  onMount(() => {
+    AOS.init();
+  });
   return (
     <div class={`${styles.index} bg-gray-50`}>
       <Navbar />
@@ -106,7 +111,7 @@ function Index() {
                 <div class="bg-white rounded-lg shadow-sm h-64 flex items-center justify-center text-center">
                   <div class="w-full h-full">
                     <video
-                      src="/images/m3terhead.webm"
+                      src="/videos/m3terhead.webm"
                       autoplay
                       muted
                       loop
@@ -168,7 +173,8 @@ function Index() {
           >
             Let's build your project next
           </h2>
-          <Carousel />
+          {/* <Carousel /> */}
+          <CardCarousel />
         </section>
         <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">
