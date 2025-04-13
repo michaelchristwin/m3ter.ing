@@ -10,6 +10,10 @@ export default createHandler(() => (
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:site_name" content="M3tering Protocol" />
           <meta
+            name="description"
+            content="The decentralized protocol that's driving solar energy adoption in Africa."
+          />
+          <meta
             property="og:description"
             content="The decentralized protocol that's driving solar energy adoption in Africa."
           />

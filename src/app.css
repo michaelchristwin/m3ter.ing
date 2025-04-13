@@ -760,3 +760,11 @@ button {
   transform: scale(1.05);
   z-index: 1;
 }
+/* @media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .card-grid > :is(:nth-child(1), :nth-child(7)) {
+    display: none;
+  }
+} */

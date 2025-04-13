@@ -12,11 +12,13 @@ const cards = [
 
 const CardCarousel: Component = () => {
   return (
-    <div class={`grid grid-cols-7 w-full h-full card-grid`}>
+    <div
+      class={`grid sm:grid-cols-7 grid-cols-1 w-full sm:h-full h-[100vh] card-grid`}
+    >
       <For each={cards}>
         {(card, i) => (
           <div
-            class="w-full h-auto aspect-[2.5/3] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
+            class="sm:w-full w-[220px] mx-auto h-auto sm:aspect-[2.5/3] aspect-[3/1.5] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
             style={{ "box-shadow": `-1rem 0 3rem rgb(0 0 0 / 0.25)` }}
           >
             <img

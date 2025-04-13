@@ -4,6 +4,7 @@ import { lazy, onMount } from "solid-js";
 import AOS from "aos";
 import blurHashes from "~/blurhashes.json";
 import styles from "~/styles/parallax.module.css";
+import BlurHashImage2 from "~/components/ui/bur";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));
@@ -167,7 +168,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <section class={`pb-[100px] h-[400px] w-full space-y-[70px]`}>
+        <section class={`mb-[100px] sm:h-[400px] h-fit w-full space-y-[70px]`}>
           <h2
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
