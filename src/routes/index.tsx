@@ -167,7 +167,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <section class={`pb-[100px] h-fit w-full space-y-[70px]`}>
+        <section class={`pb-[100px] h-[400px] w-full space-y-[70px]`}>
           <h2
             class={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]`}
           >
