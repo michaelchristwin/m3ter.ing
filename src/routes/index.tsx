@@ -1,7 +1,6 @@
 import { Title } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
-import { lazy, onMount } from "solid-js";
-import AOS from "aos";
+import { lazy } from "solid-js";
 import blurHashes from "~/blurhashes.json";
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
@@ -12,15 +11,14 @@ const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 const AppsSection = lazy(() => import("~/components/AppsSection"));
-const CardCarousel = lazy(() => import("~/components/CardCarousel"));
+const CardCarousel = clientOnly(() => import("~/components/CardCarousel"));
 const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
 
 function Index() {
-  onMount(() => {
-    AOS.init();
-  });
+  let rootRef!: HTMLDivElement;
+
   return (
-    <div class={`${styles.index} bg-gray-50`}>
+    <div class={`${styles.index} bg-gray-50 index`} ref={rootRef}>
       <Navbar />
       <Title>Home</Title>
       <section class={styles.parallax_wrapper}>

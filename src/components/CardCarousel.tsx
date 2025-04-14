@@ -1,4 +1,5 @@
-import { Component, For } from "solid-js";
+import { Component, For, onMount } from "solid-js";
+import { animate, onScroll, utils } from "animejs";
 
 const cards = [
   { image: "/images/companies/logo.webp" },
@@ -11,14 +12,34 @@ const cards = [
 ];
 
 const CardCarousel: Component = () => {
+  let cardRef!: HTMLDivElement;
+  onMount(() => {
+    const [container] = utils.$(".index");
+    animate(cardRef, {
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: "200",
+      ease: "inOutQuad",
+      autoplay: onScroll({
+        container,
+        repeat: true,
+        sync: true,
+        axis: "y",
+        enter: "bottom top",
+        leave: "top bottom",
+      }),
+    });
+  });
+
   return (
     <div
+      ref={cardRef}
       class={`grid sm:grid-cols-7 grid-cols-1 w-full sm:h-full h-[100vh] card-grid`}
     >
       <For each={cards}>
         {(card, i) => (
           <div
-            class="sm:w-full w-[220px] mx-auto h-auto sm:aspect-[2.5/3] aspect-[3/1.5] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
+            class="animate-card sm:w-full w-[220px] mx-auto h-auto sm:aspect-[2.5/3] aspect-[3/1.5] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
             style={{ "box-shadow": `-1rem 0 3rem rgb(0 0 0 / 0.25)` }}
           >
             <img
