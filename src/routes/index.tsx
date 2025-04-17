@@ -15,10 +15,8 @@ const CardCarousel = clientOnly(() => import("~/components/CardCarousel"));
 const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
 
 function Index() {
-  let rootRef!: HTMLDivElement;
-
   return (
-    <div class={`${styles.index} bg-gray-50 index`} ref={rootRef}>
+    <div class={`${styles.index} bg-gray-50 index`} id="index">
       <Navbar />
       <Title>Home</Title>
       <section class={styles.parallax_wrapper}>
