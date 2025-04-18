@@ -1,12 +1,14 @@
 import { Title } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy } from "solid-js";
-import blurHashes from "~/blurhashes.json";
+import ImageComponent from "~/components/ImageComponent";
+const VerticalCounter = clientOnly(
+  () => import("~/components/VerticalCounter")
+);
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const MetricBottom = lazy(() => import("~/components/MetricBottom"));
 const MetricTop = lazy(() => import("~/components/MetricTop"));
-const BlurHashImage = lazy(() => import("~/components/BlurHashImage"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
@@ -36,15 +38,11 @@ function Index() {
           >
             Protocol V2
           </h1>
-          <div class="relative max-w-full w-full mx-auto mt-[90px] shadow-xl">
-            <img
-              loading={`lazy`}
-              src={`/images/infra.webp`}
-              alt="Energy Infrastructure design"
-              class="object-cover w-full h-auto"
-            />
-          </div>
-
+          <ImageComponent
+            alt="Energy Infrastructure design"
+            sizes="100vw"
+            imagePathName="/images/infra"
+          />
           <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
@@ -56,14 +54,12 @@ function Index() {
             Decentralised, Democratized and Solarpunk at its core
           </p>
         </section>
-        <section class="w-full grid lg:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
-          <BlurHashImage
-            src={`/images/ethcity.webp`}
-            alt="ETH City"
-            class={` w-full h-0`}
-            imageClass={`rounded-2xl`}
-            hash={blurHashes["ethcity.webp"]}
-            aspectRatio={1 / 1}
+        <section class="w-full grid sm:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
+          <ImageComponent
+            alt=""
+            imagePathName="/images/ethcity"
+            sizes="(min-width: 640px) 50vw, 100vw"
+            class="rounded-2xl"
           />
           <div class="w-full h-auto">
             <div class="space-y-4">
@@ -225,6 +221,7 @@ function Index() {
         {/** Hardware section */}
         <HardwareSection />
         <AppsSection />
+        <VerticalCounter />
       </div>
 
       <Footer />

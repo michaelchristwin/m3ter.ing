@@ -1,24 +1,130 @@
 {
-  "xcharge.webp": "U21:t8HYiftlvETAo|nnM0pHo|aLP]vXVaXL",
-  "meter_case1.webp": "UNA^IFR%0JsCP;i^vLS5%haxIUo1-VayNGj]",
-  "board_overview.webp": "UGLE{7?v00tk_NxaVYSg00V@~qj[?vODIoxG",
-  "meter_case2.webp": "UKJ8ki%2=^pIuPS2q[wd={kCIpWB:%oLPVR*",
-  "exterior_design.webp": "UGS6oS~D=K.8_3ofWVbH}ZNaS#w{.8n%n*SM",
-  "pcb_design.webp": "UFS?DV_3%M-;_3ofoffQ%MRjRjof~qayRjt7",
-  "avatar.webp": "UAG%0ts.0i-A}q$$EhJ804o0xZEg5mI=xFxF",
-  "solaxy.webp": "UUSPRqp1%M?7~oxvM{ROIuRNt7t9?woHWAbd",
-  "solarpunk.webp": "UzH|BO%LNLRk%%t6WCR-V@n$RQW=WBoyWVWB",
-  "infra.webp": "UASs1@~qW;_3?voIV@WU9tt6oJM{_3xaV@Rj",
-  "ecovillages.webp": "UDDmKVb^ES~2^XRPIrR.D,bIofoyFhtOxDxU",
-  "revenue.webp": "UNG9BM~V?GtQxb?GtRIo%1x[kVoJtQxujZSg",
-  "panel.webp": "UgCkYoafxAo}G^t6kCW;#RoykDjFIvt3sRa$",
-  "wind.webp": "USKTw:oeIBEl~mxs=@RkS#t6%0xW^$t6smxZ",
-  "solarbg-ghiblify.webp": "UNEW8Pbbn}oy?wW;fPj[.8a}kDWY?aR.W=bI",
-  "ethcity.webp": "UKF*WWxJ#qXWC7=cMyS5_N$K-NtL.Q$xt7NF",
-  "arkreen.webp": "UGA.@oo{00kUXOj[RjR%00ae}xaM%MWBn,xb",
-  "project.webp": "UDR:A{-;^+~q_3RjM{t7%MM{WBxu?bayRjay",
-  "tas.webp": "U36IjOtR.TyDyDayV@oz.TfQx^fQRPkCtSV@",
-  "solar-foundation.webp": "UGIqrA%00,kpP-baz=n%06R-Z*Rk{_oJ5rR,",
-  "switch-electric.webp": "UJDa#pxFENsn}DoLJ8oK10R+oeso5-WV#-oK",
-  "watt-a-frame.webp": "U4CF;=?t00a}9:RzxMR~009E~qS08$tKo#NF"
+  "/images/ethcity-480w.webp": {
+    "hash": "UKF*WWxJ#qXWC7=cMyS5_N$K-NtL.Q$xt7NF",
+    "aspectRatio": 1
+  },
+  "/images/ethcity-1440w.webp": {
+    "hash": "UJF*WWxJ#qXWC7=cMyS5_N$K-NtL.Q$xxaNF",
+    "aspectRatio": 1
+  },
+  "/images/infra-1440w.webp": {
+    "hash": "U9Ss1[~qf+_3?voIV@WBE1t6j?M{_3xtRjRj",
+    "aspectRatio": 1.3126709206927984
+  },
+  "/images/xcharge.webp": {
+    "hash": "U21:t8HYiftlvETAo|nnM0pHo|aLP]vXVaXL",
+    "aspectRatio": 0.7250755287009063
+  },
+  "/images/hardware/meter_case1.webp": {
+    "hash": "UNA^IFR%0JsCP;i^vLS5%haxIUo1-VayNGj]",
+    "aspectRatio": 0.8446927374301676
+  },
+  "/images/hardware/board_overview.webp": {
+    "hash": "UGLE{7?v00tk_NxaVYSg00V@~qj[?vODIoxG",
+    "aspectRatio": 1
+  },
+  "/images/hardware/meter_case2.webp": {
+    "hash": "UKJ8ki%2=^pIuPS2q[wd={kCIpWB:%oLPVR*",
+    "aspectRatio": 1.25
+  },
+  "/images/hardware/exterior_design.webp": {
+    "hash": "UGS6oS~D=K.8_3ofWVbH}ZNaS#w{.8n%n*SM",
+    "aspectRatio": 1.1300639658848615
+  },
+  "/images/hardware/pcb_design.webp": {
+    "hash": "UFS?DV_3%M-;_3ofoffQ%MRjRjof~qayRjt7",
+    "aspectRatio": 1.3292978208232447
+  },
+  "/images/infra-768w.webp": {
+    "hash": "UASs1@~qW;_3?voIV@WV9tt6j@M{_3xaV@Rj",
+    "aspectRatio": 1.3128205128205128
+  },
+  "/images/avatar.webp": {
+    "hash": "UAG%0ts.0i-A}q$$EhJ804o0xZEg5mI=xFxF",
+    "aspectRatio": 1
+  },
+  "/images/solaxy.webp": {
+    "hash": "UUSPRqp1%M?7~oxvM{ROIuRNt7t9?woHWAbd",
+    "aspectRatio": 1.681260945709282
+  },
+  "/images/solarpunk.webp": {
+    "hash": "UzH|BO%LNLRk%%t6WCR-V@n$RQW=WBoyWVWB",
+    "aspectRatio": 2.4347826086956523
+  },
+  "/images/infra-1024w.webp": {
+    "hash": "UASs1@~qW;_3?voIV@WU9tt6oJM{_3xaV@Rj",
+    "aspectRatio": 1.3128205128205128
+  },
+  "/images/ethcity-768w.webp": {
+    "hash": "UJF*WWxJ#qXWC7=cMyS5_N$K-NtL.Q$xxaNF",
+    "aspectRatio": 1
+  },
+  "/images/metrics/ecovillages.webp": {
+    "hash": "UDDmKVb^ES~2^XRPIrR.D,bIofoyFhtOxDxU",
+    "aspectRatio": 1.8581818181818182
+  },
+  "/images/metrics/revenue.webp": {
+    "hash": "UNG9BM~V?GtQxb?GtRIo%1x[kVoJtQxujZSg",
+    "aspectRatio": 1.875
+  },
+  "/images/metrics/panel.webp": {
+    "hash": "UgCkYoafxAo}G^t6kCW;#RoykDjFIvt3sRa$",
+    "aspectRatio": 0.6666666666666666
+  },
+  "/images/metrics/wind.webp": {
+    "hash": "USKTw:oeIBEl~mxs=@RkS#t6%0xW^$t6smxZ",
+    "aspectRatio": 5.607142857142857
+  },
+  "/images/ethcity-320w.webp": {
+    "hash": "UJF*WWxJ#XXWC7=cMyS5_N$K-NtL.Q$xxaNF",
+    "aspectRatio": 1
+  },
+  "/images/ethcity-1024w.webp": {
+    "hash": "UKF*WWxJ#qXWC7=cMyS5_N$K-NtL.Q$xt7NF",
+    "aspectRatio": 1
+  },
+  "/images/infra-320w.webp": {
+    "hash": "UASs1@~qW;_3?voIV@WU9tt6j?M{_3xaV@Rj",
+    "aspectRatio": 1.3114754098360655
+  },
+  "/images/solarbg-ghiblify.webp": {
+    "hash": "UNEW8Pbbn}oy?wW;fPj[.8a}kDWY?aR.W=bI",
+    "aspectRatio": 1.5
+  },
+  "/images/infra-480w.webp": {
+    "hash": "UASs1@~qW;_3?voIV@WV9tt6oKM{_3xtV@Rj",
+    "aspectRatio": 1.3114754098360655
+  },
+  "/images/companies/arkreen.webp": {
+    "hash": "UGA.@oo{00kUXOj[RjR%00ae}xaM%MWBn,xb",
+    "aspectRatio": 1
+  },
+  "/images/companies/project.webp": {
+    "hash": "UDR:A{-;^+~q_3RjM{t7%MM{WBxu?bayRjay",
+    "aspectRatio": 1
+  },
+  "/images/companies/tas.webp": {
+    "hash": "U36IjOtR.TyDyDayV@oz.TfQx^fQRPkCtSV@",
+    "aspectRatio": 0.8888888888888888
+  },
+  "/images/companies/solar-foundation.webp": {
+    "hash": "UGIqrA%00,kpP-baz=n%06R-Z*Rk{_oJ5rR,",
+    "aspectRatio": 1
+  },
+  "/images/companies/switch-electric.webp": {
+    "hash": "UJDa#pxFENsn}DoLJ8oK10R+oeso5-WV#-oK",
+    "aspectRatio": 2.8272251308900525
+  },
+  "/images/companies/logo.webp": {
+    "hash": "UZLy{3{10fJ;Ba$iwZJ80|KPMIP5$vE4nhbV",
+    "aspectRatio": 1
+  },
+  "/images/companies/powerledger.webp": {
+    "hash": "UB61rAO_D4$rk=b0i^j:D4r-uLN7jDj:V_WH",
+    "aspectRatio": 1
+  },
+  "/images/watt-a-frame.webp": {
+    "hash": "U4CF;=?t00a}9:RzxMR~009E~qS08$tKo#NF",
+    "aspectRatio": 0.8830744071954211
+  }
 }
