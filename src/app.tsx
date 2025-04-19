@@ -10,7 +10,7 @@ export default function App() {
       root={(props) => (
         <MetaProvider>
           <Suspense>
-            <main class={`h-[100vh] relative`}>{props.children}</main>
+            <main class={`relative`}>{props.children}</main>
           </Suspense>
         </MetaProvider>
       )}

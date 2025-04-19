@@ -1,48 +1,59 @@
-import { Component, onMount } from "solid-js";
-import "./style.css";
+import { Component, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImageComponent from "../ImageComponent";
+import ImageComponent from "./ImageComponent";
+import "~/styles/scroll-marquee.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const VerticalCounter: Component<{}> = () => {
+type ScrollMarqueeProps = {
+  scroller: HTMLElement;
+};
+const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
   let section2Ref!: HTMLDivElement;
-  onMount(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        scroller: document.getElementById("index"),
-        trigger: section2Ref,
-        invalidateOnRefresh: true,
-        markers: true,
-        start: "0% 0%",
-        end: "120% 0%",
-        scrub: 1,
-        pin: true,
-      },
-    });
+  let ctx: gsap.Context;
 
-    tl.to(
-      ".images .right",
-      {
-        marginTop: "0",
-        duration: 2.5,
-      },
-      0
-    );
-    tl.to(
-      ".images .left",
-      {
-        marginTop: "150%",
-        duration: 1,
-      },
-      0
-    );
+  onMount(() => {
+    ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          scroller: props.scroller,
+          trigger: section2Ref,
+          invalidateOnRefresh: true,
+          // markers: true,a
+          start: "0% 0%",
+          end: "120% 0%",
+          scrub: 1,
+          pin: true,
+        },
+      });
+
+      tl.to(
+        ".images .right",
+        {
+          marginTop: "0",
+          duration: 2.5,
+        },
+        0
+      );
+      tl.to(
+        ".images .left",
+        {
+          marginTop: "150%",
+          duration: 1,
+        },
+        0
+      );
+    }, section2Ref);
     ScrollTrigger.refresh();
   });
+
+  onCleanup(() => {
+    ctx.revert();
+  });
+
   return (
     <div class="container wrapper">
-      <div class="section_1"></div>
       <div class="section_2" ref={(el) => (section2Ref = el)}>
         <div class="flexo">
           <div class="content space-y-2.5">
@@ -158,8 +169,7 @@ const VerticalCounter: Component<{}> = () => {
           </div>
         </div>
       </div>
-      <div class="section_3"></div>
     </div>
   );
 };
-export default VerticalCounter;
+export default ScrollMarquee;

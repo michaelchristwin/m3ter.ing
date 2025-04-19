@@ -1,9 +1,9 @@
 import { ParentComponent } from "solid-js";
 import { createSignal, onMount } from "solid-js";
 //@ts-expect-error"Could not find a declaration file for module '../../node_modules/colorthief/dist/color-thief.mjs'."
-import ColorThief from "../../node_modules/colorthief/dist/color-thief.mjs";
+import ColorThief from "colorthief";
 
-const MetricTop: ParentComponent<{ image: string; fallbackColor?: string }> = (
+const Metric: ParentComponent<{ image: string; fallbackColor?: string }> = (
   props
 ) => {
   const [gradientColor, setGradientColor] = createSignal("transparent");
@@ -65,4 +65,4 @@ const MetricTop: ParentComponent<{ image: string; fallbackColor?: string }> = (
     </div>
   );
 };
-export default MetricTop;
+export default Metric;

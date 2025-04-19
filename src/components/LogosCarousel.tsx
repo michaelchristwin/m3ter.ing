@@ -1,10 +1,14 @@
-import { Component, For, onMount, createSignal } from "solid-js";
+import { Component, For, onMount, createSignal, onCleanup } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cards = [
+type LogosCarouselProps = {
+  scroller: HTMLElement;
+};
+
+const logos = [
   { image: "/images/companies/logo.webp" },
   { image: "/images/companies/tas.webp" },
   { image: "/images/companies/solar-foundation.webp" },
@@ -14,11 +18,10 @@ const cards = [
   { image: "/images/companies/powerledger.webp" },
 ];
 
-const CardCarousel: Component = () => {
-  // Use a signal for the refs container
+const LogosCarousel: Component<LogosCarouselProps> = (props) => {
   const [cardRefs, setCardRefs] = createSignal<HTMLDivElement[]>([]);
+  let ctx: gsap.Context;
 
-  // Helper function to set refs
   const setCardRef = (el: HTMLDivElement, index: number) => {
     if (el) {
       const current = cardRefs();
@@ -28,12 +31,9 @@ const CardCarousel: Component = () => {
   };
 
   onMount(() => {
-    // Wait for the next frame to ensure refs are all set
     const elements = cardRefs();
-    if (elements.length > 0) {
-      // Create a container reference for ScrollTrigger
-      const container = elements[0].parentElement;
-
+    const container = elements[0].parentElement;
+    ctx = gsap.context(() => {
       gsap.fromTo(
         elements,
         {
@@ -42,25 +42,30 @@ const CardCarousel: Component = () => {
         },
         {
           scrollTrigger: {
-            trigger: container, // Use the parent container as trigger
-            start: "top bottom", // Start animation when trigger is 80% from top of viewport
+            trigger: container,
+            start: "top bottom",
             toggleActions: "play none none reverse",
-            scroller: document.getElementById("index"),
+            scroller: props.scroller,
+            // markers: true,
           },
           opacity: 1,
           scale: 1,
-          duration: 0.8,
+          duration: 2,
           stagger: 0.1, // Add staggered animation for better visual effect
           ease: "power3.out",
         }
       );
-      ScrollTrigger.refresh();
-    }
+    }, container as Element);
+    ScrollTrigger.refresh();
+  });
+
+  onCleanup(() => {
+    ctx.revert();
   });
 
   return (
     <div class="grid sm:grid-cols-7 grid-cols-1 w-full sm:h-full h-[100vh] card-grid">
-      <For each={cards}>
+      <For each={logos}>
         {(card, i) => (
           <div
             ref={(el) => setCardRef(el, i())}
@@ -82,4 +87,4 @@ const CardCarousel: Component = () => {
   );
 };
 
-export default CardCarousel;
+export default LogosCarousel;

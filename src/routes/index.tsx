@@ -2,23 +2,21 @@ import { Title } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy } from "solid-js";
 import ImageComponent from "~/components/ImageComponent";
-const VerticalCounter = clientOnly(
-  () => import("~/components/VerticalCounter")
-);
 import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
-const MetricBottom = lazy(() => import("~/components/MetricBottom"));
-const MetricTop = lazy(() => import("~/components/MetricTop"));
+const Metric = lazy(() => import("~/components/Metric"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const Footer = lazy(() => import("~/components/Footer"));
 const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 const AppsSection = lazy(() => import("~/components/AppsSection"));
-const CardCarousel = clientOnly(() => import("~/components/CardCarousel"));
+const LogosCarousel = clientOnly(() => import("~/components/LogosCarousel"));
 const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
+const ScrollMarquee = clientOnly(() => import("~/components/ScrollMarquee"));
 
 function Index() {
+  let scrollerRef!: HTMLDivElement;
   return (
-    <div class={`${styles.index} bg-gray-50 index`} id="index">
+    <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scrollerRef}>
       <Navbar />
       <Title>Home</Title>
       <section class={styles.parallax_wrapper}>
@@ -113,7 +111,7 @@ function Index() {
                   </div>
                 </div>
 
-                <MetricTop image={`/images/metrics/panel.webp`}>
+                <Metric image={`/images/metrics/panel.webp`}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -122,12 +120,12 @@ function Index() {
                       kWh of electricity generated
                     </p>
                   </div>
-                </MetricTop>
+                </Metric>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <MetricBottom image={`/images/metrics/wind.webp`}>
+                <Metric image={`/images/metrics/wind.webp`}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -136,25 +134,25 @@ function Index() {
                       Tonnes of CO₂ prevented
                     </p>
                   </div>
-                </MetricBottom>
+                </Metric>
 
-                <MetricBottom image={`/images/metrics/revenue.webp`}>
+                <Metric image={`/images/metrics/revenue.webp`}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
                     <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
-                </MetricBottom>
+                </Metric>
 
-                <MetricBottom image={`/images/metrics/ecovillages.webp`}>
+                <Metric image={`/images/metrics/ecovillages.webp`}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
                     <AnimatedCounter to={6} />
                     <p class={`font-[600] text-[20px]`}>Ecovillages</p>
                   </div>
-                </MetricBottom>
+                </Metric>
               </div>
             </div>
           </div>
@@ -165,8 +163,8 @@ function Index() {
           >
             Let's build your project next
           </h2>
-          {/* <Carousel /> */}
-          <CardCarousel />
+
+          <LogosCarousel scroller={scrollerRef} />
         </section>
         <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">
@@ -221,7 +219,7 @@ function Index() {
         {/** Hardware section */}
         <HardwareSection />
         <AppsSection />
-        <VerticalCounter />
+        <ScrollMarquee scroller={scrollerRef} />
       </div>
 
       <Footer />
