@@ -218,8 +218,8 @@ function Index() {
 
         {/** Hardware section */}
         <HardwareSection />
-        <AppsSection />
         <ScrollMarquee scroller={scrollerRef} />
+        <AppsSection />
       </div>
 
       <Footer />

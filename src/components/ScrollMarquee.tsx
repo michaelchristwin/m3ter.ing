@@ -1,4 +1,4 @@
-import { Component, onCleanup, onMount } from "solid-js";
+import { Component, For, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ImageComponent from "./ImageComponent";
@@ -9,6 +9,15 @@ gsap.registerPlugin(ScrollTrigger);
 type ScrollMarqueeProps = {
   scroller: HTMLElement;
 };
+
+const images = [
+  "/images/hardware/meter_case1",
+  "/images/hardware/meter_case2",
+  "/images/hardware/board_overview",
+  "/images/hardware/exterior_design",
+  "/images/hardware/pcb_design",
+];
+
 const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
   let section2Ref!: HTMLDivElement;
   let ctx: gsap.Context;
@@ -53,10 +62,13 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
   });
 
   return (
-    <div class="container wrapper">
-      <div class="section_2" ref={(el) => (section2Ref = el)}>
-        <div class="flexo">
-          <div class="content space-y-2.5">
+    <section class="w-full my-[100px]">
+      <div
+        class="section_2 sm:h-[100vh] h-fit"
+        ref={(el) => (section2Ref = el)}
+      >
+        <div class="marquee-container justify-between">
+          <div class="w-[45%] space-y-2.5">
             <div>
               <h2 class="text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px]">
                 The Metering Hardware
@@ -99,77 +111,36 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
               </div>
             </div>
           </div>
-          <div class="images" id="images">
+          <div class="images w-[45%] justify-between" id="images">
             <div class="left">
-              <ImageComponent
-                class="img"
-                alt="Meter Case 1"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/meter_case1"
-              />
-
-              <ImageComponent
-                class="img"
-                alt="Meter Case 2"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/meter_case2"
-              />
-              <ImageComponent
-                class="img"
-                alt="Board overview"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/board_overview"
-              />
-              <ImageComponent
-                class="img"
-                alt="Exterior Design"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/exterior_design"
-              />
-              <ImageComponent
-                class="img"
-                alt="PCB Design"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/pcb_design"
-              />
+              <For each={images}>
+                {(img, i) => (
+                  <ImageComponent
+                    class="img"
+                    alt={`Hardware image ${i()} left`}
+                    sizes="calc(50vw / 4)"
+                    imagePathName={img}
+                  />
+                )}
+              </For>
             </div>
+            {/*Right*/}
             <div class="right">
-              <ImageComponent
-                class="img"
-                alt="PCB Design"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/pcb_design"
-              />
-
-              <ImageComponent
-                class="img"
-                alt="Exterior Design"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/exterior_design"
-              />
-              <ImageComponent
-                class="img"
-                alt="Board overview"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/board_overview"
-              />
-              <ImageComponent
-                class="img"
-                alt="Meter Case 2"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/meter_case2"
-              />
-              <ImageComponent
-                class="img"
-                alt="Meter Case 1"
-                sizes="calc(50vw / 4)"
-                imagePathName="/images/hardware/meter_case1"
-              />
+              <For each={[...images].reverse()}>
+                {(img, i) => (
+                  <ImageComponent
+                    class="img"
+                    alt={`Hardware image ${i()} right`}
+                    sizes="calc(50vw / 4)"
+                    imagePathName={img}
+                  />
+                )}
+              </For>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default ScrollMarquee;

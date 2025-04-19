@@ -1,21 +1,14 @@
 .section_2 {
   width: 100%;
-  height: 100vh;
+  overflow: hidden;
 }
-.flexo {
+
+.marquee-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-}
-.section_2 {
-  overflow: hidden;
-}
-
-.content {
-  max-width: 40ch;
-  padding: 3rem;
-  flex-grow: 1;
+  width: 100%;
 }
 
 .images {
@@ -33,9 +26,11 @@
   gap: 2rem;
   margin: 2rem;
 }
+
 .img {
   border-radius: 16px;
 }
+
 .right {
   margin-top: 40rem;
 }
