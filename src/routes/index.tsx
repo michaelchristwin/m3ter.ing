@@ -1,13 +1,14 @@
 import { Title } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy } from "solid-js";
-import ImageComponent from "~/components/ImageComponent";
 import styles from "~/styles/parallax.module.css";
+import { ETHCity, Infrastructure } from "~/assets/images";
+import { ResponsiveImage } from "@responsive-image/solid";
+import { EcoVillages, Panel, Revenue, WindTurbine } from "~/assets/images/metrics";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const Metric = lazy(() => import("~/components/Metric"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
 const Footer = lazy(() => import("~/components/Footer"));
-const HardwareSection = lazy(() => import("~/components/HardwareSection"));
 const AppsSection = lazy(() => import("~/components/AppsSection"));
 const LogosCarousel = clientOnly(() => import("~/components/LogosCarousel"));
 const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
@@ -36,11 +37,7 @@ function Index() {
           >
             Protocol V2
           </h1>
-          <ImageComponent
-            alt="Energy Infrastructure design"
-            sizes="100vw"
-            imagePathName="/images/infra"
-          />
+          <ResponsiveImage src={Infrastructure} size={100} class="w-full" />
           <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
@@ -53,11 +50,11 @@ function Index() {
           </p>
         </section>
         <section class="w-full grid sm:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
-          <ImageComponent
+          <ResponsiveImage
+            src={ETHCity}
             alt=""
-            imagePathName="/images/ethcity"
             sizes="(min-width: 640px) 50vw, 100vw"
-            class="rounded-2xl"
+            class="rounded-2xl w-full"
           />
           <div class="w-full h-auto">
             <div class="space-y-4">
@@ -111,7 +108,7 @@ function Index() {
                   </div>
                 </div>
 
-                <Metric image={`/images/metrics/panel.webp`}>
+                <Metric image={Panel}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -125,7 +122,7 @@ function Index() {
 
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Bottom row: 3 cards */}
-                <Metric image={`/images/metrics/wind.webp`}>
+                <Metric image={WindTurbine}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -136,7 +133,7 @@ function Index() {
                   </div>
                 </Metric>
 
-                <Metric image={`/images/metrics/revenue.webp`}>
+                <Metric image={Revenue}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -145,7 +142,7 @@ function Index() {
                   </div>
                 </Metric>
 
-                <Metric image={`/images/metrics/ecovillages.webp`}>
+                <Metric image={EcoVillages}>
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
@@ -217,9 +214,9 @@ function Index() {
         </section>
 
         {/** Hardware section */}
-        <HardwareSection />
-        <ScrollMarquee scroller={scrollerRef} />
+        {/* <HardwareSection /> */}
         <AppsSection />
+        <ScrollMarquee scroller={scrollerRef} />
       </div>
 
       <Footer />

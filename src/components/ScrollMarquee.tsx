@@ -1,22 +1,15 @@
 import { Component, For, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImageComponent from "./ImageComponent";
 import "~/styles/scroll-marquee.css";
+import { hardwareimages } from "~/assets/images/hardware";
+import { ResponsiveImage } from "@responsive-image/solid";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type ScrollMarqueeProps = {
   scroller: HTMLElement;
 };
-
-const images = [
-  "/images/hardware/meter_case1",
-  "/images/hardware/meter_case2",
-  "/images/hardware/board_overview",
-  "/images/hardware/exterior_design",
-  "/images/hardware/pcb_design",
-];
 
 const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
   let section2Ref!: HTMLDivElement;
@@ -29,7 +22,7 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
           scroller: props.scroller,
           trigger: section2Ref,
           invalidateOnRefresh: true,
-          // markers: true,a
+          //markers: true,
           start: "0% 0%",
           end: "120% 0%",
           scrub: 1,
@@ -53,7 +46,7 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
         },
         0
       );
-    }, section2Ref);
+    });
     ScrollTrigger.refresh();
   });
 
@@ -113,26 +106,26 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
           </div>
           <div class="images w-[45%] justify-between" id="images">
             <div class="left">
-              <For each={images}>
+              <For each={hardwareimages}>
                 {(img, i) => (
-                  <ImageComponent
-                    class="img"
+                  <ResponsiveImage
+                    class="rounded-[16px]"
                     alt={`Hardware image ${i()} left`}
                     sizes="calc(50vw / 4)"
-                    imagePathName={img}
+                    src={img}
                   />
                 )}
               </For>
             </div>
             {/*Right*/}
             <div class="right">
-              <For each={[...images].reverse()}>
+              <For each={[...hardwareimages].reverse()}>
                 {(img, i) => (
-                  <ImageComponent
-                    class="img"
+                  <ResponsiveImage
+                    class="rounded-[16px]"
                     alt={`Hardware image ${i()} right`}
                     sizes="calc(50vw / 4)"
-                    imagePathName={img}
+                    src={img}
                   />
                 )}
               </For>

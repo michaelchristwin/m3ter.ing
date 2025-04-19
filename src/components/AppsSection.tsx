@@ -2,11 +2,11 @@ import { A } from "@solidjs/router";
 import { Component, createSignal, For, onMount } from "solid-js";
 //@ts-expect-error"Could not find a declaration file for module '../../node_modules/colorthief/dist/color-thief.mjs'."
 import ColorThief from "../../node_modules/colorthief/dist/color-thief.mjs";
+import { Solaxy, WattAFrame, XCharge } from "~/assets/images/applications";
 
 type AppElementProps = {
   class: string;
-  imgSrc: string;
-
+  imgSrc: any;
   href: string;
   name: string;
 };
@@ -14,39 +14,39 @@ type AppElementProps = {
 type AppDataType = {
   name: string;
   href: string;
-  imgSrc: string;
+  imgSrc: any;
 };
 
 const AppsData: AppDataType[] = [
   {
     name: "XCharge",
     href: "https://xcharge.m3ter.ing/",
-    imgSrc: "xcharge.webp",
+    imgSrc: XCharge,
   },
   {
     name: "Watt-A-Frame",
     href: "https://watt-a-frame.vercel.app/",
-    imgSrc: "watt-a-frame.webp",
+    imgSrc: WattAFrame,
   },
   {
     name: "Solaxy",
     href: "https://asset.m3ter.ing/",
-    imgSrc: "solaxy.webp",
+    imgSrc: Solaxy,
   },
   {
     name: "XCharge",
     href: "https://xcharge.m3ter.ing/",
-    imgSrc: "xcharge.webp",
+    imgSrc: XCharge,
   },
   {
     name: "Watt-A-Frame",
     href: "https://watt-a-frame.vercel.app/",
-    imgSrc: "watt-a-frame.webp",
+    imgSrc: WattAFrame,
   },
   {
     name: "Solaxy",
     href: "https://asset.m3ter.ing/",
-    imgSrc: "solaxy.webp",
+    imgSrc: Solaxy,
   },
 ];
 
@@ -93,7 +93,7 @@ const AppElement: Component<AppElementProps> = (props) => {
         }
       };
 
-      img.src = `/images/${props.imgSrc}`;
+      img.src = props.imgSrc.imageUrlFor();
     } else {
       // No background image, use fallback
       setGradientColor("rgba(0, 0, 0, 0.5)");
@@ -107,7 +107,7 @@ const AppElement: Component<AppElementProps> = (props) => {
       class={`${props.class} app-container`}
       target="_blank"
       style={{
-        "background-image": `url(/images/${props.imgSrc})`,
+        "background-image": `url(${props.imgSrc.imageUrlFor()})`,
         "background-size": "cover",
         "background-position": "center",
         position: "relative",

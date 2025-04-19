@@ -760,34 +760,3 @@ button {
   transform: scale(1.05);
   z-index: 1;
 }
-
-/* .right .img:nth-child(1),
-.left .img:nth-child(5) {
-  background-image: url("/images/hardware/board_overview.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.right .img:nth-child(2),
-.left .img:nth-child(4) {
-  background-image: url("/images/hardware/exterior_design.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.right .img:nth-child(3),
-.left .img:nth-child(3) {
-  background-image: url("/images/hardware/meter_case1.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.right .img:nth-child(4),
-.left .img:nth-child(2) {
-  background-image: url("/images/hardware/meter_case2.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.right .img:nth-child(5),
-.left .img:nth-child(1) {
-  background-image: url("/images/hardware/pcb_design.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */

@@ -1,4 +1,5 @@
 import { createSignal } from "solid-js";
+import { Solarpunk } from "~/assets/images";
 
 const Footer = () => {
   const [email, setEmail] = createSignal("");
@@ -12,7 +13,7 @@ const Footer = () => {
   return (
     <footer
       class="w-full relative text-white bg-no-repeat bg-center bg-cover"
-      style={{ "background-image": `url("/images/solarpunk.webp")` }}
+      style={{ "background-image": `url(${Solarpunk.imageUrlFor()})` }}
     >
       {/* Overlay for better text visibility */}
       <div class="absolute inset-0 bg-black/30 "></div>

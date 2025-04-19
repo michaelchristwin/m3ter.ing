@@ -1,22 +1,14 @@
 import { Component, For, onMount, createSignal, onCleanup } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { companyicons } from "~/assets/images/companies";
+import { ResponsiveImage } from "@responsive-image/solid";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type LogosCarouselProps = {
   scroller: HTMLElement;
 };
-
-const logos = [
-  { image: "/images/companies/logo.webp" },
-  { image: "/images/companies/tas.webp" },
-  { image: "/images/companies/solar-foundation.webp" },
-  { image: "/images/companies/project.webp" },
-  { image: "/images/companies/switch-electric.webp" },
-  { image: "/images/companies/arkreen.webp" },
-  { image: "/images/companies/powerledger.webp" },
-];
 
 const LogosCarousel: Component<LogosCarouselProps> = (props) => {
   const [cardRefs, setCardRefs] = createSignal<HTMLDivElement[]>([]);
@@ -46,7 +38,7 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
             start: "top bottom",
             toggleActions: "play none none reverse",
             scroller: props.scroller,
-            // markers: true,
+            //markers: true,
           },
           opacity: 1,
           scale: 1,
@@ -55,7 +47,7 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
           ease: "power3.out",
         }
       );
-    }, container as Element);
+    });
     ScrollTrigger.refresh();
   });
 
@@ -65,8 +57,8 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
 
   return (
     <div class="grid sm:grid-cols-7 grid-cols-1 w-full sm:h-full h-[100vh] card-grid">
-      <For each={logos}>
-        {(card, i) => (
+      <For each={companyicons}>
+        {(icon, i) => (
           <div
             ref={(el) => setCardRef(el, i())}
             class="sm:w-full w-[220px] mx-auto h-auto sm:aspect-[2.5/3] aspect-[3/1.5] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
@@ -74,9 +66,8 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
               "box-shadow": "-1rem 0 3rem rgb(0 0 0 / 0.25)",
             }}
           >
-            <img
-              loading="lazy"
-              src={card.image}
+            <ResponsiveImage
+              src={icon}
               alt={`Card ${i()}`}
               class="max-w-full max-h-full transition-all duration-300 ease-in-out object-contain"
             />

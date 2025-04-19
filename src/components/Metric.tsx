@@ -3,7 +3,7 @@ import { createSignal, onMount } from "solid-js";
 //@ts-expect-error"Could not find a declaration file for module '../../node_modules/colorthief/dist/color-thief.mjs'."
 import ColorThief from "colorthief";
 
-const Metric: ParentComponent<{ image: string; fallbackColor?: string }> = (
+const Metric: ParentComponent<{ image: any; fallbackColor?: string }> = (
   props
 ) => {
   const [gradientColor, setGradientColor] = createSignal("transparent");
@@ -29,7 +29,7 @@ const Metric: ParentComponent<{ image: string; fallbackColor?: string }> = (
         }
       };
 
-      img.src = props.image;
+      img.src = props.image.imageUrlFor();
     } else {
       // No background image, use fallback
       setGradientColor(props.fallbackColor || "rgba(0, 0, 0, 0.5)");
@@ -40,7 +40,7 @@ const Metric: ParentComponent<{ image: string; fallbackColor?: string }> = (
     <div
       class="rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center"
       style={{
-        "background-image": `url(${props.image})`,
+        "background-image": `url(${props.image.imageUrlFor()})`,
         "background-size": "cover",
         "background-position": "center",
         position: "relative",
