@@ -22,7 +22,6 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
           scroller: props.scroller,
           trigger: section2Ref,
           invalidateOnRefresh: true,
-          //markers: true,
           start: "0% 0%",
           end: "120% 0%",
           scrub: 1,
@@ -33,16 +32,16 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
       tl.to(
         ".images .right",
         {
-          marginTop: "0",
-          duration: 2.5,
+          y: "-50%",
+          ease: "none",
         },
         0
       );
       tl.to(
         ".images .left",
         {
-          marginTop: "150%",
-          duration: 1,
+          y: "50%",
+          ease: "none",
         },
         0
       );

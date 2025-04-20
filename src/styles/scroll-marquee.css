@@ -30,3 +30,7 @@
 .right {
   margin-top: 40rem;
 }
+.images .left,
+.images .right {
+  will-change: transform;
+}

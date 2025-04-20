@@ -26,33 +26,19 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
     const elements = cardRefs();
     const container = elements[0].parentElement;
     ctx = gsap.context(() => {
-      gsap.fromTo(
-        elements,
-        {
-          scale: 0.6,
-          opacity: 0,
+      gsap.from(elements, {
+        scale: 0.6,
+        opacity: 0,
+        duration: 2,
+        ease: "power3.out",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom",
+          toggleActions: "play none none reverse",
+          scroller: props.scroller,
         },
-        {
-          scrollTrigger: {
-            trigger: container,
-            start: "top bottom",
-            end: "top center",
-            toggleActions: "play none none reverse",
-            scroller: props.scroller,
-            //markers: true,
-          },
-          opacity: 1,
-          scale: 1,
-          stagger: 0.1, // Add staggered animation for better visual effect
-          ease: "power3.out",
-          onComplete: () => {
-            gsap.set(elements, { clearProps: "transform,opacity" }); // removes inline styles
-          },
-          onReverseComplete: () => {
-            gsap.set(elements, { clearProps: "transform,opacity" });
-          },
-        }
-      );
+      });
     });
     ScrollTrigger.refresh();
   });
