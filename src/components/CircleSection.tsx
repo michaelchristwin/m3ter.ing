@@ -21,6 +21,7 @@ const CircleSection: Component<CircleSectionProps> = (props) => {
         scrub: 1,
       });
     }, holdRef);
+    ScrollTrigger.normalizeScroll();
   });
   onCleanup(() => {
     ctx.revert();

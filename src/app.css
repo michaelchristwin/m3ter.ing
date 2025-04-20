@@ -684,6 +684,7 @@ button {
   transform: translateY(-50%);
   width: 50%;
   padding: 0 10%;
+  will-change: transform;
 }
 .hold {
   height: 100vh;
@@ -697,4 +698,5 @@ button {
   height: 100px;
   border-radius: 100%;
   background-color: #00a29a;
+  will-change: transform;
 }

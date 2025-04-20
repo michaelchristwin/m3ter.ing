@@ -64,6 +64,7 @@ const TextSection: Component<TextSectionProps> = (props) => {
         duration: 1,
       });
     }, wrapperRef);
+    ScrollTrigger.normalizeScroll();
   });
 
   onCleanup(() => {
