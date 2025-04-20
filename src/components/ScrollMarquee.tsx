@@ -24,28 +24,15 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
           invalidateOnRefresh: true,
           start: "0% 0%",
           end: "120% 0%",
-          scrub: 1,
+          scrub: 1.5,
           pin: true,
         },
       });
 
-      tl.to(
-        ".images .right",
-        {
-          y: "-50%",
-          ease: "none",
-        },
-        0
-      );
-      tl.to(
-        ".images .left",
-        {
-          y: "50%",
-          ease: "none",
-        },
-        0
-      );
+      tl.to(".images .right", { y: "-50%", ease: "none" }, 0);
+      tl.to(".images .left", { y: "50%", ease: "none" }, 0);
     });
+    ScrollTrigger.normalizeScroll();
     ScrollTrigger.refresh();
   });
 
