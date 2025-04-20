@@ -1,10 +1,15 @@
-import { Title } from "@solidjs/meta";
+import { Title, Meta } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy } from "solid-js";
 import styles from "~/styles/parallax.module.css";
 import { ETHCity, Infrastructure } from "~/assets/images";
 import { ResponsiveImage } from "@responsive-image/solid";
-import { EcoVillages, Panel, Revenue, WindTurbine } from "~/assets/images/metrics";
+import {
+  EcoVillages,
+  Panel,
+  Revenue,
+  WindTurbine,
+} from "~/assets/images/metrics";
 const Navbar = lazy(() => import("~/components/Navbar"));
 const Metric = lazy(() => import("~/components/Metric"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
@@ -20,6 +25,7 @@ function Index() {
     <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scrollerRef}>
       <Navbar />
       <Title>Home</Title>
+      <Meta property="description" content="Welcome to M3tering Protocols" />
       <section class={styles.parallax_wrapper}>
         <p
           class={`jello-stone font-[600] w-fit mx-auto text-white text-[clamp(60px,15vw,240px)] leading-[50%]`}
@@ -37,7 +43,12 @@ function Index() {
           >
             Protocol V2
           </h1>
-          <ResponsiveImage src={Infrastructure} size={100} class="w-full" />
+          <ResponsiveImage
+            src={Infrastructure}
+            alt="Energy infrastructure design"
+            size={100}
+            class="w-full"
+          />
           <p
             class={`text-center lg:text-[28px] md:text-[28px] text-[22px] font-[600] leading-relaxed`}
           >
@@ -52,7 +63,7 @@ function Index() {
         <section class="w-full grid sm:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[30px]">
           <ResponsiveImage
             src={ETHCity}
-            alt=""
+            alt="ETHCity"
             sizes="(min-width: 640px) 50vw, 100vw"
             class="rounded-2xl w-full"
           />
@@ -137,7 +148,7 @@ function Index() {
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
-                    <AnimatedCounter to={30000} />
+                    <AnimatedCounter to={30000} prefix="$" />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </Metric>

@@ -1,4 +1,3 @@
-//@ts-nocheck
 import MeterCase1 from "./meter_case1.webp?lqip=blurhash&responsive";
 import MeterCase2 from "./meter_case2.webp?lqip=blurhash&responsive";
 import Exterior from "./exterior_design.webp?lqip=blurhash&responsive";

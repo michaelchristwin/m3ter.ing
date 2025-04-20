@@ -36,15 +36,21 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
           scrollTrigger: {
             trigger: container,
             start: "top bottom",
+            end: "top center",
             toggleActions: "play none none reverse",
             scroller: props.scroller,
             //markers: true,
           },
           opacity: 1,
           scale: 1,
-          duration: 2,
           stagger: 0.1, // Add staggered animation for better visual effect
           ease: "power3.out",
+          onComplete: () => {
+            gsap.set(elements, { clearProps: "transform,opacity" }); // removes inline styles
+          },
+          onReverseComplete: () => {
+            gsap.set(elements, { clearProps: "transform,opacity" });
+          },
         }
       );
     });

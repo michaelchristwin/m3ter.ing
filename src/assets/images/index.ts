@@ -1,4 +1,3 @@
-//@ts-nocheck
 import Infrastructure from "./infra.webp?lqip=blurhash&responsive";
 import Solarpunk from "./solarpunk.webp?lqip=blurhash&responsive";
 import SolarGhibhify from "./solarbg-ghiblify.webp?lqip=blurhash&responsive";

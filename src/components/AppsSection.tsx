@@ -1,4 +1,5 @@
 import { A } from "@solidjs/router";
+import { ImageData } from "@responsive-image/core";
 import { Component, createSignal, For, onMount } from "solid-js";
 //@ts-expect-error"Could not find a declaration file for module '../../node_modules/colorthief/dist/color-thief.mjs'."
 import ColorThief from "../../node_modules/colorthief/dist/color-thief.mjs";
@@ -6,7 +7,7 @@ import { Solaxy, WattAFrame, XCharge } from "~/assets/images/applications";
 
 type AppElementProps = {
   class: string;
-  imgSrc: any;
+  imgSrc: ImageData;
   href: string;
   name: string;
 };
@@ -14,7 +15,7 @@ type AppElementProps = {
 type AppDataType = {
   name: string;
   href: string;
-  imgSrc: any;
+  imgSrc: ImageData;
 };
 
 const AppsData: AppDataType[] = [
@@ -93,7 +94,7 @@ const AppElement: Component<AppElementProps> = (props) => {
         }
       };
 
-      img.src = props.imgSrc.imageUrlFor();
+      img.src = props.imgSrc.imageUrlFor(768) as string;
     } else {
       // No background image, use fallback
       setGradientColor("rgba(0, 0, 0, 0.5)");
@@ -107,7 +108,7 @@ const AppElement: Component<AppElementProps> = (props) => {
       class={`${props.class} app-container`}
       target="_blank"
       style={{
-        "background-image": `url(${props.imgSrc.imageUrlFor()})`,
+        "background-image": `url(${props.imgSrc.imageUrlFor(768)})`,
         "background-size": "cover",
         "background-position": "center",
         position: "relative",

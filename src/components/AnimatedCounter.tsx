@@ -1,7 +1,7 @@
 import { CountUp } from "countup.js";
 import { Component, createEffect, onCleanup, onMount } from "solid-js";
 
-const AnimatedCounter: Component<{ to: number }> = (props) => {
+const AnimatedCounter: Component<{ to: number; prefix?: string }> = (props) => {
   let spanElement!: HTMLSpanElement;
   let countUpAnim: CountUp;
   let observer: IntersectionObserver;
@@ -71,7 +71,7 @@ const AnimatedCounter: Component<{ to: number }> = (props) => {
       ref={spanElement}
       class={`font-mono font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px] text-white`}
     >
-      0
+      {props.prefix} 0
     </span>
   );
 };

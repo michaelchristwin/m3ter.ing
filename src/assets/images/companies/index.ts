@@ -1,4 +1,3 @@
-//@ts-nocheck
 import TAS from "./tas.webp?lqip=blurhash&responsive";
 import SwitchElectric from "./switch-electric.webp?lqip=blurhash&responsive";
 import SolarFoundation from "./solar-foundation.webp?lqip=blurhash&responsive";
