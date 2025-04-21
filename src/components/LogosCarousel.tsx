@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { companyicons } from "~/assets/images/companies";
 import { ResponsiveImage } from "@responsive-image/solid";
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ type LogosCarouselProps = {
 const LogosCarousel: Component<LogosCarouselProps> = (props) => {
   const [cardRefs, setCardRefs] = createSignal<HTMLDivElement[]>([]);
   let ctx: gsap.Context;
+  let lenis: Lenis;
 
   const setCardRef = (el: HTMLDivElement, index: number) => {
     if (el) {
@@ -21,8 +23,16 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
       setCardRefs([...current]);
     }
   };
-
   onMount(() => {
+    lenis = new Lenis({
+      wrapper: props.scroller,
+      autoRaf: true,
+    });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+    gsap.ticker.lagSmoothing(0);
     const elements = cardRefs();
     const container = elements[0].parentElement;
     ctx = gsap.context(() => {
@@ -45,6 +55,7 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
 
   onCleanup(() => {
     ctx.revert();
+    lenis.destroy();
   });
 
   return (
