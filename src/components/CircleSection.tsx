@@ -15,6 +15,7 @@ const CircleSection: Component<CircleSectionProps> = (props) => {
         trigger: holdRef,
         scroller: props.scroller,
         animation: gsap.fromTo(".resize", { scale: 1 }, { scale: 10 }),
+        anticipatePin: 1,
         pin: true,
         start: "center center",
         end: "bottom top",
@@ -27,7 +28,7 @@ const CircleSection: Component<CircleSectionProps> = (props) => {
     ctx.revert();
   });
   return (
-    <section class="hold" ref={holdRef}>
+    <section class="hold" ref={(el) => (holdRef = el)}>
       <div class="resize"></div>
     </section>
   );

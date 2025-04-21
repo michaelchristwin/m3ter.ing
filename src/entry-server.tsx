@@ -8,7 +8,9 @@ export default createHandler(() => (
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta property="og:title" content="M3tering Protocol" />
           <meta property="og:site_name" content="M3tering Protocol" />
+          <meta property="og:url" content="https://meter.ing" />
           <meta
             name="description"
             content="The decentralized protocol that's driving solar energy adoption in Africa."

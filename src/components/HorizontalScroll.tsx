@@ -40,6 +40,7 @@ const HorizontalScroll: Component<HorizontalScrollProps> = (props) => {
         duration: 2,
       });
     }, wrapperRef);
+    ScrollTrigger.normalizeScroll();
   });
 
   onCleanup(() => {
@@ -47,7 +48,10 @@ const HorizontalScroll: Component<HorizontalScrollProps> = (props) => {
   });
 
   return (
-    <div ref={wrapperRef} style={{ padding: "none", margin: "none" }}>
+    <div
+      ref={(el) => (wrapperRef = el)}
+      style={{ padding: "none", margin: "none" }}
+    >
       <div
         class={`first h-[100vh] m-0 p-0 box-border flex justify-center items-center`}
       >
