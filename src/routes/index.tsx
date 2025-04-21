@@ -18,8 +18,11 @@ const AppsSection = lazy(() => import("~/components/AppsSection"));
 const LogosCarousel = clientOnly(() => import("~/components/LogosCarousel"));
 const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
 const ScrollMarquee = clientOnly(() => import("~/components/ScrollMarquee"));
-//const TextSection = clientOnly(() => import("~/components/TextSection"));
+const TextSection = clientOnly(() => import("~/components/TextSection"));
 const CircleSection = clientOnly(() => import("~/components/CircleSection"));
+const HorizontalScroll = clientOnly(
+  () => import("~/components/HorizontalScroll")
+);
 
 function Index() {
   let scrollerRef!: HTMLDivElement;
@@ -226,12 +229,11 @@ function Index() {
           </div>
         </section>
 
-        {/** Hardware section */}
-        {/* <HardwareSection /> */}
         <AppsSection />
         <ScrollMarquee scroller={scrollerRef} />
-        {/* <TextSection scroller={scrollerRef} /> */}
+        <TextSection scroller={scrollerRef} />
         <CircleSection scroller={scrollerRef} />
+        <HorizontalScroll scroller={scrollerRef} />
       </div>
 
       <Footer />

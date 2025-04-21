@@ -662,16 +662,6 @@ button {
   height: 100vh;
 }
 
-.background-text {
-  opacity: 1;
-  width: 75%;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  transform: translateY(-50%);
-  will-change: transform;
-}
-
 .intro-text {
   position: relative;
   height: 100%;
@@ -687,6 +677,7 @@ button {
   padding: 0 10%;
   will-change: transform;
 }
+
 .hold {
   height: 100vh;
   background-color: orange;
@@ -694,6 +685,7 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 .hold .resize {
   width: 100px;
   height: 100px;
