@@ -1,7 +1,9 @@
 import { Title, Meta } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
-import { lazy } from "solid-js";
+import { lazy, onCleanup, onMount } from "solid-js";
 import styles from "~/styles/parallax.module.css";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import { ETHCity, Infrastructure } from "~/assets/images";
 import { ResponsiveImage } from "@responsive-image/solid";
 import {
@@ -21,6 +23,15 @@ const ScrollMarquee = clientOnly(() => import("~/components/ScrollMarquee"));
 
 function Index() {
   let scrollerRef!: HTMLDivElement;
+  let lenis!: Lenis;
+  onMount(() => {
+    lenis = new Lenis({
+      autoRaf: true,
+    });
+  });
+  onCleanup(() => {
+    lenis.destroy();
+  });
   return (
     <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scrollerRef}>
       <Navbar />
