@@ -2,7 +2,6 @@ import { Title, Meta } from "@solidjs/meta";
 import { clientOnly } from "@solidjs/start";
 import { lazy } from "solid-js";
 import styles from "~/styles/parallax.module.css";
-import "lenis/dist/lenis.css";
 import { ETHCity, Infrastructure } from "~/assets/images";
 import { ResponsiveImage } from "@responsive-image/solid";
 import {
@@ -173,7 +172,7 @@ function Index() {
             Let's build your project next
           </h2>
 
-          <LogosCarousel scroller={scrollerRef} />
+          <LogosCarousel />
         </section>
         <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">

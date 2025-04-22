@@ -633,6 +633,40 @@ button {
   z-index: 1;
 }
 
+/* .index * {
+    view-timeline-name: "body-animation";
+    animation: slide-fade-in both;
+    animation-timeline: "body-animation";
+    animation-range: contain 0% contain 50%;
+  }
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .logoCard {
+    animation: none;
+  }
+}
+.logoCard {
+  transform-origin: center;
+  animation-name: zoomIn;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-timing-function: linear;
+  animation-range: entry;
+  animation-composition: add;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
 .section {
   height: 100vh;
   padding: 50px;
