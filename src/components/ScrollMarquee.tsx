@@ -5,29 +5,21 @@ import "~/styles/scroll-marquee.css";
 import { hardwareimages } from "~/assets/images/hardware";
 import { ResponsiveImage } from "@responsive-image/solid";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type ScrollMarqueeProps = {
-  scroller: HTMLElement;
-};
-
-const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
+const ScrollMarquee: Component = () => {
   let section2Ref!: HTMLDivElement;
   let ctx: gsap.Context;
 
   onMount(() => {
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
     ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          scroller: props.scroller,
           trigger: section2Ref,
           invalidateOnRefresh: true,
           start: "0% 0%",
           end: "120% 0%",
-          scrub: isTouchDevice ? 0.8 : 1.5,
+          scrub: true,
           preventOverlaps: true,
+          pinType: "transform",
           pin: true,
         },
       });

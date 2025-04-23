@@ -34,3 +34,7 @@
 .images .right {
   will-change: transform;
 }
+.images .left,
+.images .right {
+  transform: translateZ(0); /* triggers GPU compositing */
+}

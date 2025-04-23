@@ -6,11 +6,7 @@ import { ResponsiveImage } from "@responsive-image/solid";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type LogosCarouselProps = {
-  scroller: HTMLElement;
-};
-
-const LogosCarousel: Component<LogosCarouselProps> = (props) => {
+const LogosCarousel: Component = () => {
   const [cardRefs, setCardRefs] = createSignal<HTMLDivElement[]>([]);
 
   let ctx: gsap.Context;
@@ -48,8 +44,6 @@ const LogosCarousel: Component<LogosCarouselProps> = (props) => {
           start: "top bottom",
 
           toggleActions: "play none none reverse",
-
-          scroller: props.scroller,
         },
       });
     });

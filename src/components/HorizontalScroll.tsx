@@ -1,13 +1,7 @@
 import { Component, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
-type HorizontalScrollProps = {
-  scroller: HTMLElement;
-};
-
-const HorizontalScroll: Component<HorizontalScrollProps> = (props) => {
+const HorizontalScroll: Component = () => {
   let wrapperRef!: HTMLDivElement;
   let ctx: gsap.Context;
 
@@ -16,7 +10,6 @@ const HorizontalScroll: Component<HorizontalScrollProps> = (props) => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".scrollCcontainer",
-          scroller: props.scroller,
           start: "top top",
           end: "+=4000",
           pin: true,
@@ -40,7 +33,6 @@ const HorizontalScroll: Component<HorizontalScrollProps> = (props) => {
         duration: 2,
       });
     }, wrapperRef);
-    ScrollTrigger.normalizeScroll();
   });
 
   onCleanup(() => {

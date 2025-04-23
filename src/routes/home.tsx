@@ -1,5 +1,5 @@
 import { Meta, Title } from "@solidjs/meta";
-import { lazy } from "solid-js";
+import { lazy, onMount } from "solid-js";
 import { ETHCity, Infrastructure } from "~/assets/images";
 import { ResponsiveImage } from "@responsive-image/solid";
 import {
@@ -17,9 +17,22 @@ import AppsSection from "~/components/AppsSection";
 import Metric from "~/components/Metric";
 import LogosCarousel from "~/components/LogosCarousel";
 import ScrollMarquee from "~/components/ScrollMarquee";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Home() {
   let scroller!: HTMLDivElement;
+
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load", // optional but useful
+    });
+    ScrollTrigger.defaults({
+      scroller: scroller,
+    });
+  });
+
   return (
     <div class={`${styles.index} h-[100vh] bg-gray-50 index`} ref={scroller}>
       <Navbar />
@@ -171,7 +184,7 @@ function Home() {
             Let's build your project next
           </h2>
 
-          <LogosCarousel scroller={scroller} />
+          <LogosCarousel />
         </section>
         <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">
@@ -224,7 +237,7 @@ function Home() {
         </section>
 
         <AppsSection />
-        <ScrollMarquee scroller={scroller} />
+        <ScrollMarquee />
       </div>
 
       <Footer />

@@ -2,12 +2,7 @@ import { Component, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type TextSectionProps = {
-  scroller: HTMLElement;
-};
-const TextSection: Component<TextSectionProps> = (props) => {
+const TextSection: Component = () => {
   let wrapperRef!: HTMLDivElement;
   let ctx: gsap.Context;
 
@@ -16,25 +11,21 @@ const TextSection: Component<TextSectionProps> = (props) => {
       gsap.to(".frontend", {
         scrollTrigger: {
           trigger: ".landing",
-          scroller: props.scroller,
+
           start: "center center",
           scrub: 0.5,
         },
         xPercent: 25,
       });
-
       gsap.to(".developer", {
         scrollTrigger: {
           trigger: ".landing",
-          scroller: props.scroller,
           start: "center center",
           scrub: 0.5,
         },
         xPercent: -25,
       });
     }, wrapperRef);
-
-    ScrollTrigger.normalizeScroll();
   });
 
   onCleanup(() => {
