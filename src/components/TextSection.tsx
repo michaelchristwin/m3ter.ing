@@ -1,6 +1,5 @@
 import { Component, onCleanup, onMount } from "solid-js";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TextSection: Component = () => {
   let wrapperRef!: HTMLDivElement;

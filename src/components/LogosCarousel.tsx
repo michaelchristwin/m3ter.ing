@@ -4,8 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { companyicons } from "~/assets/images/companies";
 import { ResponsiveImage } from "@responsive-image/solid";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const LogosCarousel: Component = () => {
   const [cardRefs, setCardRefs] = createSignal<HTMLDivElement[]>([]);
 
