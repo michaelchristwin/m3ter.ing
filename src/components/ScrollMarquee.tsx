@@ -16,6 +16,8 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
   let ctx: gsap.Context;
 
   onMount(() => {
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
     ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -24,7 +26,8 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
           invalidateOnRefresh: true,
           start: "0% 0%",
           end: "120% 0%",
-          scrub: 1.5,
+          scrub: isTouchDevice ? 0.8 : 1.5,
+          preventOverlaps: true,
           pin: true,
         },
       });
@@ -32,7 +35,6 @@ const ScrollMarquee: Component<ScrollMarqueeProps> = (props) => {
       tl.to(".images .right", { y: "-50%", ease: "none" }, 0);
       tl.to(".images .left", { y: "50%", ease: "none" }, 0);
     });
-    ScrollTrigger.normalizeScroll();
     ScrollTrigger.refresh();
   });
 

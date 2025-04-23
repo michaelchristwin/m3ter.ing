@@ -18,10 +18,10 @@ import Metric from "~/components/Metric";
 import LogosCarousel from "~/components/LogosCarousel";
 import ScrollMarquee from "~/components/ScrollMarquee";
 
-function Index() {
+function Home() {
   let scroller!: HTMLDivElement;
   return (
-    <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scroller}>
+    <div class={`${styles.index} h-[100vh] bg-gray-50 index`} ref={scroller}>
       <Navbar />
       <Title>Home</Title>
       <Meta property="description" content="Welcome to M3tering Protocols" />
@@ -34,7 +34,7 @@ function Index() {
       </section>
 
       <div
-        class={`space-y-[100px] relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px] lg:px-[90px] px-[40px] xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]`}
+        class={`space-y-[100px] h-fit relative z-1 w-full bg-gray-50 lg:rounded-t-[150px] md:rounded-t-[100px] rounded-t-[50px] lg:px-[90px] px-[40px] xl:text-[25px] lg:text-[24px] md:text-[23px] text-[20px]`}
       >
         <section class={`mb-[100px] w-full mx-auto`}>
           <h1
@@ -232,4 +232,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;
