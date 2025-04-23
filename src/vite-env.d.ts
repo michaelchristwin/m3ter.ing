@@ -1,4 +1,4 @@
-/// <reference types="@solidjs/start/env" />
+/// <reference types="vite/client" />
 declare module "*responsive" {
   import { ImageData } from "@responsive-image/core";
   const value: ImageData;

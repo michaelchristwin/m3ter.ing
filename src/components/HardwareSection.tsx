@@ -45,7 +45,7 @@ const HardwareSection: Component<{}> = () => {
               src={`/images/hardware${selectedImage().image}.webp`}
               alt={selectedImage().alt}
               class="w-full aspect-square"
-              placeholder={`/lazy${selectedImage().image}.webp`}
+              placeholder={`/lazy${selectedImage().image}-small.webp`}
             />
           </div>
           <div class="w-full">
@@ -68,7 +68,7 @@ const HardwareSection: Component<{}> = () => {
                         src={`/images/hardware${item.image}.webp`}
                         alt={item.alt}
                         class="w-full h-full object-cover"
-                        placeholder={`/lazy${item.image}.webp`}
+                        placeholder={`/lazy${item.image}-small.webp`}
                       />
                     </div>
                   </button>

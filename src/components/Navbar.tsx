@@ -1,6 +1,5 @@
 import { A } from "@solidjs/router";
-import { clientOnly } from "@solidjs/start";
-const NavbarSheet = clientOnly(() => import("~/components/NavbarSheet"));
+import NavbarSheet from "./NavbarSheet";
 
 const Navbar = () => {
   return (

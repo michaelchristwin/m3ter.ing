@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer
       class="w-full relative text-white bg-no-repeat bg-center bg-cover"
-      style={{ "background-image": `url(${Solarpunk.imageUrlFor()})` }}
+      style={{ "background-image": `url(${Solarpunk.imageUrlFor(768)})` }}
     >
       {/* Overlay for better text visibility */}
       <div class="absolute inset-0 bg-black/30 "></div>

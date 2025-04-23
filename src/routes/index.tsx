@@ -1,7 +1,5 @@
-import { Title, Meta } from "@solidjs/meta";
-import { clientOnly } from "@solidjs/start";
+import { Meta, Title } from "@solidjs/meta";
 import { lazy } from "solid-js";
-import styles from "~/styles/parallax.module.css";
 import { ETHCity, Infrastructure } from "~/assets/images";
 import { ResponsiveImage } from "@responsive-image/solid";
 import {
@@ -10,19 +8,20 @@ import {
   Revenue,
   WindTurbine,
 } from "~/assets/images/metrics";
+import styles from "~/styles/parallax.module.css";
 const Navbar = lazy(() => import("~/components/Navbar"));
-const Metric = lazy(() => import("~/components/Metric"));
 const AnimatedCounter = lazy(() => import("~/components/AnimatedCounter"));
+const M3terHeadBlink = lazy(() => import("~/components/M3terHeadBlink"));
 const Footer = lazy(() => import("~/components/Footer"));
-const AppsSection = lazy(() => import("~/components/AppsSection"));
-const LogosCarousel = clientOnly(() => import("~/components/LogosCarousel"));
-const M3terHeadBlink = clientOnly(() => import("~/components/M3terHeadBlink"));
-const ScrollMarquee = clientOnly(() => import("~/components/ScrollMarquee"));
+import AppsSection from "~/components/AppsSection";
+import Metric from "~/components/Metric";
+import LogosCarousel from "~/components/LogosCarousel";
+import ScrollMarquee from "~/components/ScrollMarquee";
 
 function Index() {
-  let scrollerRef!: HTMLDivElement;
+  let scroller!: HTMLDivElement;
   return (
-    <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scrollerRef}>
+    <div class={`${styles.index} bg-gray-50 index h-[100vh]`} ref={scroller}>
       <Navbar />
       <Title>Home</Title>
       <Meta property="description" content="Welcome to M3tering Protocols" />
@@ -148,7 +147,7 @@ function Index() {
                   <div
                     class={`block text-center space-y-[5px] w-full z-2 text-white`}
                   >
-                    <AnimatedCounter to={30000} prefix="$" />
+                    <AnimatedCounter to={30000} />
                     <p class={`font-[600] text-[20px]`}>Revenue generated</p>
                   </div>
                 </Metric>
@@ -172,7 +171,7 @@ function Index() {
             Let's build your project next
           </h2>
 
-          <LogosCarousel />
+          <LogosCarousel scroller={scroller} />
         </section>
         <section class={`w-full flex justify-center items-center`}>
           <div class="users-color-container">
@@ -225,7 +224,7 @@ function Index() {
         </section>
 
         <AppsSection />
-        <ScrollMarquee scroller={scrollerRef} />
+        <ScrollMarquee scroller={scroller} />
       </div>
 
       <Footer />
