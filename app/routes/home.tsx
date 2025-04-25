@@ -35,12 +35,15 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   const scroller = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    ScrollTrigger.defaults({
-      scroller: scroller.current,
-      markers: true,
-    });
-  });
+  useGSAP(
+    () => {
+      ScrollTrigger.defaults({
+        scroller: scroller.current,
+        markers: true,
+      });
+    },
+    { scope: scroller }
+  );
 
   return (
     <div className={`${styles.index} bg-gray-50`} ref={scroller}>
