@@ -1,20 +1,9 @@
-import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
+import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
-import path from "path";
-import { setupPlugins } from "@responsive-image/vite-plugin";
+import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { imagetools } from "vite-imagetools";
 
 export default defineConfig({
-  plugins: [
-    solid(),
-    tailwindcss(),
-    setupPlugins({
-      include: /^[^?]+\.webp\?.*responsive.*$/,
-    }),
-  ],
-  resolve: {
-    alias: {
-      "~": path.resolve(__dirname, "./src"),
-    },
-  },
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), imagetools()],
 });
