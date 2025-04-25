@@ -36,16 +36,7 @@ export default function Home() {
   const scroller = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!scroller.current) {
-      console.log(
-        "scroller.current is null/undefined in production (using official hook)!"
-      );
-      return;
-    }
-    console.log(
-      "scroller.current in production (using official hook):",
-      scroller.current
-    );
+    if (!scroller.current) return;
     ScrollTrigger.defaults({
       scroller: scroller.current,
       markers: true,
