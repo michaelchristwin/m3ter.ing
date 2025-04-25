@@ -16,7 +16,7 @@ import {
   WindTurbine,
 } from "~/assets/images/metrics";
 import Applications from "~/components/Applications";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TextAnimation from "~/components/TextAnimation";
@@ -38,6 +38,7 @@ export default function Home() {
   useGSAP(() => {
     ScrollTrigger.defaults({
       scroller: scroller.current,
+      markers: true,
     });
   });
 

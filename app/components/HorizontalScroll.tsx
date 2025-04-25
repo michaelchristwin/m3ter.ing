@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { useRef } from "react";
 
 const HorizontalScroll: React.FC = () => {
