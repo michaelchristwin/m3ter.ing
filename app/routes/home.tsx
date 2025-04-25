@@ -35,25 +35,22 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   const scroller = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (!scroller.current) {
-        console.log(
-          "scroller.current is null/undefined in production (using official hook)!"
-        );
-        return;
-      }
+  useGSAP(() => {
+    if (!scroller.current) {
       console.log(
-        "scroller.current in production (using official hook):",
-        scroller.current
+        "scroller.current is null/undefined in production (using official hook)!"
       );
-      ScrollTrigger.defaults({
-        scroller: scroller.current,
-        markers: true,
-      });
-    },
-    { scope: scroller }
-  );
+      return;
+    }
+    console.log(
+      "scroller.current in production (using official hook):",
+      scroller.current
+    );
+    ScrollTrigger.defaults({
+      scroller: scroller.current,
+      markers: true,
+    });
+  });
 
   return (
     <div className={`${styles.index} bg-gray-50`} ref={scroller}>
