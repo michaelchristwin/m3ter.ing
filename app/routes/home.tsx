@@ -19,9 +19,9 @@ import Applications from "~/components/Applications";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import TextAnimation from "~/components/TextAnimation";
-import CircleAnimation from "~/components/CircleAnimation";
-import HorizontalScroll from "~/components/HorizontalScroll";
+// import TextAnimation from "~/components/TextAnimation";
+// import CircleAnimation from "~/components/CircleAnimation";
+// import HorizontalScroll from "~/components/HorizontalScroll";
 import M3terheads from "~/components/M3terheads";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -37,7 +37,16 @@ export default function Home() {
 
   useGSAP(
     () => {
-      if (!scroller.current) return;
+      if (!scroller.current) {
+        console.log(
+          "scroller.current is null/undefined in production (using official hook)!"
+        );
+        return;
+      }
+      console.log(
+        "scroller.current in production (using official hook):",
+        scroller.current
+      );
       ScrollTrigger.defaults({
         scroller: scroller.current,
         markers: true,
@@ -289,9 +298,9 @@ export default function Home() {
         {/* <HardwareSection /> */}
         <Applications />
         <ScrollMarquee />
-        <TextAnimation />
+        {/* <TextAnimation />
         <CircleAnimation />
-        <HorizontalScroll />
+        <HorizontalScroll /> */}
       </div>
 
       <Footer />
