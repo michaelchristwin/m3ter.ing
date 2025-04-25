@@ -7,6 +7,6 @@ import { imagetools } from "vite-imagetools";
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), imagetools()],
   optimizeDeps: {
-    include: ["gsap", "gsap/ScrollTrigger"],
+    exclude: ["gsap", "gsap/ScrollTrigger"],
   },
 });
