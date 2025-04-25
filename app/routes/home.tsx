@@ -16,8 +16,8 @@ import {
   WindTurbine,
 } from "~/assets/images/metrics";
 import Applications from "~/components/Applications";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap/gsap-core";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 // import TextAnimation from "~/components/TextAnimation";
 // import CircleAnimation from "~/components/CircleAnimation";
