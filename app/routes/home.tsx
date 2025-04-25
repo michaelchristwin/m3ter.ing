@@ -37,6 +37,7 @@ export default function Home() {
 
   useGSAP(
     () => {
+      if (!scroller.current) return;
       ScrollTrigger.defaults({
         scroller: scroller.current,
         markers: true,
