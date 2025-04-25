@@ -9,4 +9,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["gsap", "gsap/ScrollTrigger"],
   },
+  build: {
+    rollupOptions: {
+      treeshake: false,
+    },
+  },
 });
