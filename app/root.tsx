@@ -39,7 +39,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
           property="og:description"
           content="The decentralized protocol that's driving solar energy adoption in Africa."
         />
-        <meta property="og:image" content="/images/solarbg-ghiblify.webp" />
+        <meta
+          property="og:image"
+          content="https://m3tering/images/solarbg-ghiblify.webp"
+        />
         <meta property="og:url" content="https://m3ter.ing/" />
         <Meta />
         <Links />

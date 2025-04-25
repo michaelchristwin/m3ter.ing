@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 import Navbar from "~/components/Navbar";
 import styles from "~/styles/parallax.module.css";
@@ -19,6 +19,10 @@ import Applications from "~/components/Applications";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TextAnimation from "~/components/TextAnimation";
+import CircleAnimation from "~/components/CircleAnimation";
+import HorizontalScroll from "~/components/HorizontalScroll";
+import M3terheads from "~/components/M3terheads";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function meta({}: Route.MetaArgs) {
@@ -208,61 +212,81 @@ export default function Home() {
 
           <LogosCarousel />
         </section>
-        {/* <section className={`w-full flex justify-center items-center`}>
+        <section className={`w-full flex justify-center items-center`}>
           <div className="users-color-container">
-            <span className="item" style="--i: 1"></span>
-            <M3terHeadBlink
+            <span
+              className="item"
+              style={{ "--i": 1 } as React.CSSProperties}
+            ></span>
+            <M3terheads
               backgroundColor="#fe7419"
               index={2}
               displayTime={10}
               hiddenTime={5}
             />
-            <span className="item" style="--i: 3"></span>
-            <M3terHeadBlink
+            <span
+              className="item"
+              style={{ "--i": 3 } as React.CSSProperties}
+            ></span>
+            <M3terheads
               displayTime={8}
               hiddenTime={4}
               backgroundColor="#8071A8"
               index={4}
             />
-            <M3terHeadBlink
+            <M3terheads
               backgroundColor="#fad058"
               displayTime={6}
               hiddenTime={3}
               index={10}
             />
 
-            <span className="item" style="--i: 11"></span>
-            <M3terHeadBlink
+            <span
+              className="item"
+              style={{ "--i": 11 } as React.CSSProperties}
+            ></span>
+            <M3terheads
               backgroundColor="#edafb0"
               index={12}
               displayTime={7}
               hiddenTime={7}
             />
 
-            <span className="item" style="--i: 5"></span>
+            <span
+              className="item"
+              style={{ "--i": 5 } as React.CSSProperties}
+            ></span>
 
-            <span className="item" style="--i: 9"></span>
-            <M3terHeadBlink
+            <span
+              className="item"
+              style={{ "--i": 9 } as React.CSSProperties}
+            ></span>
+            <M3terheads
               backgroundColor="#71c266"
               index={8}
               displayTime={9}
               hiddenTime={4}
             />
-            <span className="item" style="--i: 7"></span>
-            <M3terHeadBlink
+            <span
+              className="item"
+              style={{ "--i": 7 } as React.CSSProperties}
+            ></span>
+            <M3terheads
               backgroundColor="#6bd6eb"
               index={6}
               displayTime={5}
               hiddenTime={5}
             />
           </div>
-        </section> */}
+        </section>
 
         {/** Hardware section */}
         {/* <HardwareSection /> */}
         <Applications />
-
         <ScrollMarquee />
+        <TextAnimation />
+        <CircleAnimation />
+        <HorizontalScroll />
       </div>
 
       <Footer />

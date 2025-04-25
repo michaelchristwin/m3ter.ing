@@ -1,5 +1,5 @@
 import seedrandom from "seedrandom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 //@ts-ignore
 import { M3terHead } from "m3ters";
 
@@ -19,8 +19,8 @@ const M3terheads: React.FC<M3terHeadProps> = ({
   const [randomNum, setRandomNum] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
 
-  let displayTimeout: NodeJS.Timeout;
-  let hiddenTimeout: NodeJS.Timeout;
+  const displayTimeout = useRef<NodeJS.Timeout | null>(null);
+  const hiddenTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const generateRandom = () => {
     const rng = seedrandom();
@@ -31,10 +31,10 @@ const M3terheads: React.FC<M3terHeadProps> = ({
   const startCycle = () => {
     generateRandom();
     setVisible(true); // Fade in
-    displayTimeout = setTimeout(() => {
-      setVisible(false); // Fade out
-      hiddenTimeout = setTimeout(() => {
-        startCycle(); // Restart the cycle
+    displayTimeout.current = setTimeout(() => {
+      setVisible(false);
+      hiddenTimeout.current = setTimeout(() => {
+        startCycle();
       }, hiddenTime * 1000);
     }, displayTime * 1000);
   };
@@ -42,10 +42,10 @@ const M3terheads: React.FC<M3terHeadProps> = ({
   useEffect(() => {
     startCycle();
     return () => {
-      clearTimeout(displayTimeout);
-      clearTimeout(hiddenTimeout);
+      if (displayTimeout.current) clearTimeout(displayTimeout.current);
+      if (hiddenTimeout.current) clearTimeout(hiddenTimeout.current);
     };
-  });
+  }, []);
 
   return (
     <div
