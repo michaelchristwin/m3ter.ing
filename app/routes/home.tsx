@@ -41,6 +41,7 @@ export default function Home() {
       scroller: scroller.current,
       markers: true,
     });
+    ScrollTrigger.refresh();
   });
 
   return (
