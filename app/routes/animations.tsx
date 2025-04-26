@@ -4,9 +4,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-import CircleAnimation from "~/components/CircleAnimation";
-import HorizontalScroll from "~/components/HorizontalScroll";
-import TextAnimation from "~/components/TextAnimation";
+// import CircleAnimation from "~/components/CircleAnimation";
+// import HorizontalScroll from "~/components/HorizontalScroll";
+// import TextAnimation from "~/components/TextAnimation";
+import HeroScrollAnimation from "~/components/hero-text-scroll-animation";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function meta({}: Route.MetaArgs) {
@@ -31,13 +32,8 @@ function Animations() {
   );
 
   return (
-    <div
-      ref={scroller}
-      className={`w-full overflow-x-hidden overflow-y-auto h-[100vh]`}
-    >
-      <TextAnimation />
-      <CircleAnimation />
-      <HorizontalScroll />
+    <div ref={scroller} className={`w-full`}>
+      <HeroScrollAnimation />
     </div>
   );
 }

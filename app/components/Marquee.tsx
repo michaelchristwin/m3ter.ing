@@ -1,51 +1,46 @@
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-
-import "./marquee.css";
+import { useRef, useEffect, useState } from "react";
+import "~/components/ScrollMarquee/marquee.css";
 import { hardwareimages } from "~/assets/images/hardware";
 
-const ScrollMarqueeSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const Marquee = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [leftMargin, setLeftMargin] = useState("0%");
+  const [rightMargin, setRightMargin] = useState("100%");
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".section_2",
-          invalidateOnRefresh: true,
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
 
-          start: "0% 0%",
-          end: "120% 0%",
-          scrub: 1,
-          pin: true,
-        },
-      });
+      const scrollY = window.scrollY;
+      const offsetTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-      // Add animations
-      tl.to(
-        ".images .right",
-        {
-          marginTop: "0",
-          duration: 2.5,
-        },
-        0
+      // scroll progress between 0 (start) and 1 (end)
+      const start = offsetTop;
+      const end = offsetTop + sectionHeight * 1.2; // 120% like GSAP
+      const progress = Math.min(
+        Math.max((scrollY - start) / (end - start), 0),
+        1
       );
-      tl.to(
-        ".images .left",
-        {
-          marginTop: "150%",
-          duration: 1,
-        },
-        0
-      );
-    },
-    { scope: containerRef }
-  );
+
+      // Left moves from 0% → 150%, Right moves from 100% → 0%
+      const newLeftMargin = `${progress * 150}%`;
+      const newRightMargin = `${(1 - progress) * 100}%`;
+
+      setLeftMargin(newLeftMargin);
+      setRightMargin(newRightMargin);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="w-full my-[100px]" ref={containerRef}>
-      <div className="section_2 sm:h-[100vh] h-fit">
+    <section className="w-full my-[100px] relative h-[250vh]" ref={sectionRef}>
+      <div className="sticky top-0 h-screen flex items-center section_2">
         <div className="marquee-container justify-between flex w-full">
+          {/* TEXT */}
           <div className="w-[45%] space-y-2.5">
             <div>
               <h2 className="text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px] fade-in-block">
@@ -91,8 +86,13 @@ const ScrollMarqueeSection = () => {
               </div>
             </div>
           </div>
+
+          {/* IMAGES */}
           <div className="images w-[45%] justify-between" id="images">
-            <div className="left">
+            <div
+              className="left transition-all duration-300"
+              style={{ marginTop: leftMargin }}
+            >
               {hardwareimages.map((img, i) => (
                 <picture key={i}>
                   {Object.entries(img.sources).map(([type, srcset]) => (
@@ -104,13 +104,15 @@ const ScrollMarqueeSection = () => {
                     width={img.img.w}
                     alt={`Hardware image ${i} left`}
                     sizes="calc(50vw / 4)"
-                    className={`rounded-2xl`}
+                    className="rounded-2xl"
                   />
                 </picture>
               ))}
             </div>
-            {/*Right*/}
-            <div className="right">
+            <div
+              className="right transition-all duration-300"
+              style={{ marginTop: rightMargin }}
+            >
               {[...hardwareimages].reverse().map((img, i) => (
                 <picture key={i}>
                   {Object.entries(img.sources).map(([type, srcset]) => (
@@ -122,7 +124,7 @@ const ScrollMarqueeSection = () => {
                     width={img.img.w}
                     alt={`Hardware image ${i} right`}
                     sizes="calc(50vw / 4)"
-                    className={`rounded-2xl`}
+                    className="rounded-2xl"
                   />
                 </picture>
               ))}
@@ -134,4 +136,4 @@ const ScrollMarqueeSection = () => {
   );
 };
 
-export default ScrollMarqueeSection;
+export default Marquee;
