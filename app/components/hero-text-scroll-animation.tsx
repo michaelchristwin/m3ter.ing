@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { AnimeBg, Island } from "~/assets/images";
 
 const HeroScrollAnimation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -282,10 +283,18 @@ const HeroScrollAnimation = () => {
       <div className="fixed inset-0 w-full h-screen overflow-hidden">
         {/* Section 1: Hero Text */}
         <section
-          className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-blue-900 to-black text-white px-4"
+          className="absolute inset-0 flex flex-col items-center justify-center px-4 bg-[#faf9f6]"
           style={getSectionVisibility(0)}
         >
           <div className="text-center">
+            <h1 className="text-6xl md:text-8xl font-bold mb-4">
+              <span
+                className="inline-block transition-all duration-700 ease-out"
+                style={calculateWord1Style()}
+              >
+                Introducing
+              </span>
+            </h1>
             <h1 className="text-6xl md:text-8xl font-bold mb-4">
               <span
                 className="inline-block transition-all duration-700 ease-out"
@@ -299,7 +308,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out"
                 style={calculateWord2Style()}
               >
-                protocol
+                Protocol
               </span>
             </h1>
           </div>
@@ -307,30 +316,44 @@ const HeroScrollAnimation = () => {
 
         {/* Section 2: Image Transition */}
         <section
-          className="absolute inset-0 flex items-center justify-center bg-black"
-          style={getSectionVisibility(1)}
+          className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-cover bg-center"
+          style={{
+            ...getSectionVisibility(1),
+            backgroundImage: `url(${AnimeBg.img.src})`,
+          }}
         >
           <div
             className="transition-all duration-700 ease-out flex items-center justify-center"
             style={calculateImageTransition()}
           >
             {/* Placeholder logo/image */}
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-blue-500 rounded-full flex items-center justify-center text-white">
-              <span className="text-xl md:text-2xl font-bold">M3</span>
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center">
+              <picture>
+                {Object.entries(Island.sources).map(([type, srcset]) => (
+                  <source key={type} type={`image/${type}`} srcSet={srcset} />
+                ))}
+                <img
+                  src={Island.img.src}
+                  width={Island.img.w}
+                  height={Island.img.h}
+                  alt={`Island`}
+                  className={`max-w-full max-h-full transition-all duration-300 ease-in-out object-contain`}
+                />
+              </picture>
             </div>
           </div>
         </section>
 
         {/* Section 3: Left Slide Transition */}
         <section
-          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-gradient-to-br from-black to-blue-800"
+          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#faf9f6]"
           style={getSectionVisibility(2)}
         >
           <div
             className="w-full transition-all duration-700 ease-out"
             style={calculateLeftSlideTransition()}
           >
-            <div className="text-center text-white px-4">
+            <div className="text-center text-black px-4">
               <h2 className="text-4xl md:text-6xl font-bold">Left Exit</h2>
               <p className="mt-4 text-xl md:text-2xl">
                 Content slides out to the left
@@ -342,14 +365,14 @@ const HeroScrollAnimation = () => {
 
         {/* Section 4: Top Slide Transition */}
         <section
-          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 to-purple-800"
+          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#faf9f6]"
           style={getSectionVisibility(3)}
         >
           <div
             className="w-full transition-all duration-700 ease-out"
             style={calculateTopSlideTransition()}
           >
-            <div className="text-center text-white px-4">
+            <div className="text-center text-black px-4">
               <h2 className="text-4xl md:text-6xl font-bold">Top Exit</h2>
               <p className="mt-4 text-xl md:text-2xl">
                 Content slides out to the top
@@ -361,14 +384,14 @@ const HeroScrollAnimation = () => {
 
         {/* Section 5: Right Slide Transition */}
         <section
-          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 to-indigo-800"
+          className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#faf9f6]"
           style={getSectionVisibility(4)}
         >
           <div
             className="w-full transition-all duration-700 ease-out"
             style={calculateRightSlideTransition()}
           >
-            <div className="text-center text-white px-4">
+            <div className="text-center text-black px-4">
               <h2 className="text-4xl md:text-6xl font-bold">Right Exit</h2>
               <p className="mt-4 text-xl md:text-2xl">
                 Content slides out to the right
@@ -380,7 +403,7 @@ const HeroScrollAnimation = () => {
 
         {/* Section 6: Final Section */}
         <section
-          className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-indigo-900 to-black text-white px-4"
+          className="absolute inset-0 flex items-center justify-center bg-[#faf9f6] text-black px-4"
           style={{
             ...getSectionVisibility(5),
             opacity: getSectionProgress(5),
@@ -391,7 +414,7 @@ const HeroScrollAnimation = () => {
             <p className="mt-4 text-xl md:text-2xl">
               All transitions completed
             </p>
-            <button className="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-lg transition-colors">
+            <button className="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-black rounded-lg text-lg transition-colors">
               Get Started
             </button>
           </div>
