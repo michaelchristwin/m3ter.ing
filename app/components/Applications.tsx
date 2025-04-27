@@ -10,6 +10,13 @@ type AppDataType = {
   imgSrc: string;
 };
 
+type AppElementProps = {
+  className: string;
+  imgSrc: string;
+  href: string;
+  name: string;
+};
+
 const appsdata: AppDataType[] = [
   {
     name: "XCharge",
@@ -59,13 +66,6 @@ const Applications: React.FC = () => {
   );
 };
 export default Applications;
-
-type AppElementProps = {
-  className: string;
-  imgSrc: string;
-  href: string;
-  name: string;
-};
 
 const AppElement: React.FC<AppElementProps> = ({
   name,
@@ -117,7 +117,7 @@ const AppElement: React.FC<AppElementProps> = ({
       }}
     >
       <div
-        className={`overlay`}
+        className={`overlay p-2`}
         style={{
           position: "absolute",
           top: "0",
@@ -129,7 +129,7 @@ const AppElement: React.FC<AppElementProps> = ({
           transition: "opacity 0.3s ease",
         }}
       >
-        <p>{name}</p>
+        <p className={`sm:text-[18px] text-[13px]`}>{name}</p>
       </div>
     </Link>
   );

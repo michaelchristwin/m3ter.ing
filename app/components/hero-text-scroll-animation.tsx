@@ -284,10 +284,10 @@ const HeroScrollAnimation = () => {
       <div className="fixed inset-0 w-full h-screen overflow-hidden">
         {/* Section 1: Hero Text */}
         <section
-          className="absolute inset-0 flex flex-col items-center justify-center px-4 bg-[#faf9f6]"
+          className="absolute inset-0 flex flex-col justify-center px-4 bg-[#faf9f6]"
           style={getSectionVisibility(0)}
         >
-          <div className="w-[90%] mx-auto">
+          <div className="w-[90%] sm:w-[50%]">
             <h1 className="text-2xl text-start md:text-3xl font-bold mb-4">
               <span
                 className="inline-block transition-all duration-700 ease-out playwrite-hr"
