@@ -1,13 +1,6 @@
-import { useMultiIntersectionObserver } from "~/hooks/useMultiIntersectionObserver";
 import { companyicons } from "~/assets/images/companies";
 
 const LogosCarousel: React.FC = () => {
-  const [refs, visibility] = useMultiIntersectionObserver<HTMLDivElement>(
-    companyicons.length,
-    {
-      threshold: 0.1,
-    }
-  );
   return (
     <div
       className={`grid sm:grid-cols-7 grid-cols-1 w-full sm:h-full h-[100vh] card-grid`}
@@ -15,8 +8,6 @@ const LogosCarousel: React.FC = () => {
       {companyicons.map((logo, i) => (
         <div
           key={i}
-          ref={refs[i]}
-          style={visibility[i] ? isVisible : isNotVisible}
           className="sm:w-full w-[220px] shadow-[_-1rem_0_3rem_rgba(0,0,0,0.25)] mx-auto h-auto sm:aspect-[2.5/3] aspect-[3/1.5] flex justify-center items-center p-3 lg:rounded-2xl rounded-xl bg-[#faf9f6]"
         >
           <picture>
@@ -38,17 +29,17 @@ const LogosCarousel: React.FC = () => {
 };
 export default LogosCarousel;
 
-const isVisible: React.CSSProperties = {
-  opacity: 1,
-  animationFillMode: "forwards",
-  animationName: "zoomIn",
-  animationDuration: "300ms",
-  animationTimingFunction: "ease-in-out",
-  willChange: "transform, opacity",
-};
+// const isVisible: React.CSSProperties = {
+//   opacity: 1,
+//   animationFillMode: "forwards",
+//   animationName: "zoomIn",
+//   animationDuration: "300ms",
+//   animationTimingFunction: "ease-in-out",
+//   willChange: "transform, opacity",
+// };
 
-const isNotVisible: React.CSSProperties = {
-  opacity: 0,
-  transform: "scale(0.6)",
-  transition: "opacity 300ms ease-in-out, transform 300ms ease-in-out",
-};
+// const isNotVisible: React.CSSProperties = {
+//   opacity: 0,
+//   transform: "scale(0.6)",
+//   transition: "opacity 300ms ease-in-out, transform 300ms ease-in-out",
+// };
