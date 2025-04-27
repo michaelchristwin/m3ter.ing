@@ -139,7 +139,7 @@ const HeroScrollAnimation = () => {
       };
 
       animationRef.current = requestAnimationFrame(animate);
-      console.log(scrollProgress);
+
       return () => {
         if (animationRef.current) {
           cancelAnimationFrame(animationRef.current);
@@ -287,7 +287,7 @@ const HeroScrollAnimation = () => {
           style={getSectionVisibility(0)}
         >
           <div className="w-[90%] mx-auto">
-            <h1 className="text-6xl text-start md:text-8xl font-bold mb-4">
+            <h1 className="text-2xl text-start md:text-3xl font-bold mb-4">
               <span
                 className="inline-block transition-all duration-700 ease-out playwrite-hr"
                 style={calculateWord1Style()}
@@ -300,7 +300,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord1Style(),
-                  ...setFontVariation(100 - 25 + scrollProgress * 50),
+                  ...setFontVariation(100 - 25 - scrollProgress * 50),
                 }}
               >
                 M3tering
@@ -311,13 +311,13 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord2Style(),
-                  ...setFontVariation(100 - 25 + scrollProgress * 50),
+                  ...setFontVariation(100 - 25 - scrollProgress * 50),
                 }}
               >
                 Protocol
               </span>
             </h1>
-            <h1 className="text-6xl text-end md:text-8xl font-bold">
+            <h1 className="text-2xl text-end md:text-3xl font-bold">
               <span
                 className="inline-block transition-all duration-700 ease-out playwrite-hr"
                 style={calculateWord2Style()}
