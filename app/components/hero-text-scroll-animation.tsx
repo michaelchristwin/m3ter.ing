@@ -286,10 +286,10 @@ const HeroScrollAnimation = () => {
           className="absolute inset-0 flex flex-col items-center justify-center px-4 bg-[#faf9f6]"
           style={getSectionVisibility(0)}
         >
-          <div className="text-center">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4">
+          <div className="w-[90%] mx-auto">
+            <h1 className="text-6xl text-start md:text-8xl font-bold mb-4">
               <span
-                className="inline-block transition-all duration-700 ease-out"
+                className="inline-block transition-all duration-700 ease-out playwrite-hr"
                 style={calculateWord1Style()}
               >
                 Introducing
@@ -297,18 +297,32 @@ const HeroScrollAnimation = () => {
             </h1>
             <h1 className="text-6xl md:text-8xl font-bold mb-4">
               <span
-                className="inline-block transition-all duration-700 ease-out"
-                style={calculateWord1Style()}
+                className="inline-block transition-all duration-700 ease-out june-expt-variable"
+                style={{
+                  ...calculateWord1Style(),
+                  ...setFontVariation(scrollProgress * 10),
+                }}
               >
                 M3tering
               </span>
             </h1>
-            <h1 className="text-6xl md:text-8xl font-bold">
+            <h1 className="text-6xl text-end md:text-8xl font-bold">
               <span
-                className="inline-block transition-all duration-700 ease-out"
-                style={calculateWord2Style()}
+                className="inline-block transition-all duration-700 ease-out june-expt-variable"
+                style={{
+                  ...calculateWord2Style(),
+                  ...setFontVariation(scrollProgress * 10),
+                }}
               >
                 Protocol
+              </span>
+            </h1>
+            <h1 className="text-6xl text-end md:text-8xl font-bold">
+              <span
+                className="inline-block transition-all duration-700 ease-out playwrite-hr"
+                style={calculateWord2Style()}
+              >
+                V2
               </span>
             </h1>
           </div>
@@ -484,3 +498,10 @@ const HeroScrollAnimation = () => {
 };
 
 export default HeroScrollAnimation;
+
+const setFontVariation = (size: number) => {
+  const fontsStyle: React.CSSProperties = {
+    fontVariationSettings: ` 'STYL' ${size} `,
+  };
+  return fontsStyle;
+};
