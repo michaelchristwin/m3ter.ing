@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimeBg, Island } from "~/assets/images";
 import Applications from "./Applications";
+import LogosCarousel from "./LogosCarousel";
 
 const HeroScrollAnimation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -384,16 +385,10 @@ const HeroScrollAnimation = () => {
           style={getSectionVisibility(3)}
         >
           <div
-            className="w-full transition-all duration-700 ease-out"
+            className="w-full transition-all duration-700 ease-out px-4"
             style={calculateTopSlideTransition()}
           >
-            <div className="text-center text-black px-4">
-              <h2 className="text-4xl md:text-6xl font-bold">Top Exit</h2>
-              <p className="mt-4 text-xl md:text-2xl">
-                Content slides out to the top
-              </p>
-              <div className="mt-8 w-32 h-1 bg-purple-400 mx-auto"></div>
-            </div>
+            <LogosCarousel />
           </div>
         </section>
 
