@@ -300,7 +300,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord1Style(),
-                  ...setFontVariation(100 - 25 - scrollProgress * 50),
+                  fontVariationSettings: ` 'STYL' 60`,
                 }}
               >
                 M3tering
@@ -311,7 +311,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord2Style(),
-                  ...setFontVariation(100 - 25 - scrollProgress * 50),
+                  fontVariationSettings: ` 'STYL' 60`,
                 }}
               >
                 Protocol
@@ -498,10 +498,3 @@ const HeroScrollAnimation = () => {
 };
 
 export default HeroScrollAnimation;
-
-const setFontVariation = (size: number) => {
-  const fontsStyle: React.CSSProperties = {
-    fontVariationSettings: ` 'STYL' ${size} `,
-  };
-  return fontsStyle;
-};
