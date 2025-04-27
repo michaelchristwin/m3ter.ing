@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimeBg, Island } from "~/assets/images";
+import Applications from "./Applications";
 
 const HeroScrollAnimation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -417,21 +418,100 @@ const HeroScrollAnimation = () => {
 
         {/* Section 6: Final Section */}
         <section
-          className="absolute inset-0 flex items-center justify-center bg-[#faf9f6] text-black px-4"
+          className="absolute inset-0 flex flex-col items-center justify-end bg-[#faf9f6] text-black"
           style={{
             ...getSectionVisibility(5),
-            opacity: getSectionProgress(5),
+            opacity: getSectionProgress(5) > 0 ? 1 : 0,
           }}
         >
-          <div className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold">Complete</h2>
-            <p className="mt-4 text-xl md:text-2xl">
-              All transitions completed
-            </p>
-            <button className="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-black rounded-lg text-lg transition-colors">
-              Get Started
-            </button>
-          </div>
+          <Applications />
+          <footer
+            className={`w-full h-[300px] flex justify-between bg-neutral-800 text-white p-4`}
+          >
+            <p className="text-[20px] font-semibold">M3tering</p>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[40px]">
+              <div>
+                <p className="font-bold mb-4 text-[20px]">Products</p>
+                <ul className="space-y-2">
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">XCharge</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Watt-A-Frame</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Solaxy</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Maxwell</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold mb-4 text-[20px]">Socials</p>
+                <ul className="space-y-2">
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Facebook</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Twitter</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Farcaster</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Mastodon</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Instagram</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold mb-4 text-[20px]">Docs</p>
+                <ul className="space-y-2">
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">M3tering</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Switch</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Lorem</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Ipsum</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold mb-4 text-[20px]">Product</p>
+                <ul className="space-y-2">
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                  <li className="hover:text-gray-300 transition">
+                    <a href="#">Nitro</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
         </section>
 
         {/* Navigation buttons (optional) */}
