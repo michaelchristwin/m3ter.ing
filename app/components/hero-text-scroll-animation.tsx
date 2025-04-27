@@ -139,7 +139,7 @@ const HeroScrollAnimation = () => {
       };
 
       animationRef.current = requestAnimationFrame(animate);
-
+      console.log(scrollProgress);
       return () => {
         if (animationRef.current) {
           cancelAnimationFrame(animationRef.current);
@@ -300,7 +300,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord1Style(),
-                  ...setFontVariation(scrollProgress * 10),
+                  ...setFontVariation(100 - 25 + scrollProgress * 50),
                 }}
               >
                 M3tering
@@ -311,7 +311,7 @@ const HeroScrollAnimation = () => {
                 className="inline-block transition-all duration-700 ease-out june-expt-variable"
                 style={{
                   ...calculateWord2Style(),
-                  ...setFontVariation(scrollProgress * 10),
+                  ...setFontVariation(100 - 25 + scrollProgress * 50),
                 }}
               >
                 Protocol
