@@ -43,7 +43,7 @@ const Counter: React.FC<CounterProps> = ({
   return (
     <motion.span
       ref={spanRef}
-      className={`font-mono font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px] text-white ${className}`}
+      className={`font-mono font-extrabold xl:text-[60px] lg:text-[50px] md:text-[35px] text-[60px] text-white ${className} fade-in-block`}
     >
       {prefix}
       {displayValue}

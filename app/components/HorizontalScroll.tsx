@@ -1,40 +1,8 @@
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 import { useRef } from "react";
 
 const HorizontalScroll: React.FC = () => {
   const wrapper = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
-      if (!wrapper.current) return;
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".scrollCcontainer",
-          start: "top top",
-          end: "+=4000",
-          pin: true,
-          scrub: true,
-          snap: 1 / 4,
-        },
-      });
 
-      tl.to(".one", {
-        duration: 2,
-        xPercent: -110,
-      });
-
-      tl.to(".two", {
-        yPercent: -110,
-        duration: 2,
-      });
-
-      tl.to(".three", {
-        xPercent: 110,
-        duration: 2,
-      });
-    },
-    { scope: wrapper }
-  );
   return (
     <div ref={wrapper} style={{ padding: "none", margin: "none" }}>
       <div

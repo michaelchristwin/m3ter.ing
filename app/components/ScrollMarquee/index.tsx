@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 
 import "./marquee.css";
 import { hardwareimages } from "~/assets/images/hardware";
@@ -8,40 +6,6 @@ import { hardwareimages } from "~/assets/images/hardware";
 const ScrollMarqueeSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".section_2",
-          invalidateOnRefresh: true,
-
-          start: "0% 0%",
-          end: "120% 0%",
-          scrub: 1,
-          pin: true,
-        },
-      });
-
-      // Add animations
-      tl.to(
-        ".images .right",
-        {
-          marginTop: "0",
-          duration: 2.5,
-        },
-        0
-      );
-      tl.to(
-        ".images .left",
-        {
-          marginTop: "150%",
-          duration: 1,
-        },
-        0
-      );
-    },
-    { scope: containerRef }
-  );
   return (
     <section className="w-full my-[100px]" ref={containerRef}>
       <div className="section_2 sm:h-[100vh] h-fit">

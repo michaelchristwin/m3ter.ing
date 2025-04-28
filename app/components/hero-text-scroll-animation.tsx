@@ -2,6 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { AnimeBg, Island } from "~/assets/images";
 import Applications from "./Applications";
 import LogosCarousel from "./LogosCarousel";
+import {
+  EcoVillages,
+  Panel,
+  Revenue,
+  WindTurbine,
+} from "~/assets/images/metrics";
+import Counter from "./Counter";
+import Metric from "./Metric";
 
 const HeroScrollAnimation = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -285,7 +293,7 @@ const HeroScrollAnimation = () => {
       <div className="fixed inset-0 w-full h-screen overflow-hidden">
         {/* Section 1: Hero Text */}
         <section
-          className="absolute inset-0 flex flex-col justify-center px-4 bg-[#faf9f6]"
+          className="absolute inset-0 flex flex-col sm:items-start items-center justify-center px-4 bg-[#faf9f6]"
           style={getSectionVisibility(0)}
         >
           <div className="w-[90%] sm:w-[50%]">
@@ -369,13 +377,79 @@ const HeroScrollAnimation = () => {
             className="w-full transition-all duration-700 ease-out"
             style={calculateLeftSlideTransition()}
           >
-            <div className="text-center text-black px-4">
-              <h2 className="text-4xl md:text-6xl font-bold">Left Exit</h2>
-              <p className="mt-4 text-xl md:text-2xl">
-                Content slides out to the left
-              </p>
-              <div className="mt-8 w-32 h-1 bg-blue-400 mx-auto"></div>
-            </div>
+            <section className={`h-fit w-full mb-[100px]`}>
+              <div className="h-fit py-12">
+                <div className="space-y-[50px]">
+                  <h2
+                    className={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px] fade-in-block`}
+                  >
+                    Real Environmental Impact; Real Economic Value
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    {/* Top row: 2 cards */}
+                    <div className="bg-white rounded-lg shadow-sm h-64 flex items-center justify-center text-center">
+                      <div className="w-full h-full">
+                        <video
+                          src="/videos/m3terhead.webm"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full h-full object-contain"
+                        ></video>
+                      </div>
+                    </div>
+
+                    <Metric image={Panel.img.src}>
+                      <div
+                        className={`block text-center space-y-[5px] w-full z-2 text-white`}
+                      >
+                        <Counter from={0} to={10000} />
+                        <p className={`font-[600] text-[20px] fade-in-block`}>
+                          kWh of electricity generated
+                        </p>
+                      </div>
+                    </Metric>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Bottom row: 3 cards */}
+                    <Metric image={WindTurbine.img.src}>
+                      <div
+                        className={`block text-center space-y-[5px] w-full z-2 text-white`}
+                      >
+                        <Counter from={0} to={4000} />
+                        <p className={`font-[600] text-[20px] fade-in-block`}>
+                          Tonnes of CO₂ prevented
+                        </p>
+                      </div>
+                    </Metric>
+
+                    <Metric image={Revenue.img.src}>
+                      <div
+                        className={`block text-center space-y-[5px] w-full z-2 text-white`}
+                      >
+                        <Counter from={0} to={30000} prefix="$" />
+                        <p className={`font-[600] text-[20px] fade-in-block`}>
+                          Revenue generated
+                        </p>
+                      </div>
+                    </Metric>
+
+                    <Metric image={EcoVillages.img.src}>
+                      <div
+                        className={`block text-center space-y-[5px] w-full z-2 text-white`}
+                      >
+                        <Counter from={0} to={6} />
+                        <p className={`font-[600] text-[20px] fade-in-block`}>
+                          Ecovillages
+                        </p>
+                      </div>
+                    </Metric>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 

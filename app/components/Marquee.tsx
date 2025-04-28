@@ -18,7 +18,7 @@ const Marquee = () => {
 
       // scroll progress between 0 (start) and 1 (end)
       const start = offsetTop;
-      const end = offsetTop + sectionHeight * 1.2; // 120% like GSAP
+      const end = offsetTop + sectionHeight * 1.2;
       const progress = Math.min(
         Math.max((scrollY - start) / (end - start), 0),
         1
