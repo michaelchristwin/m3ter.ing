@@ -52,7 +52,7 @@ const appsdata: AppDataType[] = [
 
 const Applications: React.FC = () => {
   return (
-    <section className="activity-container w-full mb-[100px] text-[20px] font-semibold px-4">
+    <section className="activity-container w-full mb-[100px] text-[20px] font-semibold p-4">
       {appsdata.map((app, i) => (
         <AppElement
           key={i}
