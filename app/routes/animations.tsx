@@ -256,7 +256,12 @@ function Animations() {
           style={{ x: threeX }}
           className="absolute inset-0 bg-[#faf9f6] z-8 flex justify-center items-center"
         >
-          <div className="w-full transition-all duration-700 ease-out px-4">
+          <div className="w-full space-y-6 transition-all duration-700 ease-out px-4">
+            <h2
+              className={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px] fade-in-block`}
+            >
+              Let's build your project next
+            </h2>
             <LogosCarousel />
           </div>
         </motion.div>
