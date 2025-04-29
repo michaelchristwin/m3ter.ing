@@ -16,9 +16,6 @@ import {
 } from "~/assets/images/metrics";
 import Applications from "~/components/Applications";
 import { useFadeInOnScroll } from "~/hooks/useFadeInOnScroll";
-// import TextAnimation from "~/components/TextAnimation";
-// import CircleAnimation from "~/components/CircleAnimation";
-// import HorizontalScroll from "~/components/HorizontalScroll";
 import M3terheads from "~/components/M3terheads";
 import Marquee from "~/components/Marquee";
 

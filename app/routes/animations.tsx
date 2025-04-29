@@ -1,7 +1,7 @@
 import type { Route } from "./+types/animations";
 import { useFadeInOnScroll } from "~/hooks/useFadeInOnScroll";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AnimeBg, Island } from "~/assets/images";
 import {
   Panel,
@@ -14,6 +14,14 @@ import Metric from "~/components/Metric";
 import LogosCarousel from "~/components/LogosCarousel";
 import Applications from "~/components/Applications";
 
+interface ParticleData {
+  element: HTMLDivElement;
+  startX: number;
+  startY: number;
+  animDuration: number;
+  lastFrameId?: number;
+}
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Animations" },
@@ -23,10 +31,13 @@ export function meta({}: Route.MetaArgs) {
 
 function Animations() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const particlesContainer = useRef<HTMLDivElement>(null);
+  const particlesRef = useRef<ParticleData[]>([]);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
+
   // Create animations linked to scroll progress
   const textLeft = useTransform(scrollYProgress, [0, 0.1], ["0%", "-250%"]);
   const textRight = useTransform(scrollYProgress, [0, 0.1], ["0%", "250%"]);
@@ -37,11 +48,106 @@ function Animations() {
   const threeX = useTransform(scrollYProgress, [0.75, 1], ["0%", "110%"]);
 
   useFadeInOnScroll();
+  const animateParticle = (particleData: ParticleData): void => {
+    const animate = (): void => {
+      const now = Date.now();
+      const xOffset =
+        Math.sin((now / particleData.animDuration) * Math.PI * 2) * 10;
+      const yOffset =
+        Math.cos((now / particleData.animDuration) * Math.PI * 2) * 10;
+
+      particleData.element.style.left = `${particleData.startX + xOffset}%`;
+      particleData.element.style.top = `${particleData.startY + yOffset}%`;
+
+      particleData.lastFrameId = requestAnimationFrame(animate);
+    };
+
+    particleData.lastFrameId = requestAnimationFrame(animate);
+  };
+  useEffect(() => {
+    if (!particlesContainer.current) return;
+
+    // Clear any existing particles
+    if (particlesRef.current.length > 0) {
+      particlesRef.current.forEach((particle) => {
+        if (particle.lastFrameId) {
+          cancelAnimationFrame(particle.lastFrameId);
+        }
+      });
+
+      if (particlesContainer.current) {
+        particlesContainer.current.innerHTML = "";
+      }
+
+      particlesRef.current = [];
+    }
+
+    // Create new particles
+    for (let i = 0; i < 100; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+
+      // Random position
+      const posX = Math.random() * 100;
+      const posY = Math.random() * 100;
+
+      // Random size
+      const size = Math.random() * 3 + 1;
+
+      // Set styles
+      particle.style.position = "absolute";
+      particle.style.left = `${posX}%`;
+      particle.style.top = `${posY}%`;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+      particle.style.borderRadius = "50%";
+      particle.style.opacity = `${Math.random() * 0.5 + 0.3}`;
+
+      particlesContainer.current.appendChild(particle);
+
+      // Store particle data for animation and cleanup
+      const particleData: ParticleData = {
+        element: particle,
+        startX: posX,
+        startY: posY,
+        animDuration: Math.random() * 20000 + 10000, // Random duration between 10-30 seconds
+      };
+
+      particlesRef.current.push(particleData);
+
+      // Start animation
+      animateParticle(particleData);
+    }
+
+    // Cleanup function
+    return () => {
+      particlesRef.current.forEach((particle) => {
+        if (particle.lastFrameId) {
+          cancelAnimationFrame(particle.lastFrameId);
+        }
+      });
+
+      if (particlesContainer.current) {
+        particlesContainer.current.innerHTML = "";
+      }
+    };
+  }, []);
   return (
     <div ref={containerRef} className="relative h-[400vh]">
       {/* Static Section */}
-      <div className="h-screen flex justify-center sm:justify-start items-center px-4">
-        <div className="w-[90%] sm:w-[50%]">
+      <div
+        className="h-screen flex justify-center sm:justify-start items-center px-4"
+        style={{
+          background: "linear-gradient(135deg, #0a0a1a 0%, #1a1a4a 100%)",
+        }}
+      >
+        <div
+          ref={particlesContainer}
+          className="particles absolute top-0 left-0 w-full h-full"
+          id="particles"
+        ></div>
+        <div className="w-[90%] sm:w-[50%] text-white">
           <motion.div className={`w-full`} style={{ x: textLeft }}>
             <h1 className="text-2xl text-start md:text-3xl font-bold mb-4">
               <span className="inline-block transition-all duration-700 ease-out playwrite-hr">
