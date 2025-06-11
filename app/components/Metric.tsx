@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 //@ts-expect-error"Could not find a declaration file for module '../../node_modules/colorthief/dist/color-thief.mjs'."
 import ColorThief from "colorthief";
+import { motion } from "motion/react";
 
 const Metric: React.FC<{
   image: string;
   fallbackColor?: string;
   children: React.ReactNode;
-}> = (props) => {
+  x?: number;
+  y?: number;
+}> = ({ image, fallbackColor, children, x, y }) => {
   const [gradientColor, setGradientColor] = useState("transparent");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (props.image) {
+    if (image) {
       const colorThief = new ColorThief();
       const img = new Image();
       img.crossOrigin = "Anonymous";
@@ -25,24 +28,27 @@ const Metric: React.FC<{
         } catch (e) {
           console.error("Color extraction failed:", e);
           // Use fallback color if extraction fails
-          setGradientColor(props.fallbackColor || "rgba(0, 0, 0, 0.5)");
+          setGradientColor(fallbackColor || "rgba(0, 0, 0, 0.5)");
           setIsLoaded(true);
         }
       };
 
-      img.src = props.image;
+      img.src = image;
     } else {
       // No background image, use fallback
-      setGradientColor(props.fallbackColor || "rgba(0, 0, 0, 0.5)");
+      setGradientColor(fallbackColor || "rgba(0, 0, 0, 0.5)");
       setIsLoaded(true);
     }
   });
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x, y }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="rounded-lg shadow-sm lg:p-7 md:p-5 p-4 h-64 flex items-end text-center"
       style={{
-        backgroundImage: `url(${props.image})`,
+        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
@@ -63,8 +69,8 @@ const Metric: React.FC<{
           transition: "opacity 0.3s ease",
         }}
       />
-      {props.children}
-    </div>
+      {children}
+    </motion.div>
   );
 };
 export default Metric;

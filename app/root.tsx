@@ -19,7 +19,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playwrite+HR:wght@100..400&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playwrite+HR:wght@100..400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap",
   },
 ];
 
@@ -29,21 +29,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="M3tering Protocol" />
         <meta property="og:site_name" content="M3tering Protocol" />
-        <meta
-          name="description"
-          content="The decentralized protocol that's driving solar energy adoption in Africa."
-        />
+        <meta property="og:type" content="M3tering Protocol" />
+        <meta property="og:title" content="M3tering Protocol" />
         <meta
           property="og:description"
           content="The decentralized protocol that's driving solar energy adoption in Africa."
         />
-        <meta
-          property="og:image"
-          content="https://m3tering/images/solarbg-ghiblify.webp"
-        />
+        <meta property="og:image" content={"/images/og_image1.png"} />
         <meta property="og:url" content="https://m3ter.ing/" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="m3ter.ing" />
+        <meta property="twitter:url" content="https://m3ter.ing/" />
+        <meta name="twitter:title" content="M3tering Protocol" />
+        <meta
+          name="twitter:description"
+          content="The decentralized protocol that's driving solar energy adoption in Africa."
+        />
+        <meta name="twitter:image" content={"/images/og_image1.png"} />
         <Meta />
         <Links />
       </head>
