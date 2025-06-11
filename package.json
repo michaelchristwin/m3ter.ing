@@ -1,37 +1,39 @@
 {
-  "name": "m3tering-ssr",
+  "name": "minimal",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start"
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@kobalte/core": "^0.13.9",
-    "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.15.3",
-    "@solidjs/start": "^1.1.3",
-    "blurhash": "^2.0.5",
+    "@number-flow/react": "^0.5.9",
+    "@react-router/node": "^7.5.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "colorthief": "^2.6.0",
-    "countup.js": "^2.8.0",
-    "gsap": "^3.12.7",
-    "m3ters-solid": "^1.0.12",
-    "seedrandom": "^3.0.5",
-    "solid-js": "^1.9.5",
-    "tailwind-merge": "^3.2.0",
-    "tw-animate-css": "^1.2.5",
-    "vinxi": "^0.5.4"
+    "isbot": "^5.1.27",
+    "lucide-react": "^0.511.0",
+    "motion": "12.11.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.5.3",
+    "tailwind-merge": "^3.3.0",
+    "vite-imagetools": "^7.1.0"
   },
   "devDependencies": {
-    "@kobalte/tailwindcss": "^0.9.0",
-    "@tailwindcss/vite": "^4.1.3",
-    "@types/node": "^22.14.1",
-    "@types/seedrandom": "^3.0.8",
-    "tailwindcss": "^4.1.3"
-  },
-  "engines": {
-    "node": ">=22"
+    "@react-router/dev": "^7.5.3",
+    "@tailwindcss/vite": "^4.1.7",
+    "@types/node": "^20.17.47",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vercel/react-router": "^1.1.0",
+    "tailwindcss": "^4.1.7",
+    "tw-animate-css": "^1.3.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
