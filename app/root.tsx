@@ -34,7 +34,7 @@ export const meta: Route.MetaFunction = () => {
       title: "M3tering Protocol",
     },
     {
-      description,
+      description: description,
     },
     {
       name: "robots",
