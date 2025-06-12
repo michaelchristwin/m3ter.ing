@@ -10,6 +10,11 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+const description =
+  "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.";
+const ogImage = "https://m3ter.ing/images/og_image2.png";
+const url = "https://m3ter.ing/";
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -23,31 +28,62 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    {
+      title: "M3tering Protocol",
+    },
+    {
+      description,
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    { property: "og:site_name", content: "M3tering Protocol" },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:title",
+      content: "M3tering Protocol",
+    },
+    {
+      property: "og:description",
+      content: description,
+    },
+    {
+      property: "og:image",
+      content: ogImage,
+    },
+    {
+      property: "og:url",
+      content: url,
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      property: "twitter:domain",
+      content: "m3ter.ing",
+    },
+    { property: "twitter:url", content: url },
+    { name: "twitter:title", content: "M3tering Protocol" },
+
+    {
+      name: "twitter:description",
+      content:
+        "The decentralized protocol that's driving solar energy adoption in Africa.",
+    },
+    { name: "twitter:image", content: ogImage },
+  ];
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:site_name" content="M3tering Protocol" />
-        <meta property="og:type" content="M3tering Protocol" />
-        <meta property="og:title" content="M3tering Protocol" />
-        <meta
-          property="og:description"
-          content="The decentralized protocol that's driving solar energy adoption in Africa."
-        />
-        <meta property="og:image" content={"/images/og_image1.png"} />
-        <meta property="og:url" content="https://m3ter.ing/" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="m3ter.ing" />
-        <meta property="twitter:url" content="https://m3ter.ing/" />
-        <meta name="twitter:title" content="M3tering Protocol" />
-        <meta
-          name="twitter:description"
-          content="The decentralized protocol that's driving solar energy adoption in Africa."
-        />
-        <meta name="twitter:image" content={"/images/og_image1.png"} />
         <Meta />
         <Links />
       </head>

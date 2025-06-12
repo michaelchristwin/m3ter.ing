@@ -18,7 +18,7 @@ const sections = [
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Home | M3tering Protocol" },
+    { title: "M3tering Protocol" },
     {
       name: "description",
       content:
