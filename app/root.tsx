@@ -28,7 +28,7 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function meta({}: Route.MetaArgs) {
+export const meta: Route.MetaFunction = () => {
   return [
     {
       title: "M3tering Protocol",
@@ -48,7 +48,8 @@ export function meta({}: Route.MetaArgs) {
     },
     {
       property: "og:description",
-      content: description,
+      content:
+        "The decentralized protocol that's driving solar energy adoption in Africa.",
     },
     {
       property: "og:image",
@@ -76,7 +77,7 @@ export function meta({}: Route.MetaArgs) {
     },
     { name: "twitter:image", content: ogImage },
   ];
-}
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
