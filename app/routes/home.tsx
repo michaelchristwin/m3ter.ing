@@ -1,10 +1,16 @@
-import { useRef } from "react";
+import { lazy, useRef } from "react";
 import type { Route } from "./+types/home";
-import Hero from "~/components/sections/Hero";
-import Section2 from "~/components/sections/Section2";
-import MetricsSection from "~/components/sections/MetricsSection";
-import CompaniesSection from "~/components/sections/CompaniesSection";
-import M3teringApplications from "~/components/sections/M3teringApplications";
+const Hero = lazy(() => import("~/components/sections/Hero"));
+const Section2 = lazy(() => import("~/components/sections/Section2"));
+const MetricsSection = lazy(
+  () => import("~/components/sections/MetricsSection")
+);
+const CompaniesSection = lazy(
+  () => import("~/components/sections/CompaniesSection")
+);
+const M3teringApplications = lazy(
+  () => import("~/components/sections/M3teringApplications")
+);
 import Footer from "~/components/Footer";
 
 const sections = [
@@ -16,8 +22,6 @@ const sections = [
   Footer,
 ];
 
-const description =
-  "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.";
 const ogImage = "https://m3ter.ing/images/og_image2.png";
 const url = "https://m3ter.ing/";
 
@@ -27,7 +31,8 @@ export const meta: Route.MetaFunction = () => {
       title: "M3tering Protocol",
     },
     {
-      description: description,
+      description:
+        "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.",
     },
     {
       name: "robots",
