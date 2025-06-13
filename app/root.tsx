@@ -10,8 +10,6 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
-const description =
-  "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.";
 const ogImage = "https://m3ter.ing/images/og_image2.png";
 const url = "https://m3ter.ing/";
 
@@ -34,7 +32,8 @@ export const meta: Route.MetaFunction = () => {
       title: "M3tering Protocol",
     },
     {
-      description: description,
+      description:
+        "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.",
     },
     {
       name: "robots",
