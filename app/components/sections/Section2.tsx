@@ -47,6 +47,11 @@ const Section2 = () => {
               >
                 "The M3tering Protocol is shifting energy infrastructure from
                 centralized monopolies to a shared, open economy on Ethereum."
+                <br />
+                "Whether it's a neighborhood solar farm or a shared battery
+                network, the protocol enables the energy assets to be tokenized
+                and transformed into liquid assets onchain that anyone can own,
+                trade, and earn from permissionlessly."
               </motion.p>
             </div>
 
@@ -57,33 +62,10 @@ const Section2 = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
               >
-                "Whether it's a neighborhood solar farm or a shared battery
-                network, the protocol enables the energy assets to be tokenized
-                and transformed into liquid assets onchain that anyone can own,
-                trade, and earn from permissionlessly."
-              </motion.p>
-            </div>
-
-            <div className="w-full h-[100vh] flex justify-center items-center p-[50px]">
-              <motion.p
-                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text3 italic text-start"
-                initial={{ y: -20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              >
                 "Using the protocol, communities choose how their power is
                 produced, allowing them to accelerate local clean energy
                 adoption."
-              </motion.p>
-            </div>
-
-            <div className="w-full h-[100vh] flex justify-center items-center p-[50px]">
-              <motion.p
-                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text4 italic text-start"
-                initial={{ y: -20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              >
+                <br />
                 "This is more than infrastructure; it's a solarpunk movement to
                 democratize both ownership and access to energy."
               </motion.p>

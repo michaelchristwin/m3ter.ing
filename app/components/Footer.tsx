@@ -60,24 +60,24 @@ const Footer = () => {
           </div>
 
           {/* Navigation links grid - keeping your existing structure */}
-          <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[40px]">
+          <div className="grid grid-cols-2 gap-[40px]">
             <div>
-              <p className="font-bold mb-4 text-[20px]">Products</p>
+              <p className="font-bold mb-4 text-[20px]">Applications</p>
               <ul className="space-y-2">
                 <li className="hover:text-gray-300 transition">
-                  <a href="#">XCharge</a>
+                  <a target="_blank" href="https://xcharge.m3ter.ing/">
+                    XCharge
+                  </a>
                 </li>
                 <li className="hover:text-gray-300 transition">
-                  <a href="#">Watt-A-Frame</a>
+                  <a target="_blank" href="https://watt-a-frame.vercel.app/">
+                    Watt-A-Frame
+                  </a>
                 </li>
                 <li className="hover:text-gray-300 transition">
-                  <a href="#">Solaxy</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Maxwell</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
+                  <a target="_blank" href="https://asset.m3ter.ing/">
+                    Solaxy
+                  </a>
                 </li>
               </ul>
             </div>
@@ -85,11 +85,6 @@ const Footer = () => {
             <div>
               <p className="font-bold mb-4 text-[20px]">Docs</p>
               <ul className="space-y-2">
-                <li className="hover:text-gray-300 transition">
-                  <a href="https://asset.m3ter.ing/" target="_blank">
-                    Solaxy
-                  </a>
-                </li>
                 <li className="hover:text-gray-300 transition">
                   <a
                     href="https://m3tering.whynotswitch.com/token-economics/mint-and-distribution"
@@ -105,26 +100,6 @@ const Footer = () => {
                   >
                     Audit
                   </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-bold mb-4 text-[20px]">Code</p>
-              <ul className="space-y-2">
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
-                </li>
-                <li className="hover:text-gray-300 transition">
-                  <a href="#">Nitro</a>
                 </li>
               </ul>
             </div>
