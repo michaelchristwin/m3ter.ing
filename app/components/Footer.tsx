@@ -1,4 +1,4 @@
-import { Solarpunk } from "~/assets/images";
+import { SolarRow } from "~/assets/images";
 import { FaXTwitter, FaDiscord } from "react-icons/fa6";
 import { SiFarcaster } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       className="w-full relative text-white bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: `url(${Solarpunk.img.src})` }}
+      style={{ backgroundImage: `url(${SolarRow.img.src})` }}
     >
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-black/30"></div>

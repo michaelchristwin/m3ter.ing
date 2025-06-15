@@ -40,49 +40,45 @@ const Section2 = () => {
           >
             <div className="w-full h-[100vh] flex justify-center items-center p-[50px]">
               <motion.p
-                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text1 italic text-start"
+                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text1 text-start"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
               >
-                "The M3tering Protocol is shifting energy infrastructure from
-                centralized monopolies to a shared, open economy on Ethereum."
-                <br />
                 "Whether it's a neighborhood solar farm or a shared battery
-                network, the protocol enables the energy assets to be tokenized
-                and transformed into liquid assets onchain that anyone can own,
-                trade, and earn from permissionlessly."
+                network, the M3tering protocol enables the energy assets to be
+                tokenized and transformed into liquid assets onchain that anyone
+                can own, trade, and earn from permissionlessly"
               </motion.p>
             </div>
 
             <div className="w-full h-[100vh] flex justify-center items-center p-[50px]">
               <motion.p
-                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text2 italic text-start"
+                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text2 text-start"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
               >
-                "Using the protocol, communities choose how their power is
-                produced, allowing them to accelerate local clean energy
-                adoption."
-                <br />
-                "This is more than infrastructure; it's a solarpunk movement to
-                democratize both ownership and access to energy."
+                "A Protocol for shifting energy infrastructure from centralized
+                monopolies to a shared, open economy on Ethereum. But it's more
+                than just infrastructure; it's a solarpunk movement to
+                democratize both ownership and access to energy"
               </motion.p>
             </div>
 
             <div className="w-full h-[100vh] flex justify-center items-center p-[50px]">
               <motion.p
-                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text5 italic text-start"
+                className="sm:text-[30px] text-[20px] text-neutral-700 font-bold text5 text-start"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
               >
-                "It's literally and figuratively{" "}
-                <span className="font-extrabold text-black">
-                  power to the people
+                "It's about empowering local, sustainable energy resources, and
+                enabling communities to choose how their power is produced ...
+                <span className={`italic text-black`}>
+                  It's literally and figuratively power to the people
                 </span>
-                ."
+                "
               </motion.p>
             </div>
           </motion.div>
