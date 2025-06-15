@@ -17,7 +17,7 @@ function MetricsSection() {
             <h2
               className={`text-center font-semibold lg:text-[30px] md:text-[28px] text-[25px] fade-in-block`}
             >
-              Real Environmental Impact; Real Economic Value
+              Real Impact; Real Value
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

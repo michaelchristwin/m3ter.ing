@@ -11,7 +11,7 @@ const CompaniesSection = lazy(
 const M3teringApplications = lazy(
   () => import("~/components/sections/M3teringApplications")
 );
-import Footer from "~/components/Footer";
+const Footer = lazy(() => import("~/components/Footer"));
 
 const sections = [
   Hero,
