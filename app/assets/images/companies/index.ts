@@ -7,22 +7,22 @@ import Helios from "./helios.webp?w=320;480;768;1024;1440&as=picture";
 import AlliancePower from "./alliance_power_generation.webp?w=320;480;768;1024;1440&as=picture";
 
 const companyicons = [
-  Helios,
-  AlliancePower,
-  SolarFoundation,
-  YourProject,
-  SwitchElectric,
-  Arkreen,
-  TAS,
+	Helios,
+	AlliancePower,
+	SolarFoundation,
+	YourProject,
+	SwitchElectric,
+	Arkreen,
+	TAS,
 ];
 
 export {
-  TAS,
-  SwitchElectric,
-  SolarFoundation,
-  Arkreen,
-  YourProject,
-  AlliancePower,
-  Helios,
-  companyicons,
+	TAS,
+	SwitchElectric,
+	SolarFoundation,
+	Arkreen,
+	YourProject,
+	AlliancePower,
+	Helios,
+	companyicons,
 };

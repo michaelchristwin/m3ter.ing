@@ -9,24 +9,24 @@ import Maxwell from "./maxwell.webp?w=320;480;768;1024;1440&as=picture";
 import SolarRow from "./solar-row.webp?w=320;480;768;1024;1440&as=picture";
 
 export {
-  Infrastructure,
-  SolarGhibhify,
-  Solarpunk,
-  Avatar,
-  ETHCity,
-  Island,
-  AnimeBg,
-  Maxwell,
-  SolarRow,
+	Infrastructure,
+	SolarGhibhify,
+	Solarpunk,
+	Avatar,
+	ETHCity,
+	Island,
+	AnimeBg,
+	Maxwell,
+	SolarRow,
 };
 
 export type CustomImage = {
-  sources: {
-    [key: string]: string; // e.g. { webp: "...srcset..." }
-  };
-  img: {
-    src: string;
-    w: number;
-    h: number;
-  };
+	sources: {
+		[key: string]: string; // e.g. { webp: "...srcset..." }
+	};
+	img: {
+		src: string;
+		w: number;
+		h: number;
+	};
 };

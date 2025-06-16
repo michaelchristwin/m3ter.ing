@@ -1,119 +1,121 @@
 import { useEffect, useRef } from "react";
 
 interface ParticleData {
-  element: HTMLDivElement;
-  startX: number;
-  startY: number;
-  animDuration: number;
-  lastFrameId?: number;
+	element: HTMLDivElement;
+	startX: number;
+	startY: number;
+	animDuration: number;
+	lastFrameId?: number;
 }
 
 function Particles() {
-  const particlesContainer = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<ParticleData[]>([]);
+	const particlesContainer = useRef<HTMLDivElement>(null);
+	const particlesRef = useRef<ParticleData[]>([]);
 
-  const animateParticle = (particleData: ParticleData): void => {
-    const animate = (): void => {
-      const now = Date.now();
-      const xOffset =
-        Math.sin((now / particleData.animDuration) * Math.PI * 2) * 10;
-      const yOffset =
-        Math.cos((now / particleData.animDuration) * Math.PI * 2) * 10;
+	const animateParticle = (particleData: ParticleData): void => {
+		const animate = (): void => {
+			const now = Date.now();
+			const xOffset =
+				Math.sin((now / particleData.animDuration) * Math.PI * 2) * 10;
+			const yOffset =
+				Math.cos((now / particleData.animDuration) * Math.PI * 2) * 10;
 
-      particleData.element.style.left = `${particleData.startX + xOffset}%`;
-      particleData.element.style.top = `${particleData.startY + yOffset}%`;
+			particleData.element.style.left = `${particleData.startX + xOffset}%`;
+			particleData.element.style.top = `${particleData.startY + yOffset}%`;
 
-      particleData.lastFrameId = requestAnimationFrame(animate);
-    };
+			particleData.lastFrameId = requestAnimationFrame(animate);
+		};
 
-    particleData.lastFrameId = requestAnimationFrame(animate);
-  };
+		particleData.lastFrameId = requestAnimationFrame(animate);
+	};
 
-  useEffect(() => {
-    if (!particlesContainer.current) return;
+	useEffect(() => {
+		if (!particlesContainer.current) return;
 
-    // Clear any existing particles
-    if (particlesRef.current.length > 0) {
-      particlesRef.current.forEach((particle) => {
-        if (particle.lastFrameId) {
-          cancelAnimationFrame(particle.lastFrameId);
-        }
-      });
+		// Clear any existing particles
+		if (particlesRef.current.length > 0) {
+			for (let index = 0; index < particlesRef.current.length; index++) {
+				const particle = particlesRef.current[index];
+				if (particle.lastFrameId) {
+					cancelAnimationFrame(particle.lastFrameId);
+				}
+			}
 
-      if (particlesContainer.current) {
-        particlesContainer.current.innerHTML = "";
-      }
+			if (particlesContainer.current) {
+				particlesContainer.current.innerHTML = "";
+			}
 
-      particlesRef.current = [];
-    }
+			particlesRef.current = [];
+		}
 
-    // Create new particles
-    for (let i = 0; i < 100; i++) {
-      const particle = document.createElement("div");
-      particle.classList.add("particle");
+		// Create new particles
+		for (let i = 0; i < 100; i++) {
+			const particle = document.createElement("div");
+			particle.classList.add("particle");
 
-      // Random position
-      const posX = Math.random() * 100;
-      const posY = Math.random() * 100;
+			// Random position
+			const posX = Math.random() * 100;
+			const posY = Math.random() * 100;
 
-      // Random size
-      const size = Math.random() * 3 + 1;
+			// Random size
+			const size = Math.random() * 3 + 1;
 
-      // Set styles
-      particle.style.position = "absolute";
-      particle.style.left = `${posX}%`;
-      particle.style.top = `${posY}%`;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.backgroundColor = "rgb(255, 213, 2)";
-      particle.style.borderRadius = "50%";
-      particle.style.opacity = `${Math.random() * 0.5 + 0.3}`;
+			// Set styles
+			particle.style.position = "absolute";
+			particle.style.left = `${posX}%`;
+			particle.style.top = `${posY}%`;
+			particle.style.width = `${size}px`;
+			particle.style.height = `${size}px`;
+			particle.style.backgroundColor = "rgb(255, 213, 2)";
+			particle.style.borderRadius = "50%";
+			particle.style.opacity = `${Math.random() * 0.5 + 0.3}`;
 
-      particlesContainer.current.appendChild(particle);
+			particlesContainer.current.appendChild(particle);
 
-      // Store particle data for animation and cleanup
-      const particleData: ParticleData = {
-        element: particle,
-        startX: posX,
-        startY: posY,
-        animDuration: Math.random() * 20000 + 10000, // Random duration between 10-30 seconds
-      };
+			// Store particle data for animation and cleanup
+			const particleData: ParticleData = {
+				element: particle,
+				startX: posX,
+				startY: posY,
+				animDuration: Math.random() * 20000 + 10000, // Random duration between 10-30 seconds
+			};
 
-      particlesRef.current.push(particleData);
+			particlesRef.current.push(particleData);
 
-      // Start animation
-      animateParticle(particleData);
-    }
+			// Start animation
+			animateParticle(particleData);
+		}
 
-    // Cleanup function
-    return () => {
-      particlesRef.current.forEach((particle) => {
-        if (particle.lastFrameId) {
-          cancelAnimationFrame(particle.lastFrameId);
-        }
-      });
+		// Cleanup function
+		return () => {
+			for (let index = 0; index < particlesRef.current.length; index++) {
+				const particle = particlesRef.current[index];
+				if (particle.lastFrameId) {
+					cancelAnimationFrame(particle.lastFrameId);
+				}
+			}
 
-      if (particlesContainer.current) {
-        particlesContainer.current.innerHTML = "";
-      }
-    };
-  }, []);
+			if (particlesContainer.current) {
+				particlesContainer.current.innerHTML = "";
+			}
+		};
+	});
 
-  return (
-    <div
-      ref={particlesContainer}
-      className="particles absolute z-10 top-0 left-0 w-full h-full overflow-hidden"
-      id="particles"
-    >
-      <ParticleStyles />
-    </div>
-  );
+	return (
+		<div
+			ref={particlesContainer}
+			className="particles absolute z-10 top-0 left-0 w-full h-full overflow-hidden"
+			id="particles"
+		>
+			<ParticleStyles />
+		</div>
+	);
 }
 export default Particles;
 
 const ParticleStyles = () => {
-  return (
-    <style>{`
+	return (
+		<style>{`
    .particle {
     position: absolute;
     width: 10px;
@@ -122,5 +124,5 @@ const ParticleStyles = () => {
     border-radius: 50%;
     }
         `}</style>
-  );
+	);
 };
