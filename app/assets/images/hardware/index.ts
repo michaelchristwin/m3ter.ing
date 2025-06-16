@@ -5,17 +5,17 @@ import BoardOverview from "./board_overview.webp?w=320;480;768;1024;1440&as=pict
 import PcbDesign from "./pcb_design.webp?w=320;480;768;1024;1440&as=picture";
 
 const hardwareimages = [
-  PcbDesign,
-  MeterCase1,
-  MeterCase2,
-  BoardOverview,
-  Exterior,
+	PcbDesign,
+	MeterCase1,
+	MeterCase2,
+	BoardOverview,
+	Exterior,
 ];
 export {
-  PcbDesign,
-  MeterCase1,
-  MeterCase2,
-  BoardOverview,
-  Exterior,
-  hardwareimages,
+	PcbDesign,
+	MeterCase1,
+	MeterCase2,
+	BoardOverview,
+	Exterior,
+	hardwareimages,
 };
