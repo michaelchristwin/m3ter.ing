@@ -52,7 +52,7 @@ const Section2 = () => {
                 transition={{ duration: 1, ease: "easeIn" }}
               >
                 "Whether it's a neighborhood solar farm or a shared battery
-                network, the M3tering protocol enables the energy assets to be
+                network, the M3tering Protocol enables the energy assets to be
                 tokenized and transformed into liquid assets onchain that anyone
                 can own, trade, and earn from permissionlessly"
               </motion.p>

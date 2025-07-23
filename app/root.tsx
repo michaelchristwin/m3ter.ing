@@ -14,6 +14,7 @@ const ogImage = "https://m3ter.ing/images/og_image2.png";
 const url = "https://m3ter.ing/";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "canonical", href: "https://m3ter.ing/" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
