@@ -32,7 +32,8 @@ export const meta: Route.MetaFunction = () => {
       title: "M3tering Protocol",
     },
     {
-      description:
+      name: "description",
+      content:
         "M3tering Protocol is the decentralized protocol accelerating solar energy adoption and sustainable development across Africa through innovative solutions.",
     },
     {
