@@ -15,7 +15,7 @@ interface AppCardProps {
   url: string;
   description: string;
 }
-const AppCard = ({ image, title, description, url }: AppCardProps) => {
+const AppCard = ({ image, title, description, url, alt }: AppCardProps) => {
   return (
     <Card className="border-0">
       <CardHeader className="hidden">
@@ -24,7 +24,11 @@ const AppCard = ({ image, title, description, url }: AppCardProps) => {
       </CardHeader>
       <CardContent>
         <div className={"aspect-video w-full"}>
-          <Image image_name={image} className="object-cover rounded-xl" />
+          <Image
+            image_name={image}
+            className="object-cover rounded-xl"
+            alt={alt}
+          />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>

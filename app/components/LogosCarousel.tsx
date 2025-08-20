@@ -60,7 +60,7 @@ const LogosCarousel: React.FC = () => {
               </div>
             )}
 
-            <Image image_name={logo} className="object-cover" />
+            <Image image_name={logo} className="object-cover" alt={name} />
           </motion.div>
         );
         return name === "Your Project" ? (
@@ -68,6 +68,7 @@ const LogosCarousel: React.FC = () => {
             to="https://form.typeform.com/to/d58WsifL"
             target="_blank"
             key={name}
+            aria-label="M3tering Protocol interest form"
             rel="noopener noreferrer"
           >
             {content}

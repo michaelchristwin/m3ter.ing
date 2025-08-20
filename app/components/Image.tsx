@@ -9,9 +9,10 @@ interface ImageProps {
   image_name: string;
   transformation?: string;
   className?: string;
+  alt: string;
 }
 
-function Image({ image_name, transformation, className }: ImageProps) {
+function Image({ image_name, transformation, className, alt }: ImageProps) {
   const img = cld
     .image(image_name)
     .format("webp") // Optimize delivery by resizing and applying auto-format and auto-quality
@@ -21,6 +22,7 @@ function Image({ image_name, transformation, className }: ImageProps) {
   return (
     <AdvancedImage
       cldImg={img}
+      alt={alt}
       style={{ maxWidth: "100%" }}
       className={className}
       plugins={[

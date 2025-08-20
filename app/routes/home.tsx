@@ -175,6 +175,7 @@ export default function Home() {
           <Image
             image_name="solarbg-ghiblify_fyc6ac"
             className="object-cover w-full h-full object-center"
+            alt="Solarpunk City background"
           />
         </motion.div>
         <div className="flex w-full items-center justify-between text-white absolute bottom-[30px] sm:px-[40px] px-[20px] z-10">
@@ -214,6 +215,7 @@ export default function Home() {
             <Image
               image_name="ethcity_ax29ol"
               transformation={transformationStringFromObject([{ radius: 24 }])}
+              alt="ETHCity"
             />
           </div>
 
