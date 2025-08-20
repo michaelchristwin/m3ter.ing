@@ -1,4 +1,3 @@
-import type { CustomImage } from "~/assets/images";
 import {
   Card,
   CardContent,
@@ -7,15 +6,16 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import Image from "./Image";
 
 interface AppCardProps {
-  image: CustomImage;
+  image: string;
   title: string;
   alt: string;
   url: string;
   description: string;
 }
-const AppCard = ({ image, title, alt, description, url }: AppCardProps) => {
+const AppCard = ({ image, title, description, url }: AppCardProps) => {
   return (
     <Card className="border-0">
       <CardHeader className="hidden">
@@ -24,22 +24,7 @@ const AppCard = ({ image, title, alt, description, url }: AppCardProps) => {
       </CardHeader>
       <CardContent>
         <div className={"aspect-video w-full"}>
-          <picture>
-            {Object.entries(image.sources).map(([type, srcset]) => (
-              <source key={type} type={`image/${type}`} srcSet={srcset} />
-            ))}
-            <img
-              src={image.img.src}
-              loading="lazy"
-              decoding="async"
-              width={image.img.w}
-              height={image.img.h}
-              alt={alt}
-              className={
-                "transition-all duration-300 ease-in-out object-cover rounded-xl"
-              }
-            />
-          </picture>
+          <Image image_name={image} className="object-cover rounded-xl" />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>

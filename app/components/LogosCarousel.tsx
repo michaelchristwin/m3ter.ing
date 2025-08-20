@@ -1,7 +1,17 @@
-import { companies } from "~/assets/images/companies";
 import { motion, type Variants } from "motion/react";
 import { Link } from "react-router";
 import { Fragment } from "react/jsx-runtime";
+import Image from "./Image";
+
+const companies = [
+  { name: "Helios", logo: "helios_bihsea" },
+  { name: "Alliance Power", logo: "alliance_power_generation_zue6ge" },
+  { name: "Solar Foundation", logo: "solar-foundation_uyaybq" },
+  { name: "Your Project", logo: "project_tfve9t" },
+  { name: "Switch Electric", logo: "switch-electric_c3saeo" },
+  { name: "Arkreen", logo: "arkreen_nrbgmb" },
+  { name: "TAS", logo: "tas_u6s82a" },
+];
 
 const LogosCarousel: React.FC = () => {
   const container: Variants = {
@@ -27,7 +37,7 @@ const LogosCarousel: React.FC = () => {
         const tapStyle = name === "Your Project" ? { scale: 1 } : {};
         const content = (
           <motion.div
-            key={logo.img.src}
+            key={logo}
             variants={{
               hidden: { opacity: 0, y: 50, scale },
               show: { opacity: 1, y: 0, scale },
@@ -50,20 +60,7 @@ const LogosCarousel: React.FC = () => {
               </div>
             )}
 
-            <picture>
-              {Object.entries(logo.sources).map(([type, srcset]) => (
-                <source key={type} type={`image/${type}`} srcSet={srcset} />
-              ))}
-              <img
-                src={logo.img.src}
-                loading="lazy"
-                decoding="async"
-                width={logo.img.w}
-                height={logo.img.h}
-                alt={`Card ${i}`}
-                className="transition-all duration-300 ease-in-out object-cover"
-              />
-            </picture>
+            <Image image_name={logo} className="object-cover" />
           </motion.div>
         );
         return name === "Your Project" ? (
